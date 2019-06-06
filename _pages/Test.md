@@ -1,17 +1,9 @@
 ---
 layout: page
-title: Test
+title: Day1
 permalink: workshop
 ---
 
-```{r, include=FALSE}
-tutorial::go_interactive()
-```
-By default, `tutorial` will convert all R chunks.
-
-```{r}
-a <- 2
-b <- 3
-
-a + b
-```
+## Courses
+# [Exercise 1](Day1/1.html)
+# [Exercise 2](Day2/2.html)
