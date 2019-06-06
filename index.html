@@ -1,15 +1,42 @@
-<html>
-  <title>
-    Jongjin Kim's Github Homepage
-  </title>
-  <body>
-	<a>
-		<img src="img/jj.jpeg" alt="Jongjin Kim" style="width:auto;max-width:100%" />
-	</a>
+---
+layout: default
+title: Home
+---
 
-<h2 class="wsite-content-title"><font size="6">Jongjin Kim, MS</font><br /><em style="color:rgb(85, 85, 85)"><font size="4">PhD Student, Educational Neuroscience<br />&#8203;&#8203;</font></em></h2>
+Just a test.
 
-<div class="paragraph"><font color="#3f3f3f">I am a first-year graduate student in the <a href="http://edneuro.ua.edu" target="_blank">Educational Neuroscience concentration</a> of the Educational Psychology program at the University of Alabama. Having been a high school math teacher in Korea, I found a number of students struggling with math despite their high performance. I am, therefore, interested in promoting student motivation in math courses, alleviating math anxiety among students, and designing conducive learning environments. My work currently focuses on analyzing EEG data as well as collecting behavioral and neural data from dynamic environments.&nbsp;<br /><br /><strong><font size="3">Research Interest :&nbsp;</font></strong></font><strong><font size="3"><span style="color:rgb(63, 63, 63)">educational neuroscience, math anxiety, and constructionism.</span></font></strong><br /><br /></div>
 
-  </body>
-</html>
+
+<div class="posts">
+  {% for post in paginator.posts %}
+  <div class="post">
+    <h1 class="post-title">
+      <a href="{{ post.url }}">
+        {{ post.title }}
+      </a>
+    </h1>
+
+    <span class="post-date">{{ post.date | date_to_string }}</span>
+
+    {{ post.content }}
+  </div>
+  {% endfor %}
+</div>
+
+<div class="pagination">
+  {% if paginator.next_page %}
+    <a class="pagination-item older" href="{{ site.baseurl }}page{{paginator.next_page}}">Older</a>
+  {% else %}
+    <span class="pagination-item older">Older</span>
+  {% endif %}
+  {% if paginator.previous_page %}
+    {% if paginator.page == 2 %}
+      <a class="pagination-item newer" href="{{ site.baseurl }}">Newer</a>
+    {% else %}
+      <a class="pagination-item newer" href="{{ site.baseurl }}page{{paginator.previous_page}}">Newer</a>
+    {% endif %}
+  {% else %}
+    <span class="pagination-item newer">Newer</span>
+  {% endif %}
+</div>
+
