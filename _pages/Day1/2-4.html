@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title> Exercise 2-4 | Naming a vector </title>
+  <link rel='shortcut icon' type='image/x-icon' href='{{ site.baseurl }}public/favicon.ico'/>
+  <style>
+    .exercise {
+      margin: 50px;
+    }
+  </style>
+
+  <script async src="https://cdn.datacamp.com/dcl-react.js.gz"></script>
+</head>
+<body>
+  <div class="exercise">
+    <div class="title">
+      <h2>Naming a vector</h2>
+    </div>
+
+    <div class="description">
+<p>As a data analyst, it is important to have a clear view on the data that you are using. Understanding what each element refers to is therefore essential. </p>
+
+<p>In the previous exercise, we created a vector with your winnings over the week. Each vector element refers to a day of the week but it is hard to tell which element belongs to which day. It would be nice if you could show that in the vector itself. </p>
+
+<p>You can give a name to the elements of a vector with the <code>names()</code> function. Have a look at this example:</p>
+
+<pre><code>some_vector &lt;- c("John Doe", "poker player")
+names(some_vector) &lt;- c("Name", "Profession")
+</code></pre>
+
+<p>This code first creates a vector <code>some_vector</code> and then gives the two elements a name. The first element is assigned the name <code>Name</code>, while the second element is labeled <code>Profession</code>. Printing the contents to the console yields following output:</p>
+
+<pre><code>          Name     Profession 
+    "John Doe" "poker player" 
+</code></pre>
+    <div class="Instruction">
+      <h3>Instruction</h3>
+
+<ul>
+<li>The code on the right names the elements in <code>poker_vector</code> with the days of the week. Add code to do the same thing for <code>roulette_vector</code>.</li>
+</ul>
+</div>
+
+    <div data-datacamp-exercise data-lang="r" data-height="auto">
+      <code data-type="pre-exercise-code"></code>
+      <code data-type="sample-code">
+# Poker winnings from Monday to Friday
+poker_vector <- c(140, -50, 20, -120, 240)
+
+# Roulette winnings from Monday to Friday
+roulette_vector <- c(-24, -50, 100, -350, 10)
+
+# Assign days as names of poker_vector
+names(poker_vector) <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
+
+# Assign days as names of roulette_vector
+      </code>
+      <code data-type="solution">
+        # Poker winnings from Monday to Friday
+poker_vector <- c(140, -50, 20, -120, 240)
+
+# Roulette winnings from Monday to Friday
+roulette_vector <- c(-24, -50, 100, -350, 10)
+
+# Assign days as names of poker_vector
+names(poker_vector) <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
+
+# Assign days as names of roulette_vector
+names(roulette_vector) <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
+      </code>
+      <code data-type="sct">
+test_object("poker_vector",
+            incorrect_msg = "Do not change the values inside `poker_vector`; they were already coded for you.")
+test_object("roulette_vector",
+            incorrect_msg = "Do not change the values inside `roulette_vector`; they were already coded for you.")
+test_object("poker_vector",
+            eq_condition = "equal",
+            incorrect_msg = "Do not change the code that names the elements in `poker_vector`; focus on `roulette_vector`!")
+test_object("roulette_vector",
+            eq_condition = "equal",
+            incorrect_msg = "Make sure that you assign the correct names vector to `roulette_vector`. Use the exact same vector as the one that was used to name `poker_vector`.")
+success_msg("Well done! Continue to the next exercise.")
+ <div data-type="hint">
+You can use `names(roulette_vector)` to set the names of the variable `roulette_vector`. Make sure to use the same vector with the days of the week as names. Remember that R is case sensitive!
+      </div>
+    </div>
+  </div>
+
+  <h3><a href="/_pages/Day1/2-3.html">Previous</a></h3>
+  <h3><a href="/_pages/Day1/2-5.html">Next</a></h3>
+  <h3><a href="{{ site.baseurl }}workshop">Back to Main</a></h3>
+</body>
+</html>

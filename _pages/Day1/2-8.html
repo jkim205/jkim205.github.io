@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title> Exercise 2-8 | Calculating total winnings (3) </title>
+  <link rel='shortcut icon' type='image/x-icon' href='{{ site.baseurl }}public/favicon.ico'/>
+  <style>
+    .exercise {
+      margin: 50px;
+    }
+  </style>
+
+  <script async src="https://cdn.datacamp.com/dcl-react.js.gz"></script>
+</head>
+<body>
+  <div class="exercise">
+    <div class="title">
+      <h2>Calculating total winnings (3)</h2>
+    </div>
+
+    <div class="description">
+<p>Based on the previous analysis, it looks like you had a mix of good and bad days. This is not what your ego expected, and you wonder if there may be a very tiny chance you have lost money over the week in total? </p>
+
+<p>A function that helps you to answer this question is <a href="http://www.rdocumentation.org/packages/base/functions/sum"><code>sum()</code></a>. It calculates the sum of all elements of a vector. For example, to calculate the total amount of money you have lost/won with poker you do: </p>
+
+<pre><code>total_poker &lt;- sum(poker_vector)
+</code></pre>
+    <div class="Instruction">
+      <h3>Instruction</h3>
+
+<ul>
+<li>Calculate the total amount of money that you have won/lost with roulette and assign to the variable <code>total_roulette</code>.</li>
+
+<li>Now that you have the totals for roulette and poker, you can easily calculate <code>total_week</code> (which is the sum of all gains and losses of the week).</li>
+
+<li>Print out <code>total_week</code>.</li>
+</ul>
+    </div>
+
+    <div data-datacamp-exercise data-lang="r" data-height="auto">
+      <code data-type="pre-exercise-code"></code>
+      <code data-type="sample-code">
+# Poker and roulette winnings from Monday to Friday:
+poker_vector <- c(140, -50, 20, -120, 240)
+roulette_vector <- c(-24, -50, 100, -350, 10)
+days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
+names(poker_vector) <- days_vector
+names(roulette_vector) <- days_vector
+
+# Total winnings with poker
+total_poker <- sum(poker_vector)
+
+# Total winnings with roulette
+total_roulette <-  
+
+# Total winnings overall
+total_week <- 
+
+# Print out total_week
+  
+      </code>
+      <code data-type="solution">
+# Poker and roulette winnings from Monday to Friday:
+poker_vector <- c(140, -50, 20, -120, 240)
+roulette_vector <- c(-24, -50, 100, -350, 10)
+days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
+names(poker_vector) <- days_vector
+names(roulette_vector) <- days_vector
+
+# Total winnings with poker
+total_poker <- sum(poker_vector)
+
+# Total winnings with roulette
+total_roulette <-  sum(roulette_vector)
+
+# Total winnings overall
+total_week <- total_roulette + total_poker
+
+# Print out total_week
+total_week
+      </code>
+      <code data-type="sct">
+msg = "Do not change anything about the definition and naming of `poker_vector` and `roulette_vector`."
+test_object("days_vector", undefined_msg = msg, incorrect_msg = msg)
+test_object("poker_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
+test_object("roulette_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
+test_object("total_poker", 
+            incorrect_msg = "Make sure that you assign to `total_poker` the sum of the `poker_vector`.")
+test_object("total_roulette",
+            incorrect_msg = "Make sure that you assign to `total_roulette` the sum of the `roulette_vector`.")
+test_object("total_week",
+            incorrect_msg = "Make sure that you assign to `total_week` the sum of the other two total vectors: `total_roulette` and `total_poker`.")
+
+test_output_contains("total_week", incorrect_msg = "Don't forget to write `total_week` on a new line to print out the variable.")
+success_msg("Well done. This is pretty bad news...")
+ <div data-type="hint">
+<p>Use the <a href="http://www.rdocumentation.org/packages/base/functions/sum"><code>sum()</code></a> function to get the total of the <code>roulette_vector</code>. <code>total_week</code> is then the sum of <code>roulette_vector</code> and <code>poker_vector</code>.</p>
+
+      </div>
+    </div>
+  </div>
+
+  <h3><a href="/_pages/Day1/2-7.html">Previous</a></h3>
+  <h3><a href="/_pages/Day1/2-9.html">Next</a></h3>
+  <h3><a href="{{ site.baseurl }}workshop">Back to Main</a></h3>
+</body>
+</html>

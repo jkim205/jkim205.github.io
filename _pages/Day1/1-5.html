@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title> Exercise 1-5 | Variable assignment (3) </title>
+  <link rel='shortcut icon' type='image/x-icon' href='{{ site.baseurl }}public/favicon.ico'/>
+  <style>
+    .exercise {
+      margin: 50px;
+    }
+  </style>
+
+  <script async src="https://cdn.datacamp.com/dcl-react.js.gz"></script>
+</head>
+<body>
+  <div class="exercise">
+    <div class="title">
+      <h2>Variable assignment (2)</h2>
+    </div>
+
+    <div class="description">
+      <p>Every tasty fruit basket needs oranges, so you decide to add six oranges. As a data analyst, your reflex is to immediately create the variable `my_oranges` and assign the value 6 to it. Next, you want to calculate how many pieces of fruit you have in total. Since you have given meaningful names to these values, you can now code this in a clear way:   </p><p>
+        ```
+my_apples + my_oranges
+```
+      </p>
+
+    <div class="Instruction">
+      <h3>Instruction</h3>
+
+<p>- Assign to `my_oranges` the value 6.</p><p>
+- Add the variables `my_apples` and `my_oranges` and have R simply print the result.</p><p>
+- Assign the result of adding `my_apples` and `my_oranges` to a new variable `my_fruit`.
+</p>
+</div>
+
+    <div data-datacamp-exercise data-lang="r" data-height="auto">
+      <code data-type="pre-exercise-code"></code>
+      <code data-type="sample-code">
+# Assign a value to the variables my_apples and my_oranges
+my_apples <- 5
+
+
+# Add these two variables together
+
+
+# Create the variable my_fruit
+
+      </code>
+      <code data-type="solution">
+# Assign a value to the variables my_apples and my_oranges
+my_apples  <- 5
+my_oranges <- 6
+
+# Add these two variables together
+my_apples + my_oranges
+
+# Create the variable my_fruit
+my_fruit <- my_apples + my_oranges
+      </code>
+      <code data-type="sct">
+test_object("my_apples", incorrect_msg = "Keep the line that assigns 5 to `my_apples`.")
+test_object("my_oranges", incorrect_msg = "Keep the line that assigns 6 to `my_oranges`.")
+test_output_contains("my_apples + my_oranges",
+                     incorrect_msg = "Make sure to print out the result of adding `my_apples` and `my_oranges`. The code example in the description already gives away the answer to this instruction!")
+msg <- "Have you used `my_fruit <- my_apples + my_oranges` to create the `my_fruit` variable?"
+test_object("my_fruit", undefined_msg = msg, incorrect_msg = msg)
+success_msg("Nice one! The great advantage of doing calculations with variables is reusability. If you just change `my_apples` to equal 12 instead of 5 and rerun the script, `my_fruit` will automatically update as well. Continue to the next exercise.")
+      </code>
+      <div data-type="hint">
+`my_fruit` is just the sum of `my_apples` and `my_oranges`. You can use the `+` operator to sum the two and `<-` to assign that value to the variable `my_fruit`.
+
+
+      </div>
+    </div>
+  </div>
+
+  <h3><a href="/_pages/Day1/1-4.html">Previous</a></h3>
+  <h3><a href="/_pages/Day1/1-6.html">Next</a></h3>
+  <h3><a href="{{ site.baseurl }}workshop">Back to Main</a></h3>
+</body>
+</html>

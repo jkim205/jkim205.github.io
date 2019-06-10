@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title> Exercise 2-16 | Advanced selection </title>
+  <link rel='shortcut icon' type='image/x-icon' href='{{ site.baseurl }}public/favicon.ico'/>
+  <style>
+    .exercise {
+      margin: 50px;
+    }
+  </style>
+
+  <script async src="https://cdn.datacamp.com/dcl-react.js.gz"></script>
+</head>
+<body>
+  <div class="exercise">
+    <div class="title">
+      <h2>Advanced selection</h2>
+    </div>
+
+    <div class="description">
+
+<p>Just like you did for poker, you also want to know those days where you realized a positive return for roulette.</p>
+
+    <div class="Instruction">
+      <h3>Instruction</h3>
+<ul>
+<li>Create the variable <code>selection_vector</code>, this time to see if you made profit with roulette for different days.</li>
+
+<li>Assign the amounts that you made on the days that you ended positively for roulette to the variable <code>roulette_winning_days</code>. This vector thus contains the positive winnings of <code>roulette_vector</code>.</li>
+</ul>
+    </div>
+
+    <div data-datacamp-exercise data-lang="r" data-height="auto">
+      <code data-type="pre-exercise-code"></code>
+      <code data-type="sample-code">
+# Poker and roulette winnings from Monday to Friday:
+poker_vector <- c(140, -50, 20, -120, 240)
+roulette_vector <- c(-24, -50, 100, -350, 10)
+days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
+names(poker_vector) <- days_vector
+names(roulette_vector) <- days_vector
+
+# Which days did you make money on roulette?
+selection_vector <-
+
+# Select from roulette_vector these days
+roulette_winning_days <- 
+
+
+  
+      </code>
+      <code data-type="solution">
+# Poker and roulette winnings from Monday to Friday:
+poker_vector <- c(140, -50, 20, -120, 240)
+roulette_vector <- c(-24, -50, 100, -350, 10)
+days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
+names(poker_vector) <- days_vector
+names(roulette_vector) <- days_vector
+
+# Which days did you make money on roulette?
+selection_vector <- roulette_vector > 0
+
+# Select from roulette_vector these days
+roulette_winning_days <- roulette_vector[selection_vector]
+      </code>
+      <code data-type="sct">
+msg = "Do not change anything about the definition and naming of `poker_vector` and `roulette_vector`."
+test_object("days_vector", undefined_msg = msg, incorrect_msg = msg)
+test_object("poker_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
+test_object("roulette_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
+test_object("selection_vector", 
+            incorrect_msg = "It looks like `selection_vector` does not contain the correct result. Use `roulette_vector > 0`.")
+test_object("roulette_winning_days",
+            incorrect_msg = "It looks like `roulette_winning_days` does not contain the correct result. Use `roulette_vector[selection_vector]`.")
+
+success_msg("Great! This exercise concludes the chapter on vectors. The next chapter will introduce you to the two-dimensional version of vectors: matrices.")
+ <div data-type="hint">
+
+<p>Once you've correctly calculated <code>selection_vector</code>, you can again use <code>roulette_vector[selection_vector]</code> to select the positive results from <code>roulette_vector</code>.</p>
+      </div>
+    </div>
+  </div>
+
+  <h3><a href="/_pages/Day1/2-15.html">Previous</a></h3>
+  <h3><a href="/_pages/Day1/3-1.html">Next</a></h3>
+  <h3><a href="{{ site.baseurl }}workshop">Back to Main</a></h3>
+</body>
+</html>

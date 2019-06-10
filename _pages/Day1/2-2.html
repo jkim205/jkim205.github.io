@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title> Exercise 2-2 | Create a vector (2) </title>
+  <link rel='shortcut icon' type='image/x-icon' href='{{ site.baseurl }}public/favicon.ico'/>
+  <style>
+    .exercise {
+      margin: 50px;
+    }
+  </style>
+
+  <script async src="https://cdn.datacamp.com/dcl-react.js.gz"></script>
+</head>
+<body>
+  <div class="exercise">
+    <div class="title">
+      <h2>Create a vector (2)</h2>
+    </div>
+
+    <div class="description">
+<p>Let us focus first! </p>
+
+<p>On your way from rags to riches, you will make extensive use of vectors. Vectors are one-dimension arrays that can hold numeric data, character data, or logical data. In other words, a vector is a simple tool to store data. For example, you can store your daily gains and losses in the casinos. </p>
+
+<p>In R, you create a vector with the combine function <a href="http://www.rdocumentation.org/packages/base/functions/c"><code>c()</code></a>. You place the vector elements separated by a comma between the parentheses. For example:</p>
+
+<pre><code>numeric_vector &lt;- c(1, 2, 3)
+character_vector &lt;- c("a", "b", "c")
+</code></pre>
+
+<p>Once you have created these vectors in R, you can use them to do calculations.</p>
+
+    <div class="Instruction">
+      <h3>Instruction</h3>
+
+<p>Complete the code such that <code>boolean_vector</code> contains the three elements: <code>TRUE</code>, <code>FALSE</code> and <code>TRUE</code> (in that order). </p>
+</div>
+
+    <div data-datacamp-exercise data-lang="r" data-height="auto">
+      <code data-type="pre-exercise-code"></code>
+      <code data-type="sample-code">
+numeric_vector <- c(1, 10, 49)
+character_vector <- c("a", "b", "c")
+
+# Complete the code for boolean_vector
+boolean_vector <-
+      </code>
+      <code data-type="solution">
+numeric_vector <- c(1, 10, 49)
+character_vector <- c("a", "b", "c")
+
+# Complete the code for boolean_vector
+boolean_vector <- c(TRUE, FALSE, TRUE)
+      </code>
+      <code data-type="sct">
+msg <- "Do not change the code that defined `numeric_vector` and `character_vector`!"
+test_object("numeric_vector", undefined_msg = msg, incorrect_msg = msg)
+test_object("character_vector", undefined_msg = msg, incorrect_msg = msg)
+test_object("boolean_vector",
+            incorrect_msg = "Make sure that you assign the correct values to `boolean_vector`. Use `c(TRUE, FALSE, TRUE)`. Don't place quotes around `TRUE` and `FALSE`! Also, make sure to adopt the same order as listed in the instructions.")
+success_msg("Perfect! Notice that adding a space behind the commas in the `c()` function improves the readability of your code. Let's practice some more with vector creation in the next exercise.")
+ <div data-type="hint">
+<p>Assign <code>c(TRUE, FALSE, TRUE)</code> to the variable <code>boolean_vector</code> with the <code>&lt;-</code> operator.</p>
+      </div>
+    </div>
+  </div>
+
+  <h3><a href="/_pages/Day1/2-1.html">Previous</a></h3>
+  <h3><a href="/_pages/Day1/2-3.html">Next</a></h3>
+  <h3><a href="{{ site.baseurl }}workshop">Back to Main</a></h3>
+</body>
+</html>

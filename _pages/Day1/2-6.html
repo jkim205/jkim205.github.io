@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title> Exercise 2-6 | Calculating total winnings </title>
+  <link rel='shortcut icon' type='image/x-icon' href='{{ site.baseurl }}public/favicon.ico'/>
+  <style>
+    .exercise {
+      margin: 50px;
+    }
+  </style>
+
+  <script async src="https://cdn.datacamp.com/dcl-react.js.gz"></script>
+</head>
+<body>
+  <div class="exercise">
+    <div class="title">
+      <h2>Calculating total winnings</h2>
+    </div>
+
+    <div class="description">
+<p>Now that you have the poker and roulette winnings nicely as named vectors, you can start doing some data analytical magic. </p>
+
+<p>You want to find out the following type of information:</p>
+
+<ul>
+<li>How much has been your overall profit or loss per day of the week?</li>
+
+<li>Have you lost money over the week in total?</li>
+
+<li>Are you winning/losing money on poker or on roulette?</li>
+</ul>
+
+<p>To get the answers, you have to do arithmetic calculations on vectors. </p>
+
+<p>It is important to know that if you sum two vectors in R, it takes the element-wise sum. For example, the following three statements are completely equivalent:</p>
+
+<pre><code>c(1, 2, 3) + c(4, 5, 6)
+c(1 + 4, 2 + 5, 3 + 6)
+c(5, 7, 9)
+</code></pre>
+
+<p>You can also do the calculations with variables that represent vectors:</p>
+
+<pre><code>a &lt;- c(1, 2, 3) 
+b &lt;- c(4, 5, 6)
+c &lt;- a + b
+</code></pre>
+    <div class="Instruction">
+      <h3>Instruction</h3>
+
+<ul>
+<li>Take the sum of the variables <code>A_vector</code> and <code>B_vector</code> and assign it to <code>total_vector</code>.</li>
+
+<li>Inspect the result by printing out <code>total_vector</code>.</li>
+</ul>
+
+    </div>
+
+    <div data-datacamp-exercise data-lang="r" data-height="auto">
+      <code data-type="pre-exercise-code"></code>
+      <code data-type="sample-code">
+A_vector <- c(1, 2, 3)
+B_vector <- c(4, 5, 6)
+
+# Take the sum of A_vector and B_vector
+total_vector <- 
+  
+# Print out total_vector
+      </code>
+      <code data-type="solution">
+A_vector <- c(1, 2, 3)
+B_vector <- c(4, 5, 6)
+
+# Take the sum of A_vector and B_vector
+total_vector <- A_vector + B_vector
+
+# Print out total_vector
+total_vector
+      </code>
+      <code data-type="sct">
+msg <- "Do not change the contents of `A_vector` or `B_vector`!"
+test_object("A_vector", undefined_msg = msg, incorrect_msg = msg)
+test_object("B_vector", undefined_msg = msg, incorrect_msg = msg)
+test_object("total_vector", incorrect_msg = "Make sure that `total_vector` contains the sum of `A_vector` and `B_vector`.")
+test_output_contains("total_vector", incorrect_msg = "Don't forget to print out `total_vector`! Simply write `total_vector` on a new line.")
+success_msg("Good job! Continue to the next exercise.")
+ <div data-type="hint">
+<p>Use the <code>+</code> operator to sum <code>A_vector</code> and <code>B_vector</code>. Use <code>&lt;-</code> to assign the result to <code>total_vector</code>.</p>
+
+      </div>
+    </div>
+  </div>
+
+  <h3><a href="/_pages/Day1/2-5.html">Previous</a></h3>
+  <h3><a href="/_pages/Day1/2-7.html">Next</a></h3>
+  <h3><a href="{{ site.baseurl }}workshop">Back to Main</a></h3>
+</body>
+</html>

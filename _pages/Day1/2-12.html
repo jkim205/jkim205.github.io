@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title> Exercise 2-12 | Vector selection: the good times (3) </title>
+  <link rel='shortcut icon' type='image/x-icon' href='{{ site.baseurl }}public/favicon.ico'/>
+  <style>
+    .exercise {
+      margin: 50px;
+    }
+  </style>
+
+  <script async src="https://cdn.datacamp.com/dcl-react.js.gz"></script>
+</head>
+<body>
+  <div class="exercise">
+    <div class="title">
+      <h2>Vector selection: the good times (3)</h2>
+    </div>
+
+    <div class="description">
+
+<p>Selecting multiple elements of <code>poker_vector</code> with <code>c(2, 3, 4)</code> is not very convenient. Many statisticians are lazy people by nature, so they created an easier way to do this: <code>c(2, 3, 4)</code> can be abbreviated to<code>2:4</code>, which generates a vector with all natural numbers from 2 up to 4.</p>
+
+<p>So, another way to find the mid-week results is <code>poker_vector[2:4]</code>. Notice how the vector <code>2:4</code> is placed between the square brackets to select element 2 up to 4.</p>
+
+    <div class="Instruction">
+      <h3>Instruction</h3>
+
+<p>Assign to <code>roulette_selection_vector</code> the roulette results from Tuesday up to Friday; make use of <code>:</code> if it makes things easier for you.</p>
+
+    </div>
+
+    <div data-datacamp-exercise data-lang="r" data-height="auto">
+      <code data-type="pre-exercise-code"></code>
+      <code data-type="sample-code">
+# Poker and roulette winnings from Monday to Friday:
+poker_vector <- c(140, -50, 20, -120, 240)
+roulette_vector <- c(-24, -50, 100, -350, 10)
+days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
+names(poker_vector) <- days_vector
+names(roulette_vector) <- days_vector
+
+# Define a new variable based on a selection
+roulette_selection_vector <- 
+  
+      </code>
+      <code data-type="solution">
+# Poker and roulette winnings from Monday to Friday:
+poker_vector <- c(140, -50, 20, -120, 240)
+roulette_vector <- c(-24, -50, 100, -350, 10)
+days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
+names(poker_vector) <- days_vector
+names(roulette_vector) <- days_vector
+
+# Define a new variable based on a selection
+roulette_selection_vector <- roulette_vector[2:5]
+      </code>
+      <code data-type="sct">
+msg = "Do not change anything about the definition and naming of `poker_vector` and `roulette_vector`."
+test_object("days_vector", undefined_msg = msg, incorrect_msg = msg)
+test_object("poker_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
+test_object("roulette_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
+test_object("roulette_selection_vector", 
+            undefined_msg = "Please make sure to define a variable `roulette_selection_vector`.",
+            incorrect_msg = "It looks like `roulette_selection_vector` does not contain the correct selection from `roulette_vector`. Make sure to to use the right indexes.")
+success_msg("Awesome! The colon operator is extremely useful and very often used in R programming, so remember it well. Proceed to the next exercise.")
+ <div data-type="hint">
+<p>Assign a selection of <code>roulette_vector</code> to <code>roulette_selection_vector</code> by placing <code>2:5</code> between square brackets.</p>
+      </div>
+    </div>
+  </div>
+
+  <h3><a href="/_pages/Day1/2-11.html">Previous</a></h3>
+  <h3><a href="/_pages/Day1/2-13.html">Next</a></h3>
+  <h3><a href="{{ site.baseurl }}workshop">Back to Main</a></h3>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title> Exercise 2-15 | Selection by comparison - Step 2 </title>
+  <link rel='shortcut icon' type='image/x-icon' href='{{ site.baseurl }}public/favicon.ico'/>
+  <style>
+    .exercise {
+      margin: 50px;
+    }
+  </style>
+
+  <script async src="https://cdn.datacamp.com/dcl-react.js.gz"></script>
+</head>
+<body>
+  <div class="exercise">
+    <div class="title">
+      <h2>Selection by comparison - Step 2</h2>
+    </div>
+
+    <div class="description">
+
+<p>Working with comparisons will make your data analytical life easier. Instead of selecting a subset of days to investigate yourself (like before), you can simply ask R to return only those days where you realized a positive return for poker. </p>
+
+<p>In the previous exercises you used <code>selection_vector &lt;- poker_vector &gt; 0</code> to find the days on which you had a positive poker return. Now, you would like to know not only the days on which you won, but also how much you won on those days. </p>
+
+<p>You can select the desired elements, by putting <code>selection_vector</code> between the square brackets that follow <code>poker_vector</code>:</p>
+
+<pre><code>poker_vector[selection_vector]
+</code></pre>
+
+<p>R knows what to do when you pass a logical vector in square brackets: it will only select the elements that correspond to <code>TRUE</code> in <code>selection_vector</code>.</p>
+
+    <div class="Instruction">
+      <h3>Instruction</h3>
+<p>Use <code>selection_vector</code> in square brackets to assign the amounts that you won on the profitable days to the variable <code>poker_winning_days</code>.</p>
+
+    </div>
+
+    <div data-datacamp-exercise data-lang="r" data-height="auto">
+      <code data-type="pre-exercise-code"></code>
+      <code data-type="sample-code">
+# Poker and roulette winnings from Monday to Friday:
+poker_vector <- c(140, -50, 20, -120, 240)
+roulette_vector <- c(-24, -50, 100, -350, 10)
+days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
+names(poker_vector) <- days_vector
+names(roulette_vector) <- days_vector
+
+# Which days did you make money on poker?
+selection_vector <- poker_vector > 0
+
+# Select from poker_vector these days
+poker_winning_days <- 
+
+
+  
+      </code>
+      <code data-type="solution">
+# Poker and roulette winnings from Monday to Friday:
+poker_vector <- c(140, -50, 20, -120, 240)
+roulette_vector <- c(-24, -50, 100, -350, 10)
+days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
+names(poker_vector) <- days_vector
+names(roulette_vector) <- days_vector
+
+# Which days did you make money on poker?
+selection_vector <- poker_vector > 0
+
+# Select from poker_vector these days
+poker_winning_days <- poker_vector[selection_vector]
+      </code>
+      <code data-type="sct">
+msg = "Do not change anything about the definition and naming of `poker_vector` and `roulette_vector`."
+test_object("days_vector", undefined_msg = msg, incorrect_msg = msg)
+test_object("poker_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
+test_object("roulette_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
+test_object("selection_vector", incorrect_msg = "Don't change the way `selection_vector` is calculated.")
+test_object("poker_winning_days",
+            incorrect_msg =  "It looks like `poker_winning_days` does not contain the correct result. Use `poker_vector[selection_vector]`.")
+success_msg("Good job! Continue to the next exercise.")
+ <div data-type="hint">
+
+<p>Use <code>poker_vector[selection_vector]</code> to select the desired elements from <code>poker_vector</code>, and assign the result to <code>poker_winning_days</code>.</p>
+      </div>
+    </div>
+  </div>
+
+  <h3><a href="/_pages/Day1/2-14.html">Previous</a></h3>
+  <h3><a href="/_pages/Day1/2-16.html">Next</a></h3>
+  <h3><a href="{{ site.baseurl }}workshop">Back to Main</a></h3>
+</body>
+</html>

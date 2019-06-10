@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title> Exercise 1-7 | Basic data types in R </title>
+  <link rel='shortcut icon' type='image/x-icon' href='{{ site.baseurl }}public/favicon.ico'/>
+  <style>
+    .exercise {
+      margin: 50px;
+    }
+  </style>
+
+  <script async src="https://cdn.datacamp.com/dcl-react.js.gz"></script>
+</head>
+<body>
+  <div class="exercise">
+    <div class="title">
+      <h2>Basic data types in R</h2>
+    </div>
+
+    <div class="description">
+      <p>R works with numerous data types. Some of the most basic types to get started are: </p><p>
+
+- Decimal values like `4.5` are called **numerics**.</p><p>
+- Natural numbers like `4` are called **integers**. Integers are also numerics.</p><p>
+- Boolean values (`TRUE` or `FALSE`) are called **logical**.</p><p>
+- Text (or string) values are called **characters**.</p><p>
+
+Note how the quotation marks on the right indicate that "some text" is a character.
+
+      </p>
+
+    <div class="Instruction">
+      <h3>Instruction</h3>
+
+<p>- Change the value of the:</p><p>
+
+- `my_numeric` variable to `42`.</p><p>
+- `my_character` variable to `"universe"`. Note that the quotation marks indicate that `"universe"` is a character.</p><p>
+- `my_logical` variable to `FALSE`.</p><p>
+
+Note that R is case sensitive!
+
+</p>
+</div>
+
+    <div data-datacamp-exercise data-lang="r" data-height="auto">
+      <code data-type="pre-exercise-code"></code>
+      <code data-type="sample-code">
+# Change my_numeric to be 42
+my_numeric <- 42.5
+
+# Change my_character to be "universe"
+my_character <- "some text"
+
+# Change my_logical to be FALSE
+my_logical <- TRUE
+      </code>
+      <code data-type="solution">
+# Change my_numeric to be 42
+my_numeric <- 42
+
+# Change my_character to be "universe"
+my_character <- "universe"
+
+# Change my_logical to be FALSE
+my_logical <- FALSE
+
+      </code>
+      <code data-type="sct">
+test_object("my_numeric", incorrect_msg = "Have you correctly changed the declaration of `my_numeric` so it contains the value 42?")
+test_object("my_character", incorrect_msg = "Have you correctly changed `my_character` to `\"universe\"`? Don't forget the quotes!")
+test_object("my_logical", incorrect_msg = "Have you correctly changed `my_logical` to `FALSE`? All letters of `FALSE` should be capitalized!")
+success_msg("Great work! Continue to the next exercise.")      </code>
+      <div data-type="hint">
+Replace the values in the editor with the values that are provided in the exercise. For example: 
+`my_numeric <- 42` assigns the value 42 to the variable `my_numeric`. 
+
+
+      </div>
+    </div>
+  </div>
+
+  <h3><a href="/_pages/Day1/1-6.html">Previous</a></h3>
+  <h3><a href="/_pages/Day1/1-8.html">Next</a></h3>
+  <h3><a href="{{ site.baseurl }}workshop">Back to Main</a></h3>
+</body>
+</html>

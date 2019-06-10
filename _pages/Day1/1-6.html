@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title> Exercise 1-6 | Apples and oranges </title>
+  <link rel='shortcut icon' type='image/x-icon' href='{{ site.baseurl }}public/favicon.ico'/>
+  <style>
+    .exercise {
+      margin: 50px;
+    }
+  </style>
+
+  <script async src="https://cdn.datacamp.com/dcl-react.js.gz"></script>
+</head>
+<body>
+  <div class="exercise">
+    <div class="title">
+      <h2>Variable assignment (2)</h2>
+    </div>
+
+    <div class="description">
+      <p>Common knowledge tells you not to add apples and oranges. But hey, that is what you just did, no :-)? The `my_apples` and `my_oranges` variables both contained a number in the previous exercise. The `+` operator works with numeric variables in R. If you really tried to add "apples" and "oranges", and assigned a text value to the variable `my_oranges` (see the editor), you would be trying to assign the addition of a numeric and a character variable to the variable `my_fruit`. This is not possible.
+      </p>
+
+    <div class="Instruction">
+      <h3>Instruction</h3>
+
+<p>- Click 'Submit Answer' and read the error message. Make sure to understand why this did not work.</p><p>
+- Adjust the code so that R knows you have 6 oranges and thus a fruit basket with 11 pieces of fruit.
+</p>
+</div>
+
+    <div data-datacamp-exercise data-lang="r" data-height="auto">
+      <code data-type="pre-exercise-code"></code>
+      <code data-type="sample-code">
+# Assign a value to the variable my_apples
+my_apples <- 5 
+
+# Fix the assignment of my_oranges
+my_oranges <- "six" 
+
+# Create the variable my_fruit and print it out
+my_fruit <- my_apples + my_oranges 
+my_fruit
+      </code>
+      <code data-type="solution">
+# Assign a value to the variable my_apples
+my_apples <- 5  
+
+# Fix the assignment of my_oranges
+my_oranges <- 6
+
+# Create the variable my_fruit and print it out
+my_fruit <- my_apples + my_oranges 
+my_fruit
+      </code>
+      <code data-type="sct">
+test_error(incorrect_msg = "You can do this by setting the `my_oranges` variable to a numeric value, not a string!")
+test_object("my_apples", incorrect_msg = "Make sure that `my_apples` still contains `5`.")
+test_object("my_oranges", incorrect_msg = "Make sure that `my_oranges` is equal to `6`.")
+test_object("my_fruit", incorrect_msg = "The value of `my_fruit` is not correct. It should be 11, the sum of `my_apples` and `my_oranges`.")
+test_output_contains("my_fruit", incorrect_msg = "Don't remove the line that prints out `my_fruit`.")
+success_msg("Awesome, keep up the good work! Continue to the next exercise.")
+      </code>
+      <div data-type="hint">
+You have to assign the numeric value `6` to the `my_oranges` variable instead of the character value `"six"`. Note how the quotation marks are used to indicate that `"six"` is a character.
+
+      </div>
+    </div>
+  </div>
+
+  <h3><a href="/_pages/Day1/1-5.html">Previous</a></h3>
+  <h3><a href="/_pages/Day1/1-7.html">Next</a></h3>
+  <h3><a href="{{ site.baseurl }}workshop">Back to Main</a></h3>
+</body>
+</html>

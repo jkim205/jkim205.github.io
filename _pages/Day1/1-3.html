@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title> Exercise 1-3 | Variable assignment </title>
+  <link rel='shortcut icon' type='image/x-icon' href='{{ site.baseurl }}public/favicon.ico'/>
+  <style>
+    .exercise {
+      margin: 50px;
+    }
+  </style>
+
+  <script async src="https://cdn.datacamp.com/dcl-react.js.gz"></script>
+</head>
+<body>
+  <div class="exercise">
+    <div class="title">
+      <h2>Variable assignment</h2>
+    </div>
+
+    <div class="description">
+      <p>A basic concept in (statistical) programming is called a <code>**variable**.</code> </p><p>
+
+A variable allows you to store a value (e.g. 4) or an object (e.g. a function description) in R. You can then later use this variable's name to easily access the value or the object that is stored within this variable. </p><p>
+
+You can assign a value 4 to a variable `my_var` with the command
+<code>
+my_var <- 4
+</code>
+</p>
+    </div>
+
+    <div class="Instruction">
+      <h3>Instruction</h3>
+
+<p>Over to you: complete the code in the editor such that it assigns the value 42 to the variable `x` in the editor. Click 'Submit Answer'. Notice that when you ask R to print `x`, the value 42 appears.</p>
+</div>
+
+    <div data-datacamp-exercise data-lang="r" data-height="auto">
+      <code data-type="pre-exercise-code"></code>
+      <code data-type="sample-code">
+# Assign the value 42 to x
+x <- 
+
+# Print out the value of the variable x
+x
+
+      </code>
+      <code data-type="solution">
+# Assign the value 42 to x
+x <- 42
+
+# Print out the value of the variable x
+x
+      </code>
+      <code data-type="sct">
+test_object("x", undefined_msg = "Make sure to define a variable `x`.",
+            incorrect_msg = "Make sure that you assign the correct value to `x`.") 
+success_msg("Good job! Have you noticed that R does not print the value of a variable to the console when you did the assignment? `x <- 42` did not generate any output, because R assumes that you will be needing this variable in the future. Otherwise you wouldn't have stored the value in a variable in the first place, right? Proceed to the next exercise!")
+      </code>
+      <div data-type="hint">
+        Look at how the value 4 was assigned to `my_variable` in the exercise's assignment. Do the exact same thing in the editor, but now assign 42 to the variable `x`.
+      </div>
+    </div>
+  </div>
+
+  <h3><a href="/_pages/Day1/1-2.html">Previous</a></h3>
+  <h3><a href="/_pages/Day1/1-4.html">Next</a></h3>
+  <h3><a href="{{ site.baseurl }}workshop">Back to Main</a></h3>
+</body>
+</html>

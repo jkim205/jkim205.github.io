@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title> Exercise 2-13 | Vector selection: the good times (4) </title>
+  <link rel='shortcut icon' type='image/x-icon' href='{{ site.baseurl }}public/favicon.ico'/>
+  <style>
+    .exercise {
+      margin: 50px;
+    }
+  </style>
+
+  <script async src="https://cdn.datacamp.com/dcl-react.js.gz"></script>
+</head>
+<body>
+  <div class="exercise">
+    <div class="title">
+      <h2>Vector selection: the good times (4)</h2>
+    </div>
+
+    <div class="description">
+
+<p>Another way to tackle the previous exercise is by using the names of the vector elements (Monday, Tuesday, ...) instead of their numeric positions. For example, </p>
+
+<pre><code>poker_vector["Monday"]
+</code></pre>
+
+<p>will select the first element of <code>poker_vector</code> since <code>"Monday"</code> is the name of that first element.</p>
+
+<p>Just like you did in the previous exercise with numerics, you can also use the element names to select multiple elements, for example: </p>
+
+<pre><code>poker_vector[c("Monday","Tuesday")]
+</code></pre>
+
+    <div class="Instruction">
+      <h3>Instruction</h3>
+<ul>
+<li>Select the first three elements in <code>poker_vector</code> by using their names: <code>"Monday"</code>, <code>"Tuesday"</code> and <code>"Wednesday"</code>. Assign the result of the selection to <code>poker_start</code>.</li>
+
+<li>Calculate the average of the values in <code>poker_start</code> with the <a href="http://www.rdocumentation.org/packages/base/functions/mean"><code>mean()</code></a> function. Simply print out the result so you can inspect it.</li>
+</ul>
+
+    </div>
+
+    <div data-datacamp-exercise data-lang="r" data-height="auto">
+      <code data-type="pre-exercise-code"></code>
+      <code data-type="sample-code">
+# Poker and roulette winnings from Monday to Friday:
+poker_vector <- c(140, -50, 20, -120, 240)
+roulette_vector <- c(-24, -50, 100, -350, 10)
+days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
+names(poker_vector) <- days_vector
+names(roulette_vector) <- days_vector
+
+# Select poker results for Monday, Tuesday and Wednesday
+poker_start <- 
+  
+# Calculate the average of the elements in poker_start
+
+  
+      </code>
+      <code data-type="solution">
+# Poker and roulette winnings from Monday to Friday:
+poker_vector <- c(140, -50, 20, -120, 240)
+roulette_vector <- c(-24, -50, 100, -350, 10)
+days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
+names(poker_vector) <- days_vector
+names(roulette_vector) <- days_vector
+
+# Select poker results for Monday, Tuesday and Wednesday
+poker_start <- poker_vector[c("Monday", "Tuesday", "Wednesday")]
+  
+# Calculate the average of the elements in poker_start
+mean(poker_start)
+      </code>
+      <code data-type="sct">
+msg = "Do not change anything about the definition and naming of `poker_vector` and `roulette_vector`."
+test_object("days_vector", undefined_msg = msg, incorrect_msg = msg)
+test_object("poker_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
+test_object("roulette_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
+test_object("poker_start", 
+            incorrect_msg = "It looks like `poker_start` does not contain the first three values of `poker_vector`. You can use `c(\"Monday\", \"Tuesday\", \"Wednesday\")` inside square brackets to do this.")
+test_output_contains("mean(poker_start)", incorrect_msg = "Have you correctly calculated the average of the values in `poker_start` and printed it out? Use `mean(poker_start)`.")
+success_msg("Good job! Apart from subsetting vectors by index or by name, you can also subset vectors by comparison. The next exercises will show you how!");
+ <div data-type="hint">
+<ul>
+<li>You can use <code>c("Monday", "Tuesday", "Wednesday")</code> inside square brackets to subset <code>poker_vector</code> appropriately.</li>
+
+<li>You can use <code>mean(poker_start)</code> to get the mean of the elements in <code>poker_start</code>. You do not need the mean of all poker elements, but only of the first three days.</li>
+</ul>
+      </div>
+    </div>
+  </div>
+
+  <h3><a href="/_pages/Day1/2-12.html">Previous</a></h3>
+  <h3><a href="/_pages/Day1/2-14.html">Next</a></h3>
+  <h3><a href="{{ site.baseurl }}workshop">Back to Main</a></h3>
+</body>
+</html>

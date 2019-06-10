@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title> Exercise 2-9 | Comparing total winnings </title>
+  <link rel='shortcut icon' type='image/x-icon' href='{{ site.baseurl }}public/favicon.ico'/>
+  <style>
+    .exercise {
+      margin: 50px;
+    }
+  </style>
+
+  <script async src="https://cdn.datacamp.com/dcl-react.js.gz"></script>
+</head>
+<body>
+  <div class="exercise">
+    <div class="title">
+      <h2>Comparing total winnings</h2>
+    </div>
+
+    <div class="description">
+
+<p>Oops, it seems like you are losing money. Time to rethink and adapt your strategy! This will require some deeper analysis... </p>
+
+<p>After a short brainstorm in your hotel's jacuzzi, you realize that a possible explanation might be that your skills in roulette are not as well developed as your skills in poker. So maybe your total gains in poker are higher (or <code>&gt;</code> ) than in roulette.</p>
+
+    <div class="Instruction">
+      <h3>Instruction</h3>
+
+<ul>
+<li>Calculate <code>total_poker</code> and <code>total_roulette</code> as in the previous exercise. Use the <code>sum()</code> function twice.</li>
+
+<li>Check if your total gains in poker are higher than for roulette by using a comparison. Simply print out the result of this comparison. What do you conclude, should you focus on roulette or on poker?</li>
+</ul>
+
+    </div>
+
+    <div data-datacamp-exercise data-lang="r" data-height="auto">
+      <code data-type="pre-exercise-code"></code>
+      <code data-type="sample-code">
+# Poker and roulette winnings from Monday to Friday:
+poker_vector <- c(140, -50, 20, -120, 240)
+roulette_vector <- c(-24, -50, 100, -350, 10)
+days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
+names(poker_vector) <- days_vector
+names(roulette_vector) <- days_vector
+
+# Calculate total gains for poker and roulette
+total_poker <-
+total_roulette <-
+
+# Check if you realized higher total gains in poker than in roulette 
+
+  
+      </code>
+      <code data-type="solution">
+# Poker and roulette winnings from Monday to Friday:
+poker_vector <- c(140, -50, 20, -120, 240)
+roulette_vector <- c(-24, -50, 100, -350, 10)
+days_vector <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
+names(poker_vector) <- days_vector
+names(roulette_vector) <- days_vector
+
+# Calculate total gains for poker and roulette
+total_poker <- sum(poker_vector)
+total_roulette <- sum(roulette_vector)
+
+# Check if you realized higher total gains in poker than in roulette
+total_poker > total_roulette
+      </code>
+      <code data-type="sct">
+msg <- "Do not change anything about the definition and naming of `poker_vector` and `roulette_vector`."
+test_object("days_vector", undefined_msg = msg, incorrect_msg = msg)
+test_object("poker_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
+test_object("roulette_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
+
+test_object("total_poker", 
+            incorrect_msg = "Make sure that you assign to `total_poker` the sum of the `poker_vector`. Use `sum()`.")
+test_object("total_roulette",
+            incorrect_msg = "Make sure that you assign to `total_roulette` the sum of the `roulette_vector`. Use `sum()`.")
+test_output_contains("total_poker > total_roulette",
+                     incorrect_msg = "Have you correctly carried out the comparison? To check if `total_poker` is greater than `total_roulette`, you can use `total_poker > total_roulette`.")
+success_msg("Good job! Continue to the next exercise.")
+ <div data-type="hint">
+
+<ul>
+<li>You partly calculated the answer to this question in the previous exercise already!</li>
+
+<li>To check if 6 is larger than 5, you type <code>6 &gt; 5</code>. This returns a logical value (<code>TRUE</code> or <code>FALSE</code>).</li>
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <h3><a href="/_pages/Day1/2-8.html">Previous</a></h3>
+  <h3><a href="/_pages/Day1/2-10.html">Next</a></h3>
+  <h3><a href="{{ site.baseurl }}workshop">Back to Main</a></h3>
+</body>
+</html>
