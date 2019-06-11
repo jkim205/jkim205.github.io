@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title> Exercise 3-5 | Adding a column for the Worldwide box office   </title>
+  <link rel='shortcut icon' type='image/x-icon' href='{{ site.baseurl }}public/favicon.ico'/>
+  <style>
+    .exercise {
+      margin: 50px;
+    }
+  </style>
+
+  <script async src="https://cdn.datacamp.com/dcl-react.js.gz"></script>
+</head>
+<body>
+  <div class="exercise">
+    <div class="title">
+      <h2>Adding a column for the Worldwide box office </h2>
+    </div>
+
+    <div class="description">
+
+<p>In the previous exercise you calculated the vector that contained the worldwide box office receipt for each of the three Star Wars movies. However, this vector is not yet part of <code>star_wars_matrix</code>.</p>
+
+<p>You can add a column or multiple columns to a matrix with the <a href="http://www.rdocumentation.org/packages/base/functions/cbind"><code>cbind()</code></a> function, which merges matrices and/or vectors together by column. For example: </p>
+
+<pre><code>big_matrix &lt;- cbind(matrix1, matrix2, vector1 ...)
+</code></pre>
+</div>
+
+    <div class="Instruction">
+      <h3>Instruction</h3>
+<p>Add <code>worldwide_vector</code> as a new column to the <code>star_wars_matrix</code> and assign the result to <code>all_wars_matrix</code>. Use the <a href="http://www.rdocumentation.org/packages/base/functions/cbind"><code>cbind()</code></a> function.</p>
+    </div>
+
+    <div data-datacamp-exercise data-lang="r" data-height="auto">
+      <code data-type="pre-exercise-code"></code>
+      <code data-type="sample-code">
+# Construct star_wars_matrix
+box_office <- c(460.998, 314.4, 290.475, 247.900, 309.306, 165.8)
+star_wars_matrix <- matrix(box_office, nrow = 3, byrow = TRUE,
+                           dimnames = list(c("A New Hope", "The Empire Strikes Back", "Return of the Jedi"), 
+                                           c("US", "non-US")))
+
+# The worldwide box office figures
+worldwide_vector <- rowSums(star_wars_matrix)
+
+# Bind the new variable worldwide_vector as a column to star_wars_matrix
+all_wars_matrix <- 
+      </code>
+      <code data-type="solution">
+# Construct star_wars_matrix
+box_office <- c(460.998, 314.4, 290.475, 247.900, 309.306, 165.8)
+star_wars_matrix <- matrix(box_office, nrow = 3, byrow = TRUE,
+                           dimnames = list(c("A New Hope", "The Empire Strikes Back", "Return of the Jedi"), 
+                                           c("US", "non-US")))
+
+# The worldwide box office figures
+worldwide_vector <- rowSums(star_wars_matrix)
+
+# Bind the new variable worldwide_vector as a column to star_wars_matrix
+all_wars_matrix <- cbind(star_wars_matrix, worldwide_vector)
+      </code>
+      <code data-type="sct">
+msg <- "Do not change anything about the preset variables `box_office_all` and `star_wars_marix`!"
+test_object("box_office", undefined_msg = msg, incorrect_msg = msg)
+test_object("star_wars_matrix", undefined_msg = msg, incorrect_msg = msg)
+test_object("worldwide_vector",
+            incorrect_msg = "Store the result of `rowSums(star_wars_matrix)` in `worldwide_vector`.")
+
+msg <- "Have you correctly used `cbind()` to add `worldwide_vector` to `star_wars_matrix`? You should pass `star_wars_matrix` and `world_wide_vector` to `cbind()`, in this order. The resulting matrix, `all_wars_matrix`, should consist of three rows and three columns."
+test_object("all_wars_matrix", incorrect_msg = msg)
+success_msg("Nice job! After adding column to a matrix, the logical next step is adding rows. Learn how in the next exercise.");
+ <div data-type="hint">
+<p>In this exercise, you should pass two variables to <code>cbind()</code>: <code>star_wars_matrix</code> and <code>worldwide_vector</code>, in this order. Assign the result to <code>all_wars_matrix</code>.</p>
+      </div>
+    </div>
+  </div>
+
+  <h3><a href="/_pages/Day1/3-4.html">Previous: 3-4 Analyze matrices, you shall</a></h3>
+  <h3><a href="/_pages/Day1/3-6.html">Next: 3-6</a></h3>
+  <h3><a href="{{ site.baseurl }}workshop">Back to Main</a></h3>
+</body>
+</html>

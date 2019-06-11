@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title> Exercise 4-5 | Summarizing a factor </title>
+  <link rel='shortcut icon' type='image/x-icon' href='{{ site.baseurl }}public/favicon.ico'/>
+  <style>
+    .exercise {
+      margin: 50px;
+    }
+  </style>
+
+  <script async src="https://cdn.datacamp.com/dcl-react.js.gz"></script>
+</head>
+<body>
+  <div class="exercise">
+    <div class="title">
+      <h2> Summarizing a factor </h2>
+    </div>
+
+    <div class="description">
+
+<p>After finishing this course, one of your favorite functions in R will be <a href="http://www.rdocumentation.org/packages/base/functions/summary"><code>summary()</code></a>. This will give you a quick overview of the contents of a variable:</p>
+
+<pre><code>summary(my_var)
+</code></pre>
+
+<p>Going back to our survey, you would like to know how many <code>"Male"</code> responses you have in your study, and how many <code>"Female"</code> responses. The <a href="http://www.rdocumentation.org/packages/base/functions/summary"><code>summary()</code></a> function gives you the answer to this question.</p>
+
+</div>
+
+    <div class="Instruction">
+
+<p>Ask a <a href="http://www.rdocumentation.org/packages/base/functions/summary"><code>summary()</code></a> of the <code>survey_vector</code> and <code>factor_survey_vector</code>. Interpret the results of both vectors. Are they both equally useful in this case?</p>
+
+    </div>
+
+    <div data-datacamp-exercise data-lang="r" data-height="auto">
+      <code data-type="pre-exercise-code">
+      </code>
+      <code data-type="sample-code">
+# Build factor_survey_vector with clean levels
+survey_vector <- c("M", "F", "F", "M", "M")
+factor_survey_vector <- factor(survey_vector)
+levels(factor_survey_vector) <- c("Female", "Male")
+factor_survey_vector
+
+# Generate summary for survey_vector
+
+
+# Generate summary for factor_survey_vector
+
+
+
+      </code>
+      <code data-type="solution">
+# Build factor_survey_vector with clean levels
+survey_vector <- c("M", "F", "F", "M", "M")
+factor_survey_vector <- factor(survey_vector)
+levels(factor_survey_vector) <- c("Female", "Male")
+factor_survey_vector
+
+# Generate summary for survey_vector
+summary(survey_vector)
+
+# Generate summary for factor_survey_vector
+summary(factor_survey_vector)
+      </code>
+      <code data-type="sct">
+msg = "Do not change anything about the first few lines that define `survey_vector` and `factor_survey_vector`."
+test_object("survey_vector", undefined_msg = msg, incorrect_msg = msg)
+test_object("factor_survey_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
+msg <- "Have you correctly used `summary()` to generate a summary for `%s`?"
+test_output_contains("summary(survey_vector)", incorrect_msg = sprintf(msg, "survey_vector"))
+test_output_contains("summary(factor_survey_vector)", incorrect_msg = sprintf(msg, "factor_survey_vector"))
+success_msg("Nice! Have a look at the output. The fact that you identified `\"Male\"` and `\"Female\"` as factor levels in `factor_survey_vector` enables R to show the number of elements for each category.")
+
+</code>
+ <div data-type="hint">
+
+<p>Call the <a href="http://www.rdocumentation.org/packages/base/functions/summary"><code>summary()</code></a> function on both <code>survey_vector</code> and <code>factor_survey_vector</code>, it's as simple as that!</p>
+
+      </div>
+    </div>
+  </div>
+
+  <h3><a href="/_pages/Day1/3-6.html">Previous: 3-5 Analyze matrices, you shall</a></h3>
+  <h3><a href="/_pages/Day1/3-8.html">Next: 3-7</a></h3>
+  <h3><a href="{{ site.baseurl }}workshop">Back to Main</a></h3>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title> Exercise 3-7 | The total box office revenue for the entire saga   </title>
+  <link rel='shortcut icon' type='image/x-icon' href='{{ site.baseurl }}public/favicon.ico'/>
+  <style>
+    .exercise {
+      margin: 50px;
+    }
+  </style>
+
+  <script async src="https://cdn.datacamp.com/dcl-react.js.gz"></script>
+</head>
+<body>
+  <div class="exercise">
+    <div class="title">
+      <h2>The total box office revenue for the entire saga </h2>
+    </div>
+
+    <div class="description">
+
+<p>Just like <a href="http://www.rdocumentation.org/packages/base/functions/cbind"><code>cbind()</code></a> has  <a href="http://www.rdocumentation.org/packages/base/functions/cbind"><code>rbind()</code></a>, <a href="http://www.rdocumentation.org/packages/base/functions/colSums"><code>colSums()</code></a> has <a href="http://www.rdocumentation.org/packages/base/functions/colSums"><code>rowSums()</code></a>. Your R workspace already contains the <code>all_wars_matrix</code> that you constructed in the previous exercise; type <code>all_wars_matrix</code> to have another look. Let's now calculate the total box office revenue for the entire saga.</p>
+
+</div>
+
+    <div class="Instruction">
+      <ul>
+<li>Calculate the total revenue for the US and the non-US region and assign <code>total_revenue_vector</code>. You can use the <a href="http://www.rdocumentation.org/packages/base/functions/colSums"><code>colSums()</code></a> function.</li>
+
+<li>Print out <code>total_revenue_vector</code> to have a look at the results.</li>
+</ul>
+    </div>
+
+    <div data-datacamp-exercise data-lang="r" data-height="auto">
+      <code data-type="pre-exercise-code">
+        # Construct matrix
+load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/all_wars_matrix.RData"))
+      </code>
+      <code data-type="sample-code">
+# all_wars_matrix is available in your workspace
+all_wars_matrix
+
+# Total revenue for US and non-US
+total_revenue_vector <- 
+  
+# Print out total_revenue_vector
+      </code>
+      <code data-type="solution">
+# all_wars_matrix is available in your workspace
+all_wars_matrix
+
+# Total revenue for US and non-US
+total_revenue_vector <- colSums(all_wars_matrix)
+
+# Print out total_revenue_vector
+total_revenue_vector
+      </code>
+      <code data-type="sct">
+msg = "Do not change the contents of `all_wars_matrix`; it was created for you in the workspace."
+test_object("all_wars_matrix", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
+test_function("colSums", "x", incorrect_msg = "Did you use the `colSums()` function on the all_wars_matrix?")
+test_object("total_revenue_vector",
+            incorrect_msg = "Have you correctly assigned the result of `colSums(all_wars_matrix)` to `total_revenue_vector`?")
+test_output_contains("total_revenue_vector", incorrect_msg = "Don't forget to print out `total_revenue_vector`!")
+success_msg("Bellissimo! Head over to the next exercise to learn matrix subsetting.")
+ <div data-type="hint">
+<p>You should use the <a href="http://www.rdocumentation.org/packages/base/functions/colSums"><code>colSums()</code></a> function with <code>star_wars_matrix</code> as the argument to find the total box office per region.</p>
+      </div>
+    </div>
+  </div>
+
+  <h3><a href="/_pages/Day1/3-6.html">Previous: 3-5 Analyze matrices, you shall</a></h3>
+  <h3><a href="/_pages/Day1/3-8.html">Next: 3-7</a></h3>
+  <h3><a href="{{ site.baseurl }}workshop">Back to Main</a></h3>
+</body>
+</html>

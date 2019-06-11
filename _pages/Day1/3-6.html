@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title> Exercise 3-6 | Adding a row   </title>
+  <link rel='shortcut icon' type='image/x-icon' href='{{ site.baseurl }}public/favicon.ico'/>
+  <style>
+    .exercise {
+      margin: 50px;
+    }
+  </style>
+
+  <script async src="https://cdn.datacamp.com/dcl-react.js.gz"></script>
+</head>
+<body>
+  <div class="exercise">
+    <div class="title">
+      <h2>Adding a row </h2>
+    </div>
+
+    <div class="description">
+
+<p>Just like every action has a reaction, every <a href="http://www.rdocumentation.org/packages/base/functions/cbind"><code>cbind()</code></a> has an <a href="http://www.rdocumentation.org/packages/base/functions/cbind"><code>rbind()</code></a>. (We admit, we are pretty bad with metaphors.) </p>
+
+<p>Your R workspace, where all variables you defined 'live' (<a href="http://www.statmethods.net/interface/workspace.html">check out what a workspace is</a>), has already been initialized and contains two matrices:</p>
+
+<ul>
+<li><code>star_wars_matrix</code> that we have used all along, with data on the original trilogy,</li>
+
+<li><code>star_wars_matrix2</code>, with similar data for the prequels trilogy. </li>
+</ul>
+
+<p>Type the name of these matrices in the console and hit Enter if you want to have a closer look. If you want to check out the contents of the workspace, you can type <code>ls()</code> in the console.</p>
+</div>
+
+    <div class="Instruction">
+      <h3>Instruction</h3>
+<p>Use <code>rbind()</code> to paste together <code>star_wars_matrix</code> and <code>star_wars_matrix2</code>, in this order. Assign the resulting matrix to <code>all_wars_matrix</code>.</p>
+    </div>
+
+    <div data-datacamp-exercise data-lang="r" data-height="auto">
+      <code data-type="pre-exercise-code">
+        # Construct matrix
+box_office_all <- c(461, 314.4, 290.5, 247.9, 309.3, 165.8)
+movie_names <- c("A New Hope","The Empire Strikes Back","Return of the Jedi")
+col_titles <- c("US","non-US")
+star_wars_matrix <- matrix(box_office_all, nrow = 3, byrow = TRUE, dimnames = list(movie_names, col_titles))
+
+# Construct matrix2
+box_office_all2 <- c(474.5, 552.5, 310.7, 338.7, 380.3, 468.5)
+movie_names2 <- c("The Phantom Menace", "Attack of the Clones", "Revenge of the Sith")
+star_wars_matrix2 <- matrix(box_office_all2, nrow=3, byrow = TRUE, dimnames = list(movie_names2, col_titles))
+
+# remove all except all_wars_matrix
+rm(box_office_all)
+rm(movie_names)
+rm(col_titles)
+rm(box_office_all2)
+rm(movie_names2)
+      </code>
+      <code data-type="sample-code">
+# star_wars_matrix and star_wars_matrix2 are available in your workspace
+star_wars_matrix  
+star_wars_matrix2 
+
+# Combine both Star Wars trilogies in one matrix
+all_wars_matrix <- 
+      </code>
+      <code data-type="solution">
+# star_wars_matrix and star_wars_matrix2 are available in your workspace
+star_wars_matrix  
+star_wars_matrix2 
+
+# Combine both Star Wars trilogies in one matrix
+all_wars_matrix <- rbind(star_wars_matrix, star_wars_matrix2)
+      </code>
+      <code data-type="sct">
+msg = "Do not override the variables that have been defined for you in the workspace (`star_wars_matrix` and `star_wars_matrix2`)."
+test_object("star_wars_matrix", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
+test_object("star_wars_matrix2", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
+test_object("all_wars_matrix", incorrect_msg = "Did you use the `rbind()` correctly to create `all_wars_matrix()`? `rbind()` should take two arguments: `star_wars_matrix` and `star_wars_matrix2`, in this order.")
+
+success_msg("Wonderful! Continue with the next exercise and see how you can combine the results of the `rbind()` function with the `colSums()` function!")
+ <div data-type="hint">
+<p>Bind the two matrices together like this:</p>
+
+<pre><code>rbind(matrix1, matrix2)
+</code></pre>
+
+<p>Assign the result to <code>all_wars_matrix</code>.</p>
+      </div>
+    </div>
+  </div>
+
+  <h3><a href="/_pages/Day1/3-5.html">Previous: 3-5 Analyze matrices, you shall</a></h3>
+  <h3><a href="/_pages/Day1/3-7.html">Next: 3-7</a></h3>
+  <h3><a href="{{ site.baseurl }}workshop">Back to Main</a></h3>
+</body>
+</html>

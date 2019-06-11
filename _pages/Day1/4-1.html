@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title> Exercise 4-1 | What's a factor and why would you use it? </title>
+  <link rel='shortcut icon' type='image/x-icon' href='{{ site.baseurl }}public/favicon.ico'/>
+  <style>
+    .exercise {
+      margin: 50px;
+    }
+  </style>
+
+  <script async src="https://cdn.datacamp.com/dcl-react.js.gz"></script>
+</head>
+<body>
+  <div class="exercise">
+    <div class="title">
+      <h2>What's a factor and why would you use it?
+ </h2>
+    </div>
+
+    <div class="description">
+
+<p>In this chapter you dive into the wonderful world of <strong>factors</strong>.</p>
+
+<p>The term factor refers to a statistical data type used to store categorical variables. The difference between a categorical variable and a continuous variable is that a categorical variable can belong to a <strong>limited number of categories</strong>. A continuous variable, on the other hand, can correspond to an infinite number of values.</p>
+
+<p>It is important that R knows whether it is dealing with a continuous or a categorical variable, as the statistical models you will develop in the future treat both types differently. (You will see later why this is the case.)</p>
+
+<p>A good example of a categorical variable is sex. In many circumstances you can limit the sex categories to "Male" or "Female". (Sometimes you may need different categories. For example, you may need to consider chromosomal variation, hermaphroditic animals, or different cultural norms, but you will always have a finite number of categories.)</p>
+</div>
+
+    <div class="Instruction">
+<p>Assign to variable <code>theory</code> the value <code>"factors for categorical variables"</code>.</p>
+    </div>
+
+    <div data-datacamp-exercise data-lang="r" data-height="auto">
+      <code data-type="pre-exercise-code">
+      </code>
+      <code data-type="sample-code">
+# Assign to the variable theory what this chapter is about!
+
+      </code>
+      <code data-type="solution">
+# Assign to the variable theory what this chapter is about!
+theory <- "factors for categorical variables"
+      </code>
+      <code data-type="sct">
+msg_undef <- "It looks like you haven't defined the variable `theory`."
+msg_incor <- "The value of `theory` looks incorrect. Make sure to assign it the character string `\"factors for categorical variables\"`. Remember that R is case sensitive."
+msg_err <- "Make sure that you defined `theory` correctly, using `<-` for assignment."
+# If get error and theory is undefined, point out the error
+test_or(test_error(msg_err), test_object("theory", eval = FALSE))
+
+test_object("theory", undefined_msg = msg_undef, incorrect_msg = msg_incor)
+success_msg("Good job! Ready to start? Continue to the next exercise!")
+ <div data-type="hint">
+<p>Simply assign a variable (<code>&lt;-</code>); make sure to capitalize correctly.</p>
+      </div>
+    </div>
+  </div>
+
+  <h3><a href="/_pages/Day1/3-6.html">Previous: 3-5 Analyze matrices, you shall</a></h3>
+  <h3><a href="/_pages/Day1/3-8.html">Next: 3-7</a></h3>
+  <h3><a href="{{ site.baseurl }}workshop">Back to Main</a></h3>
+</body>
+</html>

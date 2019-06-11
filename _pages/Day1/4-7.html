@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title> Exercise 4-7 | Ordered factors </title>
+  <link rel='shortcut icon' type='image/x-icon' href='{{ site.baseurl }}public/favicon.ico'/>
+  <style>
+    .exercise {
+      margin: 50px;
+    }
+  </style>
+
+  <script async src="https://cdn.datacamp.com/dcl-react.js.gz"></script>
+</head>
+<body>
+  <div class="exercise">
+    <div class="title">
+      <h2> Ordered factors </h2>
+    </div>
+
+    <div class="description">
+
+<p>Since <code>"Male"</code> and <code>"Female"</code> are unordered (or nominal) factor levels, R returns a warning message, telling you that the greater than operator is not meaningful. As seen before, R attaches an equal value to the levels for such factors.</p>
+
+<p>But this is not always the case! Sometimes you will also deal with factors that do have a natural ordering between its categories. If this is the case, we have to make sure that we pass this information to R...</p>
+
+<p>Let us say that you are leading a research team of five data analysts and that you want to evaluate their performance. To do this, you track their speed, evaluate each analyst as <code>"slow"</code>, <code>"medium"</code> or <code>"fast"</code>, and save the results in <code>speed_vector</code>.</p>
+
+</div>
+
+    <div class="Instruction">
+
+<p>As a first step, assign <code>speed_vector</code> a vector with 5 entries, one for each analyst. Each entry should be either <code>"slow"</code>, <code>"medium"</code>, or <code>"fast"</code>. Use the list below:</p>
+
+<ul>
+<li>Analyst 1 is medium,</li>
+
+<li>Analyst 2 is slow,</li>
+
+<li>Analyst 3 is slow,</li>
+
+<li>Analyst 4 is medium and</li>
+
+<li>Analyst 5 is fast.</li>
+</ul>
+
+<p>No need to specify these are factors yet.</p>
+    </div>
+
+    <div data-datacamp-exercise data-lang="r" data-height="auto">
+      <code data-type="pre-exercise-code">
+      </code>
+      <code data-type="sample-code">
+# Create speed_vector
+speed_vector <-
+
+      </code>
+      <code data-type="solution">
+# Create speed_vector
+speed_vector <- c("medium", "slow", "slow", "medium", "fast")
+      </code>
+      <code data-type="sct">
+test_object("speed_vector",
+            incorrect_msg = "`speed_vector` should be a vector with 5 entries, one for each analyst's speed rating. Don't use capital letters; R is case sensitive!")
+success_msg("A job well done! Continue to the next exercise.")
+
+</code>
+ <div data-type="hint">
+
+<p>Assign to <code>speed_vector</code> a vector containing the character strings <code>"slow"</code>, <code>"medium"</code>, or <code>"fast"</code>.</p>
+
+      </div>
+    </div>
+  </div>
+
+  <h3><a href="/_pages/Day1/3-6.html">Previous: 3-5 Analyze matrices, you shall</a></h3>
+  <h3><a href="/_pages/Day1/3-8.html">Next: 3-7</a></h3>
+  <h3><a href="{{ site.baseurl }}workshop">Back to Main</a></h3>
+</body>
+</html>

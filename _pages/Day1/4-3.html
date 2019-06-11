@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title> Exercise 4-3 | What's a factor and why would you use it? (3) </title>
+  <link rel='shortcut icon' type='image/x-icon' href='{{ site.baseurl }}public/favicon.ico'/>
+  <style>
+    .exercise {
+      margin: 50px;
+    }
+  </style>
+
+  <script async src="https://cdn.datacamp.com/dcl-react.js.gz"></script>
+</head>
+<body>
+  <div class="exercise">
+    <div class="title">
+      <h2> What's a factor and why would you use it? (3) </h2>
+    </div>
+
+    <div class="description">
+
+<p>There are two types of categorical variables: a <strong>nominal categorical variable</strong> and an <strong>ordinal categorical variable</strong>.</p>
+
+<p>A nominal variable is a categorical variable without an implied order. This means that it is impossible to say that 'one is worth more than the other'. For example, think of the categorical variable <code>animals_vector</code> with the categories <code>"Elephant"</code>, <code>"Giraffe"</code>, <code>"Donkey"</code> and <code>"Horse"</code>. Here, it is impossible to say that one stands above or below the other. (Note that some of you might disagree ;-) ).</p>
+
+<p>In contrast, ordinal variables do have a natural ordering. Consider for example the categorical variable <code>temperature_vector</code> with the categories: <code>"Low"</code>, <code>"Medium"</code> and <code>"High"</code>. Here it is obvious that <code>"Medium"</code> stands above <code>"Low"</code>, and <code>"High"</code> stands above <code>"Medium"</code>.</p>
+
+</div>
+
+    <div class="Instruction">
+<ul>
+<li>Click 'Submit Answer' to check how R constructs and prints nominal and ordinal variables. Do not worry if you do not understand all the code just yet, we will get to that.</li>
+</ul>
+    </div>
+
+    <div data-datacamp-exercise data-lang="r" data-height="auto">
+      <code data-type="pre-exercise-code">
+      </code>
+      <code data-type="sample-code">
+# Animals
+animals_vector <- c("Elephant", "Giraffe", "Donkey", "Horse")
+factor_animals_vector <- factor(animals_vector)
+factor_animals_vector
+
+# Temperature
+temperature_vector <- c("High", "Low", "High","Low", "Medium")
+factor_temperature_vector <- factor(temperature_vector, order = TRUE, levels = c("Low", "Medium", "High"))
+factor_temperature_vector
+
+      </code>
+      <code data-type="solution">
+# Animals
+animals_vector <- c("Elephant", "Giraffe", "Donkey", "Horse")
+factor_animals_vector <- factor(animals_vector)
+factor_animals_vector
+
+# Temperature
+temperature_vector <- c("High", "Low", "High","Low", "Medium")
+factor_temperature_vector <- factor(temperature_vector, order = TRUE, levels = c("Low", "Medium", "High"))
+factor_temperature_vector
+      </code>
+      <code data-type="sct">msg <- "Do not change anything about the sample code. Simply hit the Submit Answer button and inspect the solution!"
+test_object("animals_vector", undefined_msg = msg, incorrect_msg = msg)
+test_object("temperature_vector", undefined_msg = msg, incorrect_msg = msg)
+test_object("factor_animals_vector", undefined_msg = msg, incorrect_msg = msg)
+test_output_contains("factor_animals_vector", incorrect_msg = msg)
+test_object("factor_temperature_vector", undefined_msg = msg, incorrect_msg = msg)
+test_output_contains("factor_temperature_vector", incorrect_msg = msg)
+success_msg("Can you already tell what's happening in this exercise? Awesome! Continue to the next exercise and get into the details of factor levels.")
+ <div data-type="hint">
+<p>Just click the 'Submit Answer' button and look at the console. Notice how R indicates the ordering of the factor levels for ordinal categorical variables.</p>
+      </div>
+    </div>
+  </div>
+
+  <h3><a href="/_pages/Day1/3-6.html">Previous: 3-5 Analyze matrices, you shall</a></h3>
+  <h3><a href="/_pages/Day1/3-8.html">Next: 3-7</a></h3>
+  <h3><a href="{{ site.baseurl }}workshop">Back to Main</a></h3>
+</body>
+</html>

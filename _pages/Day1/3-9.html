@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title> Exercise 3-9 | A little arithmetic with matrices</title>
+  <link rel='shortcut icon' type='image/x-icon' href='{{ site.baseurl }}public/favicon.ico'/>
+  <style>
+    .exercise {
+      margin: 50px;
+    }
+  </style>
+
+  <script async src="https://cdn.datacamp.com/dcl-react.js.gz"></script>
+</head>
+<body>
+  <div class="exercise">
+    <div class="title">
+      <h2>A little arithmetic with matrices
+ </h2>
+    </div>
+
+    <div class="description">
+
+<p>Similar to what you have learned with vectors, the standard operators like <code>+</code>, <code>-</code>, <code>/</code>, <code>*</code>, etc. work in an element-wise way on matrices in R. </p>
+
+<p>For example, <code>2 * my_matrix</code> multiplies each element of <code>my_matrix</code> by two.</p>
+
+<p>As a newly-hired data analyst for Lucasfilm, it is your job to find out how many visitors went to each movie for each geographical area. You already have the total revenue figures in <code>all_wars_matrix</code>. Assume that the price of a ticket was 5 dollars. Simply dividing the box office numbers by this ticket price gives you the number of visitors.</p>
+</div>
+
+    <div class="Instruction">
+      <ul>
+<ul>
+<li>Divide <code>all_wars_matrix</code> by 5, giving you the number of visitors in millions. Assign the resulting matrix to <code>visitors</code>.</li>
+
+<li>Print out <code>visitors</code> so you can have a look.</li>
+</ul>
+    </div>
+
+    <div data-datacamp-exercise data-lang="r" data-height="auto">
+      <code data-type="pre-exercise-code">
+<p>load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro<em>to</em>r/all<em>wars</em>matrix.RData"))</p>
+      </code>
+      <code data-type="sample-code">
+# all_wars_matrix is available in your workspace
+all_wars_matrix
+
+# Estimate the visitors
+visitors <- 
+  
+# Print the estimate to the console
+
+
+      </code>
+      <code data-type="solution">
+# all_wars_matrix is available in your workspace
+all_wars_matrix
+
+# Estimate the visitors
+visitors <- all_wars_matrix / 5
+
+# Print the estimate to the console
+visitors
+      </code>
+      <code data-type="sct">
+msg = "Do not change the contents of `all_wars_matrix`; this matrix has already been created for you in the workspace."
+test_object("all_wars_matrix", undefined_msg = msg, incorrect_msg = msg)
+
+test_object("visitors",
+            incorrect_msg = "It looks like `visitors` is not correct. Simply divide `all_wars_matrix` by 5 and store the resulting matrix as `visitors`.")
+test_output_contains("visitors", incorrect_msg = "Don't forget to also print out `visitors` so you can have a look.")
+success_msg("Great! What do these results tell you? A staggering 92 million people went to see A New Hope in US theaters! Continue to the next exercise."
+ <div data-type="hint">
+<p>The number of visitors is equal to <code>all_wars_matrix</code> divided by 5.</p>
+      </div>
+    </div>
+  </div>
+
+  <h3><a href="/_pages/Day1/3-6.html">Previous: 3-5 Analyze matrices, you shall</a></h3>
+  <h3><a href="/_pages/Day1/3-8.html">Next: 3-7</a></h3>
+  <h3><a href="{{ site.baseurl }}workshop">Back to Main</a></h3>
+</body>
+</html>

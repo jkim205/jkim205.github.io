@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title> Exercise 4-2 | What's a factor and why would you use it? (2) </title>
+  <link rel='shortcut icon' type='image/x-icon' href='{{ site.baseurl }}public/favicon.ico'/>
+  <style>
+    .exercise {
+      margin: 50px;
+    }
+  </style>
+
+  <script async src="https://cdn.datacamp.com/dcl-react.js.gz"></script>
+</head>
+<body>
+  <div class="exercise">
+    <div class="title">
+      <h2> What's a factor and why would you use it? (2) </h2>
+    </div>
+
+    <div class="description">
+
+<p>To create factors in R, you make use of the function <a href="http://www.rdocumentation.org/packages/base/functions/factor"><code>factor()</code></a>. First thing that you have to do is create a vector that contains all the observations that belong to a limited number of categories. For example, <code>sex_vector</code> contains the sex of 5 different individuals:</p>
+
+<pre><code>sex_vector &lt;- c("Male","Female","Female","Male","Male")
+</code></pre>
+
+<p>It is clear that there are two categories, or in R-terms <strong>'factor levels'</strong>, at work here: "Male" and "Female".</p>
+
+<p>The function <a href="http://www.rdocumentation.org/packages/base/functions/factor"><code>factor()</code></a> will encode the vector as a factor:</p>
+
+<pre><code>factor_sex_vector &lt;- factor(sex_vector)
+</code></pre>
+
+</div>
+
+    <div class="Instruction">
+<ul>
+<li>Convert the character vector <code>sex_vector</code> to a factor with <code>factor()</code> and assign the result to <code>factor_sex_vector</code></li>
+
+<li>Print out <code>factor_sex_vector</code> and assert that R prints out the factor levels below the actual values.</li>
+</ul>
+    </div>
+
+    <div data-datacamp-exercise data-lang="r" data-height="auto">
+      <code data-type="pre-exercise-code">
+      </code>
+      <code data-type="sample-code">
+# Sex vector
+sex_vector <- c("Male", "Female", "Female", "Male", "Male")
+
+# Convert sex_vector to a factor
+factor_sex_vector <-
+
+# Print out factor_sex_vector
+
+      </code>
+      <code data-type="solution">
+# Sex vector
+sex_vector <- c("Male", "Female", "Female", "Male", "Male")
+
+# Convert sex_vector to a factor
+factor_sex_vector <- factor(sex_vector)
+
+# Print out factor_sex_vector
+factor_sex_vector      </code>
+      <code data-type="sct">
+test_object("factor_sex_vector",
+            incorrect_msg = "Did you assign the factor of `sex_vector` to `factor_sex_vector`?")
+test_output_contains("factor_sex_vector", incorrect_msg = "Don't forget to print out `factor_sex_vector`!")
+success_msg("Great! If you want to find out more about the `factor()` function, do not hesitate to type `?factor` in the console. This will open up a help page. Continue to the next exercise.");
+ <div data-type="hint">
+<p>Simply use the function <a href="http://www.rdocumentation.org/packages/base/functions/factor"><code>factor()</code></a> on <code>sex_vector</code>. Have a look at the assignment, the answer is already there somewhere...</p>
+      </div>
+    </div>
+  </div>
+
+  <h3><a href="/_pages/Day1/3-6.html">Previous: 3-5 Analyze matrices, you shall</a></h3>
+  <h3><a href="/_pages/Day1/3-8.html">Next: 3-7</a></h3>
+  <h3><a href="{{ site.baseurl }}workshop">Back to Main</a></h3>
+</body>
+</html>

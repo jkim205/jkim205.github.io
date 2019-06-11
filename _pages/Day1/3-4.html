@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title> Exercise 3-4 | Calculating the worldwide box office  </title>
+  <link rel='shortcut icon' type='image/x-icon' href='{{ site.baseurl }}public/favicon.ico'/>
+  <style>
+    .exercise {
+      margin: 50px;
+    }
+  </style>
+
+  <script async src="https://cdn.datacamp.com/dcl-react.js.gz"></script>
+</head>
+<body>
+  <div class="exercise">
+    <div class="title">
+      <h2>Calculating the worldwide box office</h2>
+    </div>
+
+    <div class="description">
+
+<p>The single most important thing for a movie in order to become an instant legend in Tinseltown is its worldwide box office figures. </p>
+
+<p>To calculate the total box office revenue for the three Star Wars movies, you have to take the sum of the US revenue column and the non-US revenue column. </p>
+
+<p>In R, the function <a href="http://www.rdocumentation.org/packages/base/functions/colSums"><code>rowSums()</code></a> conveniently calculates the totals for each row of a matrix. This function creates a new vector:</p>
+
+<pre><code>rowSums(my_matrix)
+</code></pre>
+
+    <div class="Instruction">
+      <h3>Instruction</h3>
+<ul>
+<li><p>Calculate the worldwide box office figures for the three movies and put these in the vector named <code>worldwide_vector</code>.</p></li>
+</ul>
+    </div>
+
+    <div data-datacamp-exercise data-lang="r" data-height="auto">
+      <code data-type="pre-exercise-code"></code>
+      <code data-type="sample-code">
+# Construct star_wars_matrix
+box_office <- c(460.998, 314.4, 290.475, 247.900, 309.306, 165.8)
+star_wars_matrix <- matrix(box_office, nrow = 3, byrow = TRUE,
+                           dimnames = list(c("A New Hope", "The Empire Strikes Back", "Return of the Jedi"), 
+                                           c("US", "non-US")))
+
+# Calculate worldwide box office figures
+worldwide_vector <- 
+      </code>
+      <code data-type="solution">
+# Construct star_wars_matrix
+box_office <- c(460.998, 314.4, 290.475, 247.900, 309.306, 165.8)
+star_wars_matrix <- matrix(box_office, nrow = 3, byrow = TRUE,
+                           dimnames = list(c("A New Hope", "The Empire Strikes Back", "Return of the Jedi"), 
+                                           c("US", "non-US")))
+
+# Calculate worldwide box office figures
+worldwide_vector <- rowSums(star_wars_matrix)
+      </code>
+      <code data-type="sct">
+msg <- "Do not change anything about the preset variables `box_office_all` and `star_wars_marix`!"
+test_object("box_office", undefined_msg = msg, incorrect_msg = msg)
+test_object("star_wars_matrix", undefined_msg = msg, incorrect_msg = msg)
+test_object("worldwide_vector", incorrect_msg = "Call `rowSums()` on `star_wars_matrix` and store the result in `worldwide_vector`.")
+success_msg("Well done! Continue to the next exercise.")
+ <div data-type="hint">
+<p><code>rowSums(star_wars_matrix)</code> will calculate the sum of every row, so the total box office for each movie.</p>
+      </div>
+    </div>
+  </div>
+
+  <h3><a href="/_pages/Day1/3-3.html">Previous: 3-3 Analyze matrices, you shall</a></h3>
+  <h3><a href="/_pages/Day1/3-5.html">Next: 3-5</a></h3>
+  <h3><a href="{{ site.baseurl }}workshop">Back to Main</a></h3>
+</body>
+</html>

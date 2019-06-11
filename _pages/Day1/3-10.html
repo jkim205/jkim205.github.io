@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title> Exercise 3-10 | A little arithmetic with matrices (2) </title>
+  <link rel='shortcut icon' type='image/x-icon' href='{{ site.baseurl }}public/favicon.ico'/>
+  <style>
+    .exercise {
+      margin: 50px;
+    }
+  </style>
+
+  <script async src="https://cdn.datacamp.com/dcl-react.js.gz"></script>
+</head>
+<body>
+  <div class="exercise">
+    <div class="title">
+      <h2>A little arithmetic with matrices
+ </h2>
+    </div>
+
+    <div class="description">
+
+<p>Just like <code>2 * my_matrix</code> multiplied every element of <code>my_matrix</code> by two, <code>my_matrix1 * my_matrix2</code> creates a matrix where each element is the product of the corresponding elements in <code>my_matrix1</code> and <code>my_matrix2</code>. </p>
+
+<p>After looking at the result of the previous exercise, big boss Lucas points out that the ticket prices went up over time. He asks to redo the analysis based on the prices you can find in <code>ticket_prices_matrix</code> (source: imagination).</p>
+
+<p><em>Those who are familiar with matrices should note that this is not the standard matrix multiplication for which you should use <code>%*%</code> in R.</em></p>
+</div>
+
+    <div class="Instruction">
+      <ul>
+<li>Divide <code>all_wars_matrix</code> by <code>ticket_prices_matrix</code> to get the estimated number of US and non-US visitors for the six movies. Assign the result to <code>visitors</code>.</li>
+
+<li>From the <code>visitors</code> matrix, select the entire first column, representing the number of visitors in the US. Store this selection as <code>us_visitors</code>.</li>
+
+<li>Calculate the average number of US visitors; print out the result.</li>
+</ul>
+    </div>
+
+    <div data-datacamp-exercise data-lang="r" data-height="auto">
+      <code data-type="pre-exercise-code">
+load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/all_wars_matrix.RData"))
+movie_names <- c("A New Hope","The Empire Strikes Back","Return of the Jedi", "The Phantom Menace", "Attack of the Clones", "Revenge of the Sith")
+col_titles <- c("US","non-US")
+ticket_prices_matrix <- matrix(c(5, 5, 6, 6, 7, 7, 4, 4, 4.5, 4.5, 4.9, 4.9), nrow = 6, byrow = TRUE, dimnames = list(movie_names,col_titles))
+      </code>
+      <code data-type="sample-code">
+# all_wars_matrix and ticket_prices_matrix are available in your workspace
+all_wars_matrix
+ticket_prices_matrix
+
+# Estimated number of visitors
+visitors <- 
+
+# US visitors
+us_visitors <- 
+
+# Average number of US visitors
+
+      </code>
+      <code data-type="solution">
+# all_wars_matrix and ticket_prices_matrix are available in your workspace
+all_wars_matrix
+ticket_prices_matrix
+
+# Estimated number of visitors
+visitors <- all_wars_matrix / ticket_prices_matrix
+
+# US visitors
+us_visitors <- visitors[ ,1]
+
+# Average number of US visitors
+mean(us_visitors)
+      </code>
+      <code data-type="sct">
+msg <- "Do not change the contents of `all_wars_matrix`; this matrix has already been created for you in the workspace."
+test_object("all_wars_matrix", undefined_msg = msg, incorrect_msg = msg)
+msg <- "Do not change the contents of `ticket_prices_matrix`; this matrix has already been created for you in the workspace."
+test_object("ticket_prices_matrix", undefined_msg = msg, incorrect_msg = msg)
+
+test_object("visitors",
+            incorrect_msg = "Have you correctly created the `visitors` matrix? You should divide `all_wars_matrix` by `ticket_prices_matrix` to get there.")
+test_object("us_visitors", incorrect_msg = "To create `us_visitors`, you should correctly select the entire first column from `visitors`. You can use `[,1]` for this!")
+test_output_contains("mean(us_visitors)", incorrect_msg = "Once you have created `us_visitors`, you can use `mean()` to calculate the average number of visitors in the US. Make sure to print out the result.")
+
+success_msg("It's a fact: the R force is with you! This exercise concludes the chapter on matrices. Next stop on your journey through the R language: factors.")people went to see A New Hope in US theaters! Continue to the next exercise."
+ <div data-type="hint">
+<ul>
+<li>You can use the function <code>mean()</code> to calculate the average of the inputs to the function.</li>
+
+<li>To get the number of visitors in the US, select the first column from <code>visitors</code> using <code>visitors[ ,1]</code>.</li>
+</ul>
+      </div>
+    </div>
+  </div>
+
+  <h3><a href="/_pages/Day1/3-6.html">Previous: 3-5 Analyze matrices, you shall</a></h3>
+  <h3><a href="/_pages/Day1/3-8.html">Next: 3-7</a></h3>
+  <h3><a href="{{ site.baseurl }}workshop">Back to Main</a></h3>
+</body>
+</html>

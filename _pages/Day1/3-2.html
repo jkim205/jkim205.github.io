@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title> Exercise 3-2 | Analyze matrices, you shall </title>
+  <link rel='shortcut icon' type='image/x-icon' href='{{ site.baseurl }}public/favicon.ico'/>
+  <style>
+    .exercise {
+      margin: 50px;
+    }
+  </style>
+
+  <script async src="https://cdn.datacamp.com/dcl-react.js.gz"></script>
+</head>
+<body>
+  <div class="exercise">
+    <div class="title">
+      <h2>Analyze matrices, you shall</h2>
+    </div>
+
+    <div class="description">
+
+<p>It is now time to get your hands dirty. In the following exercises you will analyze the box office numbers of the Star Wars franchise. May the force be with you! </p>
+
+<p>In the editor, three vectors are defined. Each one represents the box office numbers from the first three Star Wars movies. The first element of each vector indicates the US box office revenue, the second element refers to the Non-US box office (source: Wikipedia).</p>
+
+<p>In this exercise, you'll combine all these figures into a single vector. Next, you'll build a matrix from this vector.</p>
+
+    <div class="Instruction">
+      <h3>Instruction</h3>
+
+<ul>
+<li>Use <code>c(new_hope, empire_strikes, return_jedi)</code> to combine the three vectors into one vector. Call this vector <code>box_office</code>.</li>
+
+<li>Construct a matrix with 3 rows, where each row represents a movie. Use the <code>matrix()</code> function to do this. The first argument is the vector <code>box_office</code>, containing all box office figures. Next, you'll have to specify <code>nrow = 3</code> and <code>byrow = TRUE</code>. Name the resulting matrix <code>star_wars_matrix</code>.</li>
+</ul>
+    </div>
+
+    <div data-datacamp-exercise data-lang="r" data-height="auto">
+      <code data-type="pre-exercise-code"></code>
+      <code data-type="sample-code">
+# Box office Star Wars (in millions!)
+new_hope <- c(460.998, 314.4)
+empire_strikes <- c(290.475, 247.900)
+return_jedi <- c(309.306, 165.8)
+
+# Create box_office
+box_office <- 
+
+# Construct star_wars_matrix
+star_wars_matrix <- 
+      </code>
+      <code data-type="solution">
+# Box office Star Wars (in millions!)
+new_hope <- c(460.998, 314.4)
+empire_strikes <- c(290.475, 247.900)
+return_jedi <- c(309.306, 165.8)
+
+# Create box_office
+box_office <- c(new_hope, empire_strikes, return_jedi)
+
+# Construct star_wars_matrix
+star_wars_matrix <- matrix(box_office, nrow = 3, byrow = TRUE) 
+
+      </code>
+      <code data-type="sct">
+msg <- "Do not change anything about the box office variables `new_hope`, `empire_strikes` and `return_jedi`!"
+test_object("new_hope", undefined_msg = msg, incorrect_msg = msg)
+test_object("empire_strikes", undefined_msg = msg, incorrect_msg = msg)
+test_object("return_jedi", undefined_msg = msg, incorrect_msg = msg)
+
+test_object("box_office", incorrect_msg = "Have you correctly combined the values of `new_hope`, `empire_strikes` and `return_jedi` into the vector `box_office`?")
+
+test_function("matrix", c("data", "nrow", "byrow"),
+              incorrect_msg = "Make sure to correctly specify the arguments you pass to `matrix()`: `box_office`, `nrow = 3`, `by_row = TRUE`.")
+
+test_object("star_wars_matrix",
+            incorrect_msg = "Did you assign the result of the `matrix()` call to `star_wars_matrix`?")
+
+success_msg("The force is actually with you! Continue to the next exercise.")
+ <div data-type="hint">
+<ul>
+<li><code>box_office &lt;- c(new_hope, empire_strikes, return_jedi)</code> will combine all numbers in the different vectors into a single vector with 6 elements.</li>
+
+<li><code>matrix(box_office, nrow = ..., by_row ...)</code> is a template for the solution to the second instruction.</li>
+</ul>
+      </div>
+    </div>
+  </div>
+
+  <h3><a href="/_pages/Day1/3-1.html">Previous: 3-1 What's a matrix?</a></h3>
+  <h3><a href="/_pages/Day1/3-3.html">Next: 3-3</a></h3>
+  <h3><a href="{{ site.baseurl }}workshop">Back to Main</a></h3>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title> Exercise 4-6 | Battle of the sexes </title>
+  <link rel='shortcut icon' type='image/x-icon' href='{{ site.baseurl }}public/favicon.ico'/>
+  <style>
+    .exercise {
+      margin: 50px;
+    }
+  </style>
+
+  <script async src="https://cdn.datacamp.com/dcl-react.js.gz"></script>
+</head>
+<body>
+  <div class="exercise">
+    <div class="title">
+      <h2> Battle of the sexes </h2>
+    </div>
+
+    <div class="description">
+
+<p>You might wonder what happens when you try to compare elements of a factor.  In <code>factor_survey_vector</code> you have a factor with two levels: <code>"Male"</code> and <code>"Female"</code>. But how does R value these relative to each other?</p>
+
+</div>
+
+    <div class="Instruction">
+
+<p>Read the code in the editor and click 'Submit Answer' to test if <code>male</code> is greater than (<code>&gt;</code>) <code>female</code>.</p>
+
+    </div>
+
+    <div data-datacamp-exercise data-lang="r" data-height="auto">
+      <code data-type="pre-exercise-code">
+      </code>
+      <code data-type="sample-code">
+# Build factor_survey_vector with clean levels
+survey_vector <- c("M", "F", "F", "M", "M")
+factor_survey_vector <- factor(survey_vector)
+levels(factor_survey_vector) <- c("Female", "Male")
+
+# Male
+male <- factor_survey_vector[1]
+
+# Female
+female <- factor_survey_vector[2]
+
+# Battle of the sexes: Male 'larger' than female?
+male > female
+
+      </code>
+      <code data-type="solution">
+# Build factor_survey_vector with clean levels
+survey_vector <- c("M", "F", "F", "M", "M")
+factor_survey_vector <- factor(survey_vector)
+levels(factor_survey_vector) <- c("Female", "Male")
+
+# Male
+male <- factor_survey_vector[1]
+
+# Female
+female <- factor_survey_vector[2]
+
+# Battle of the sexes: Male 'larger' than female?
+male > female
+      </code>
+      <code data-type="sct">
+msg = "Do not change anything about the code; simply hit Submit Answer and look at the result."
+test_object("survey_vector", undefined_msg = msg, incorrect_msg = msg)
+test_object("factor_survey_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
+test_object("male", undefined_msg = msg, incorrect_msg = msg)
+test_object("female", undefined_msg = msg, incorrect_msg = msg)
+test_output_contains("male > female", incorrect_msg = msg)
+success_msg("How interesting! By default, R returns `NA` when you try to compare values in a factor, since the idea doesn't make sense. Next you'll learn about ordered factors, where more meaningful comparisons are possible.")
+
+</code>
+ <div data-type="hint">
+
+<p>Just click 'Submit Answer' and have a look at output that gets printed to the console.</p>
+
+      </div>
+    </div>
+  </div>
+
+  <h3><a href="/_pages/Day1/3-6.html">Previous: 3-5 Analyze matrices, you shall</a></h3>
+  <h3><a href="/_pages/Day1/3-8.html">Next: 3-7</a></h3>
+  <h3><a href="{{ site.baseurl }}workshop">Back to Main</a></h3>
+</body>
+</html>

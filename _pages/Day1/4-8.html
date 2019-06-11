@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title> Exercise 4-8 | Ordered factors (2) </title>
+  <link rel='shortcut icon' type='image/x-icon' href='{{ site.baseurl }}public/favicon.ico'/>
+  <style>
+    .exercise {
+      margin: 50px;
+    }
+  </style>
+
+  <script async src="https://cdn.datacamp.com/dcl-react.js.gz"></script>
+</head>
+<body>
+  <div class="exercise">
+    <div class="title">
+      <h2> Ordered factors (2) </h2>
+    </div>
+
+    <div class="description">
+
+<p><code>speed_vector</code> should be converted to an ordinal factor since its categories have a natural ordering. By default, the function <a href="http://www.rdocumentation.org/packages/base/functions/factor"><code>factor()</code></a> transforms <code>speed_vector</code> into an unordered factor. To create an ordered factor, you have to add two additional arguments: <code>ordered</code> and <code>levels</code>.</p>
+
+<pre><code>factor(some_vector,
+       ordered = TRUE,
+       levels = c("lev1", "lev2" ...))
+</code></pre>
+
+<p>By setting the argument <code>ordered</code> to <code>TRUE</code> in the function <a href="http://www.rdocumentation.org/packages/base/functions/factor"><code>factor()</code></a>, you indicate that the factor is ordered. With the argument <code>levels</code> you give the values of the factor in the correct order.</p>
+
+</div>
+
+    <div class="Instruction">
+
+<p>From <code>speed_vector</code>, create an ordered factor vector: <code>factor_speed_vector</code>. Set <code>ordered</code> to <code>TRUE</code>, and set <code>levels</code> to <code>c("slow", "medium", "fast")</code>.</p>
+
+    </div>
+
+    <div data-datacamp-exercise data-lang="r" data-height="auto">
+      <code data-type="pre-exercise-code">
+      </code>
+      <code data-type="sample-code">
+# Create speed_vector
+speed_vector <- c("medium", "slow", "slow", "medium", "fast")
+
+# Convert speed_vector to ordered factor vector
+factor_speed_vector <-
+
+# Print factor_speed_vector
+factor_speed_vector
+summary(factor_speed_vector)
+
+      </code>
+      <code data-type="solution">
+# Create speed_vector
+speed_vector <- c("medium", "slow", "slow", "medium", "fast")
+
+# Add your code below
+factor_speed_vector <- factor(speed_vector, ordered = TRUE, levels = c("slow", "medium", "fast"))
+
+# Print factor_speed_vector
+factor_speed_vector
+summary(factor_speed_vector)
+      </code>
+      <code data-type="sct">
+msg = "Do not change anything about the command that specifies the `speed_vector` variable."
+test_object("speed_vector", undefined_msg = msg, incorrect_msg = msg)
+test_function("factor", args = c("x", "ordered", "levels"),
+              incorrect_msg = c("The first argument you pass to `factor()` should be `speed_vector`.",
+                                "Make sure to set `ordered = TRUE` inside your call of `factor()`.",
+                                "Make sure to set `levels = c(\"slow\", \"medium\", \"fast\")` inside your call of `factor()`."))
+test_object("factor_speed_vector", eq_condition = "equal",
+            incorrect_msg = "There's still something wrong with `factor_speed_vector`; make sure to only pass `speed_vector`, `ordered = TRUE` and `levels = c(\"slow\", \"medium\", \"fast\")` inside your call of `factor()`.")
+success_msg("Great! Have a look at the console. It is now indicated that the Levels indeed have an order associated, with the `<` sign. Continue to the next exercise.")
+</code>
+ <div data-type="hint">
+
+<p>Use the function <a href="http://www.rdocumentation.org/packages/base/functions/factor"><code>factor()</code></a> to create <code>factor_speed_vector</code> based on <code>speed_character_vector</code>. The argument <code>ordered</code> should be set to <code>TRUE</code> since there is a natural ordering. Also, set <code>levels = c("slow", "medium", "fast")</code>.</p>
+
+      </div>
+    </div>
+  </div>
+
+  <h3><a href="/_pages/Day1/3-6.html">Previous: 3-5 Analyze matrices, you shall</a></h3>
+  <h3><a href="/_pages/Day1/3-8.html">Next: 3-7</a></h3>
+  <h3><a href="{{ site.baseurl }}workshop">Back to Main</a></h3>
+</body>
+</html>

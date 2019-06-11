@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title> Exercise 4-4 | Factor levels </title>
+  <link rel='shortcut icon' type='image/x-icon' href='{{ site.baseurl }}public/favicon.ico'/>
+  <style>
+    .exercise {
+      margin: 50px;
+    }
+  </style>
+
+  <script async src="https://cdn.datacamp.com/dcl-react.js.gz"></script>
+</head>
+<body>
+  <div class="exercise">
+    <div class="title">
+      <h2> Factor levels </h2>
+    </div>
+
+    <div class="description">
+
+<p>When you first get a data set, you will often notice that it contains factors with specific factor levels. However, sometimes you will want to change the names of these levels for clarity or other reasons. R allows you to do this with the function <a href="http://www.rdocumentation.org/packages/base/functions/levels"><code>levels()</code></a>:</p>
+
+<pre><code>levels(factor_vector) &lt;- c("name1", "name2",...)
+</code></pre>
+
+<p>A good illustration is the raw data that is provided to you by a survey. A common question for every questionnaire is the sex of the respondent. Here, for simplicity, just two categories were recorded, <code>"M"</code> and <code>"F"</code>. (You usually need more categories for survey data; either way, you use a factor to store the categorical data.) </p>
+
+<pre><code>survey_vector &lt;- c("M", "F", "F", "M", "M")
+</code></pre>
+
+<p>Recording the sex with the abbreviations <code>"M"</code> and <code>"F"</code> can be convenient if you are collecting data with pen and paper, but it can introduce confusion when analyzing the data. At that point, you will often want to change the factor levels to <code>"Male"</code> and <code>"Female"</code> instead of <code>"M"</code> and <code>"F"</code> for clarity.</p>
+
+<p><strong>Watch out:</strong> the order with which you assign the levels is important. If you type <code>levels(factor_survey_vector)</code>, you'll see that it outputs <code>[1] "F" "M"</code>. If you don't specify the levels of the factor when creating the vector, <code>R</code> will automatically assign them alphabetically. To correctly map <code>"F"</code> to <code>"Female"</code> and <code>"M"</code> to <code>"Male"</code>, the levels should be set to <code>c("Female", "Male")</code>, in this order.</p>
+
+</div>
+
+    <div class="Instruction">
+<ul>
+<li>Check out the code that builds a factor vector from <code>survey_vector</code>. You should use <code>factor_survey_vector</code> in the next instruction.</li>
+
+<li>Change the factor levels of <code>factor_survey_vector</code> to <code>c("Female", "Male")</code>. Mind the order of the vector elements here.</li>
+</ul>
+    </div>
+
+    <div data-datacamp-exercise data-lang="r" data-height="auto">
+      <code data-type="pre-exercise-code">
+      </code>
+      <code data-type="sample-code">
+# Code to build factor_survey_vector
+survey_vector <- c("M", "F", "F", "M", "M")
+factor_survey_vector <- factor(survey_vector)
+
+# Specify the levels of factor_survey_vector
+levels(factor_survey_vector) <-
+
+factor_survey_vector
+
+      </code>
+      <code data-type="solution">
+# Code to build factor_survey_vector
+survey_vector <- c("M", "F", "F", "M", "M")
+factor_survey_vector <- factor(survey_vector)
+
+# Specify the levels of factor_survey_vector
+levels(factor_survey_vector) <- c("Female", "Male")
+
+factor_survey_vector      
+      </code>
+      <code data-type="sct">
+        msg = "Do not change the definition of `survey_vector`!"
+test_object("survey_vector", undefined_msg = msg, incorrect_msg = msg)
+msg = "Do not change or remove the code to create the factor vector."
+test_function("factor", "x", not_called_msg = msg, incorrect_msg = msg)
+
+# MC-note: ideally would want to test assign operator `<-`, and have it highlight whole line.
+
+# MC-note: or negate this test_student_typed, to highlight where they type this incorrect phrase
+# test_student_typed('c("Male", "Female")')
+
+test_object("factor_survey_vector", eq_condition = "equal",
+            incorrect_msg = paste("Did you assign the correct factor levels to `factor_survey_vector`? Use `levels(factor_survey_vector) <- c(\"Female\", \"Male\")`. Remember that R is case sensitive!"))
+
+
+success_msg("Wonderful! Proceed to the next exercise.")
+</code>
+ <div data-type="hint">
+<p>Mind the order in which you have to type in the factor levels. Hint: look at the order in which the levels are printed when typing <code>levels(factor_survey_vector)</code>.</p>
+      </div>
+    </div>
+  </div>
+
+  <h3><a href="/_pages/Day1/3-6.html">Previous: 3-5 Analyze matrices, you shall</a></h3>
+  <h3><a href="/_pages/Day1/3-8.html">Next: 3-7</a></h3>
+  <h3><a href="{{ site.baseurl }}workshop">Back to Main</a></h3>
+</body>
+</html>
