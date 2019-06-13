@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Day 2 - Data Processing with dplyr
+title: Day 2 - Data Processing (dplyr)
 permalink: d2
 ---
 

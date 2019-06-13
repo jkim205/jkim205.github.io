@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Day 3 - Data Visualization with ggplot2
+title: Day 3 - Data Visualization (ggplot2)
 permalink: d3
 ---
 

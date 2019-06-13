@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Day 5 - Structural Equation Model in R
+title: Day 5 - SEM in R
 permalink: d5
 ---
 
