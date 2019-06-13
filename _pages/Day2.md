@@ -1,7 +1,7 @@
 ---
 layout: page
-title: R Workshop
-permalink: workshop
+title: Day 2 - Data Processing with dplyr
+permalink: d2
 ---
 
 ## Courses
