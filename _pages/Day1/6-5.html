@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title> Exercise 6-5 | Creating a named list (2) </title>
+  <link rel='shortcut icon' type='image/x-icon' href='{{ site.baseurl }}public/favicon.ico'/>
+  <style>
+    .exercise {
+      margin: 50px;
+    }
+  </style>
+
+  <script async src="https://cdn.datacamp.com/dcl-react.js.gz"></script>
+</head>
+<body>
+  <div class="exercise">
+    <div class="title">
+      <h2> Creating a named list (2)</h2>
+    </div>
+
+    <div class="description">
+
+<p>Being a huge movie fan (remember your job at LucasFilms), you decide to start storing information on good movies with the help of lists. </p>
+
+<p>Start by creating a list for the movie "The Shining". We have already created the variables <code>mov</code>, <code>act</code> and <code>rev</code> in your R workspace. Feel free to check them out in the console.</p>
+
+</div>
+
+    <div class="Instruction">
+
+<h2>Instruction</h2>
+
+<p>Complete the code on the right to create <code>shining_list</code>; it contains three elements:</p>
+
+<ul>
+<li>moviename: a character string with the movie title (stored in <code>mov</code>)</li>
+
+<li>actors: a vector with the main actors' names (stored in <code>act</code>)</li>
+
+<li>reviews: a data frame that contains some reviews (stored in <code>rev</code>)</li>
+</ul>
+
+<p>Do not forget to name the list components accordingly (names are moviename, actors and reviews).</p>
+
+    </div>
+
+    <div data-datacamp-exercise data-lang="r" data-height="auto">
+      <code data-type="pre-exercise-code">
+
+mov <- "The Shining"
+act      <- c("Jack Nicholson","Shelley Duvall","Danny Lloyd","Scatman Crothers","Barry Nelson")
+sources     <- c("IMDb1","IMDb2","IMDb3")
+comments    <- c("Best Horror Film I Have Ever Seen","A truly brilliant and scary film from Stanley Kubrick","A masterpiece of psychological horror")
+scores      <- c(4.5,4,5)
+rev     <- data.frame(scores, sources, comments)
+rm(scores, sources, comments)
+
+      </code>
+      <code data-type="sample-code">
+# The variables mov, act and rev are available
+
+# Finish the code to build shining_list
+shining_list <- list(moviename = mov)
+
+
+      </code>
+      <code data-type="solution">
+# The variables mov, act and rev are available
+
+# Finish the code to build shining_list
+shining_list <- list(moviename = mov, actors = act, reviews = rev)
+
+      </code>
+      <code data-type="sct">
+msg = "Do not remove or change the definition of the pre-set variables!"
+lapply(c("mov", "rev", "act"), test_object, undefined_msg = msg, incorrect_msg = msg)
+test_object("shining_list",
+            incorrect_msg = "It looks like `shining_list` does not contain the correct elements: the first element should be `mov`, the second element `act`, and the third `rev`.")
+test_object("shining_list", eq_condition = "equal",
+            incorrect_msg = "It looks like `shining_list` does not contain the correct naming for the components: name the first element `moviename`, the second element `actors`, and the third element `reviews`.");
+success_msg("Wonderful! You now know how to construct and name lists. As in the previous chapters, let's look at how to select elements for lists. Head over to the next exercise")
+
+</code>
+ <div data-type="hint">
+
+<p><code>shining_list &lt;- list(moviename = mov)</code> is only part of the solution; it's your job to also add <code>act</code> and <code>rev</code> to the list, with the appropriate names.</p>
+
+      </div>
+    </div>
+  </div>
+
+  <h3><a href="/_pages/Day1/3-6.html">Previous: 3-5 Analyze matrices, you shall</a></h3>
+  <h3><a href="/_pages/Day1/3-8.html">Next: 3-7</a></h3>
+  <h3><a href="{{ site.baseurl }}workshop">Back to Main</a></h3>
+</body>
+</html>

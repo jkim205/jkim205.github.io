@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title> Exercise 6-4 | Creating a named list  </title>
+  <link rel='shortcut icon' type='image/x-icon' href='{{ site.baseurl }}public/favicon.ico'/>
+  <style>
+    .exercise {
+      margin: 50px;
+    }
+  </style>
+
+  <script async src="https://cdn.datacamp.com/dcl-react.js.gz"></script>
+</head>
+<body>
+  <div class="exercise">
+    <div class="title">
+      <h2> Creating a named list</h2>
+    </div>
+
+    <div class="description">
+
+<p>Well done, you're on a roll!</p>
+
+<p>Just like on your to-do list, you want to avoid not knowing or remembering what the components of your list stand for. That is why you should give names to them: </p>
+
+<pre><code>my_list &lt;- list(name1 = your_comp1, 
+                name2 = your_comp2)
+</code></pre>
+
+<p></p>
+
+<p>This creates a list with components that are named <code>name1</code>, <code>name2</code>, and so on. If you want to name your lists after you've created them, you can use the <code>names()</code> function as you did with vectors. The following commands are fully equivalent to the assignment above:</p>
+
+<pre><code>my_list &lt;- list(your_comp1, your_comp2)
+names(my_list) &lt;- c("name1", "name2")
+</code></pre>
+
+    <div class="Instruction">
+
+<h2>Instruction</h2>
+
+<ul>
+<li>Change the code of the previous exercise (see editor) by adding names to the components. Use for <code>my_vector</code> the name <code>vec</code>, for <code>my_matrix</code> the name <code>mat</code> and for <code>my_df</code> the name <code>df</code>. </li>
+
+<li>Print out <code>my_list</code> so you can inspect the output.</li>
+</ul>
+
+    </div>
+
+    <div data-datacamp-exercise data-lang="r" data-height="auto">
+      <code data-type="pre-exercise-code">
+
+      </code>
+      <code data-type="sample-code">
+# Vector with numerics from 1 up to 10
+my_vector <- 1:10 
+
+# Matrix with numerics from 1 up to 9
+my_matrix <- matrix(1:9, ncol = 3)
+
+# First 10 elements of the built-in data frame mtcars
+my_df <- mtcars[1:10,]
+
+# Adapt list() call to give the components names
+my_list <- list(my_vector, my_matrix, my_df)
+
+# Print out my_list
+
+
+      </code>
+      <code data-type="solution">
+# Vector with numerics from 1 up to 10
+my_vector <- 1:10 
+
+# Matrix with numerics from 1 up to 9
+my_matrix <- matrix(1:9, ncol = 3)
+
+# First 10 elements of the built-in data frame mtcars
+my_df <- mtcars[1:10,]
+
+# Adapt list() call to give the components names
+my_list <- list(vec = my_vector, mat = my_matrix, df = my_df)
+
+# Print out my_list
+my_list
+
+      </code>
+      <code data-type="sct">
+msg = "Do not remove or change the definiton of the variables `my_vector`, `my_matrix` or `my_df`!"
+test_object("my_vector", undefined_msg = msg, incorrect_msg = msg)
+test_object("my_matrix", undefined_msg = msg, incorrect_msg = msg)
+test_object("my_df", undefined_msg = msg, incorrect_msg = msg)
+test_object("my_list",
+            incorrect_msg = "It looks like `my_list` does not contain the correct elements.")
+test_object("my_list", eq_condition = "equal",
+            incorrect_msg = "It looks like `my_list` does not contain the correct naming for the components. Make sure you use the names `vec`, `mat` and `df`, respectively. Check out the hint if you're struggling.");
+test_output_contains("my_list", incorrect_msg = "Don't forget to print `my_list` to the console! Simply add `my_list` on a new line in the editor.")
+success_msg("Great! Not only do you know how to construct lists now, you can also name them; a skill that will prove most useful in practice. Continue to the next exercise.")
+
+</code>
+ <div data-type="hint">
+
+<p>The first method of assigning names to your list components is the easiest. It starts like this: </p>
+
+<pre><code>my_list &lt;- list(vec = my_vector)
+</code></pre>
+
+<p>Add the other two components in a similar fashion.</p>
+      </div>
+    </div>
+  </div>
+
+  <h3><a href="/_pages/Day1/3-6.html">Previous: 3-5 Analyze matrices, you shall</a></h3>
+  <h3><a href="/_pages/Day1/3-8.html">Next: 3-7</a></h3>
+  <h3><a href="{{ site.baseurl }}workshop">Back to Main</a></h3>
+</body>
+</html>

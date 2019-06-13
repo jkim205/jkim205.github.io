@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title> Exercise 5-6 | Selection of data frame elements  </title>
+  <link rel='shortcut icon' type='image/x-icon' href='{{ site.baseurl }}public/favicon.ico'/>
+  <style>
+    .exercise {
+      margin: 50px;
+    }
+  </style>
+
+  <script async src="https://cdn.datacamp.com/dcl-react.js.gz"></script>
+</head>
+<body>
+  <div class="exercise">
+    <div class="title">
+      <h2> Selection of data frame elements </h2>
+    </div>
+
+    <div class="description">
+
+<p>Similar to vectors and matrices, you select elements from a data frame with the help of square brackets <code>[ ]</code>. By using a comma, you can indicate what to select from the rows and the columns respectively. For example:</p>
+
+<ul>
+<li><code>my_df[1,2]</code> selects the value at the first row and second column in <code>my_df</code>.</li>
+
+<li><code>my_df[1:3,2:4]</code> selects rows 1, 2, 3 and columns 2, 3, 4 in <code>my_df</code>.</li>
+</ul>
+
+<p>Sometimes you want to select all elements of a row or column. For example, <code>my_df[1, ]</code> selects all elements of the first row. Let us now apply this technique on <code>planets_df</code>!</p>
+
+</div>
+
+    <div class="Instruction">
+
+<h2>Instruction</h2>
+
+<ul>
+<li>From <code>planets_df</code>, select the diameter of Mercury: this is the value at the first row and the third column. Simply print out the result.</li>
+
+<li>From <code>planets_df</code>, select all data on Mars (the fourth row). Simply print out the result.</li>
+</ul>
+
+    </div>
+
+    <div data-datacamp-exercise data-lang="r" data-height="auto">
+      <code data-type="pre-exercise-code">
+        load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/planets.RData"))
+      </code>
+      <code data-type="sample-code">
+# The planets_df data frame from the previous exercise is pre-loaded
+
+# Print out diameter of Mercury (row 1, column 3)
+
+
+# Print out data for Mars (entire fourth row)
+
+      </code>
+      <code data-type="solution">
+# The planets_df data frame from the previous exercise is pre-loaded
+
+# Print out diameter of Mercury (row 1, column 3)
+planets_df[1,3]
+
+# Print out data for Mars (entire fourth row)
+planets_df[4, ]
+
+      </code>
+      <code data-type="sct">
+msg = "Do not remove or overwrite the `planets_df` data frame!"
+test_object("planets_df", undefined_msg = msg, incorrect_msg = msg)
+test_output_contains("planets_df[1,3]", incorrect_msg = "Have you correctly selected and printed out the diameter for Mercury? You can use `[1,3]`.")
+test_output_contains("planets_df[4, ]", incorrect_msg = "Have you correctly selected and printed out all data for Mars? You can use `[4,]`.")
+success_msg("Great! Apart from selecting elements from your data frame by index, you can also use the column names. To learn how, head over to the next exercise.")
+
+
+</code>
+ <div data-type="hint">
+
+<p>To select the diameter for Venus (the second row), you would need: <code>planets_df[2,3]</code>. What do you need for Mercury then?</p>
+
+      </div>
+    </div>
+  </div>
+
+  <h3><a href="/_pages/Day1/3-6.html">Previous: 3-5 Analyze matrices, you shall</a></h3>
+  <h3><a href="/_pages/Day1/3-8.html">Next: 3-7</a></h3>
+  <h3><a href="{{ site.baseurl }}workshop">Back to Main</a></h3>
+</body>
+</html>

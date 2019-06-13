@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title> Exercise 5-10 | Only planets with rings but shorter  </title>
+  <link rel='shortcut icon' type='image/x-icon' href='{{ site.baseurl }}public/favicon.ico'/>
+  <style>
+    .exercise {
+      margin: 50px;
+    }
+  </style>
+
+  <script async src="https://cdn.datacamp.com/dcl-react.js.gz"></script>
+</head>
+<body>
+  <div class="exercise">
+    <div class="title">
+      <h2> Only planets with rings but shorter </h2>
+    </div>
+
+    <div class="description">
+
+<p>So what exactly did you learn in the previous exercises? You selected a subset from a data frame (<code>planets_df</code>) based on whether or not a certain condition was true (rings or no rings), and you managed to pull out all relevant data. Pretty awesome! By now, NASA is probably already flirting with your CV ;-). </p>
+
+<p>Now, let us move up one level and use the function <a href="http://www.rdocumentation.org/packages/base/functions/subset"><code>subset()</code></a>. You should see the <a href="http://www.rdocumentation.org/packages/base/functions/subset"><code>subset()</code></a> function as a short-cut to do exactly the same as what you did in the previous exercises. </p>
+
+<pre><code>subset(my_df, subset = some_condition)
+</code></pre>
+
+<p></p>
+
+<p>The first argument of <a href="http://www.rdocumentation.org/packages/base/functions/subset"><code>subset()</code></a> specifies the data set for which you want a subset. By adding the second argument, you give R the necessary information and conditions to select the correct subset. </p>
+
+<p>The code below will give the exact same result as you got in the previous exercise, but this time, you didn't need the <code>rings_vector</code>!</p>
+
+<pre><code>subset(planets_df, subset = rings)
+</code></pre>
+
+<p></p>
+
+</div>
+
+    <div class="Instruction">
+
+<h2>Instruction</h2>
+
+<p>Use <code>subset()</code> on <code>planets_df</code> to select planets that have a diameter smaller than Earth. Because the <code>diameter</code> variable is a relative measure of the planet's diameter w.r.t that of planet Earth, your condition is <code>diameter &lt; 1</code>.</p>
+
+
+    </div>
+
+    <div data-datacamp-exercise data-lang="r" data-height="auto">
+      <code data-type="pre-exercise-code">
+        load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/planets.RData"))
+
+      </code>
+      <code data-type="sample-code">
+# planets_df is pre-loaded in your workspace
+
+# Select planets with diameter < 1
+
+      </code>
+      <code data-type="solution">
+# planets_df is pre-loaded in your workspace
+
+# Select planets with diameter < 1
+subset(planets_df, subset = diameter < 1)
+
+      </code>
+      <code data-type="sct">
+msg = "Do not remove or overwrite the `planets_df` data frame!"
+test_object("planets_df", undefined_msg = msg, incorrect_msg = msg)
+test_correct({
+  test_output_contains("subset(planets_df, subset = diameter < 1)", incorrect_msg = "Have you correctly specified the `subset = ...` part inside `subset()`. The condition in this case is `diameter < 1`. Simply print out the result.")  
+}, {
+  test_function("subset", args = "x", 
+                not_called_msg = "Make sure to use the `subset()` function to perform the selection!",
+                incorrect_msg = "The first argument you pass to `subset()` should be `planets_df`.")
+})
+success_msg("Great! Not only is the `subset()` function more concise, it is probably also more understandable for people who read your code. Continue to the next exercise.");
+
+</code>
+ <div data-type="hint">
+<p><code>subset(planets_df, subset = ...)</code> almost solves it; can you fill in the <code>...</code>?</p>
+
+      </div>
+    </div>
+  </div>
+
+  <h3><a href="/_pages/Day1/3-6.html">Previous: 3-5 Analyze matrices, you shall</a></h3>
+  <h3><a href="/_pages/Day1/3-8.html">Next: 3-7</a></h3>
+  <h3><a href="{{ site.baseurl }}workshop">Back to Main</a></h3>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title> Exercise 5-12 | Sorting your data frame  </title>
+  <link rel='shortcut icon' type='image/x-icon' href='{{ site.baseurl }}public/favicon.ico'/>
+  <style>
+    .exercise {
+      margin: 50px;
+    }
+  </style>
+
+  <script async src="https://cdn.datacamp.com/dcl-react.js.gz"></script>
+</head>
+<body>
+  <div class="exercise">
+    <div class="title">
+      <h2> Sorting your data frame</h2>
+    </div>
+
+    <div class="description">
+
+<p>Alright, now that you understand the <a href="http://www.rdocumentation.org/packages/base/functions/order"><code>order()</code></a> function, let us do something useful with it. You would like to rearrange your data frame such that it starts with the smallest planet and ends with the largest one. A sort on the <code>diameter</code> column.</p>
+
+    <div class="Instruction">
+
+<h2>Instruction</h2>
+
+<ul>
+<li>Call <code>order()</code> on <code>planets_df$diameter</code> (the <code>diameter</code> column of <code>planets_df</code>). Store the result as <code>positions</code>.</li>
+
+<li>Now reshuffle <code>planets_df</code> with the <code>positions</code> vector as row indexes inside square brackets. Keep all columns. Simply print out the result.</li>
+</ul>
+
+    </div>
+
+    <div data-datacamp-exercise data-lang="r" data-height="auto">
+      <code data-type="pre-exercise-code">
+        load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/planets.RData"))
+
+      </code>
+      <code data-type="sample-code">
+# planets_df is pre-loaded in your workspace
+
+# Use order() to create positions
+positions <-  
+
+# Use positions to sort planets_df
+
+      </code>
+      <code data-type="solution">
+# planets_df is pre-loaded in your workspace
+
+# Use order() to create positions
+positions <- order(planets_df$diameter)
+
+# Use positions to sort planets_df
+planets_df[positions, ]
+
+      </code>
+      <code data-type="sct">
+msg = "Do not remove or overwrite the `planets_df` data frame!"
+test_object("planets_df", undefined_msg = msg, incorrect_msg = msg)
+test_object("positions",
+            incorrect_msg = "Have you correctly calculated the `positions` variable? You can use `order(planets_df$diameter)`.")
+test_output_contains("planets_df[positions,]",
+                     incorrect_msg = "Use `planets_df[positions, ]` to sort `planets_df`; the comma inside the square brackets is crucial!")
+success_msg("Wonderful! This exercise concludes the chapter on data frames. Remember that data frames are extremely important in R, you will need them all the time. Another very often used data structure is the list. This will be the subject of the next chapter!")
+
+</code>
+ <div data-type="hint">
+<ul>
+<li>Use <code>order(planets_df$diameter)</code> to create <code>positions</code>.</li>
+
+<li>Now, you can use <code>positions</code> inside square brackets: <code>planets_df[...]</code>; can you fill in the <code>...</code>?</li>
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <h3><a href="/_pages/Day1/3-6.html">Previous: 3-5 Analyze matrices, you shall</a></h3>
+  <h3><a href="/_pages/Day1/3-8.html">Next: 3-7</a></h3>
+  <h3><a href="{{ site.baseurl }}workshop">Back to Main</a></h3>
+</body>
+</html>

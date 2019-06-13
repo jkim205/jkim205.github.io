@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title> Exercise 5-5 | Creating a data frame (2)  </title>
+  <link rel='shortcut icon' type='image/x-icon' href='{{ site.baseurl }}public/favicon.ico'/>
+  <style>
+    .exercise {
+      margin: 50px;
+    }
+  </style>
+
+  <script async src="https://cdn.datacamp.com/dcl-react.js.gz"></script>
+</head>
+<body>
+  <div class="exercise">
+    <div class="title">
+      <h2> Creating a data frame (2) </h2>
+    </div>
+
+    <div class="description">
+
+<p>The <code>planets_df</code> data frame should have 8 observations and 5 variables. It has been made available in the workspace, so you can directly use it.</p>
+
+</div>
+
+    <div class="Instruction">
+
+<h2>Instruction</h2>
+
+<p>Use <a href="http://www.rdocumentation.org/packages/utils/functions/str"><code>str()</code></a> to investigate the structure of the new <code>planets_df</code> variable.</p>
+
+    </div>
+
+    <div data-datacamp-exercise data-lang="r" data-height="auto">
+      <code data-type="pre-exercise-code">
+        load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/planets.RData"))
+      </code>
+      <code data-type="sample-code">
+# Check the structure of planets_df
+
+      </code>
+      <code data-type="solution">
+# Check the structure of planets_df
+str(planets_df)
+
+      </code>
+      <code data-type="sct">
+msg = "Do not remove or overwrite the `planets_df` data frame that is already available in the workspace!"
+test_object("planets_df", undefined_msg = msg, incorrect_msg = msg)
+test_output_contains("str(planets_df)", incorrect_msg = "Have you correctly displayed the structure of `planets_df`? Use `str()` to do this!")
+success_msg("Awesome! Now that you have a clear understanding of the `planets_df` data set, it's time to see how you can select elements from it. Learn all about in the next exercises!")
+
+</code>
+ <div data-type="hint">
+
+<p><code>planets_df</code> is already available in your workspace, so <code>str(planets_df)</code> will do the trick.</p>
+
+      </div>
+    </div>
+  </div>
+
+  <h3><a href="/_pages/Day1/3-6.html">Previous: 3-5 Analyze matrices, you shall</a></h3>
+  <h3><a href="/_pages/Day1/3-8.html">Next: 3-7</a></h3>
+  <h3><a href="{{ site.baseurl }}workshop">Back to Main</a></h3>
+</body>
+</html>

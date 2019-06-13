@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title> Exercise 6-6 | Selecting elements from a list </title>
+  <link rel='shortcut icon' type='image/x-icon' href='{{ site.baseurl }}public/favicon.ico'/>
+  <style>
+    .exercise {
+      margin: 50px;
+    }
+  </style>
+
+  <script async src="https://cdn.datacamp.com/dcl-react.js.gz"></script>
+</head>
+<body>
+  <div class="exercise">
+    <div class="title">
+      <h2> Selecting elements from a list</h2>
+    </div>
+
+    <div class="description">
+
+<p>Your list will often be built out of numerous elements and components. Therefore, getting a single element, multiple elements, or a component out of it is not always straightforward. </p>
+
+<p>One way to select a component is using the numbered position of that component. For example, to "grab" the first component of <code>shining_list</code> you type </p>
+
+<pre><code>shining_list[[1]]
+</code></pre>
+
+<p>A quick way to check this out is typing it in the console. Important to remember: to select elements from vectors, you use single square brackets: <code>[ ]</code>. Don't mix them up!</p>
+
+<p>You can also refer to the names of the components, with <code>[[ ]]</code> or with the <code>$</code> sign. Both will select the data frame representing the reviews: </p>
+
+<pre><code>shining_list[["reviews"]]
+shining_list$reviews
+</code></pre>
+
+<p></p>
+
+<p>Besides selecting components, you often need to select specific elements out of these components. For example, with <code>shining_list[[2]][1]</code> you select from the second component, <code>actors</code> (<code>shining_list[[2]]</code>), the first element (<code>[1]</code>). When you type this in the console, you will see the answer is Jack Nicholson.</p>
+
+</div>
+
+    <div class="Instruction">
+
+<h2>Instruction</h2>
+
+<ul>
+<li>Select from <code>shining_list</code> the vector representing the actors. Simply print out this vector.</li>
+
+<li>Select from <code>shining_list</code> the second element in the vector representing the actors. Do a printout like before.</li>
+</ul>
+
+    </div>
+
+    <div data-datacamp-exercise data-lang="r" data-height="auto">
+      <code data-type="pre-exercise-code">
+
+load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/shining_list.RData"))
+
+
+      </code>
+      <code data-type="sample-code">
+# shining_list is already pre-loaded in the workspace
+
+# Print out the vector representing the actors
+
+
+# Print the second element of the vector representing the actors
+
+
+      </code>
+      <code data-type="solution">
+# shining_list is already pre-loaded in the workspace
+
+# Print out the vector representing the actors
+shining_list$actors
+
+# Print the second element of the vector representing the actors
+shining_list$actors[2]
+
+      </code>
+      <code data-type="sct">
+msg <- "Do not remove or change the definition of `shining_list`, which is pre-loaded in the workspace!"
+test_object("shining_list", undefined_msg = msg, incorrect_msg = msg)
+test_output_contains("shining_list$actors", incorrect_msg = "Have you correctly selected and printed out the vector representing actors? You can use `shining_list$actors`, for example.")
+test_output_contains("shining_list$actors[2]", incorrect_msg = "To select the second actor from the vector representing actors, you should chain your selections: `shining_list$actors` represents the actors, so you can add a `[2]` to select the second element.")
+success_msg("Great! Selecting elements from lists is rather easy isn't it? Continue to the next exercise.")
+
+</code>
+ <div data-type="hint">
+
+<ul>
+<li>To select the vector representing the actors, you can use <code>$actors</code>.</li>
+
+<li>To select the third element in the vector representing the actors, you use <code>shining_list$actors[3]</code>. What needs to change to select the second element?</li>
+</ul>
+      </div>
+    </div>
+  </div>
+
+  <h3><a href="/_pages/Day1/3-6.html">Previous: 3-5 Analyze matrices, you shall</a></h3>
+  <h3><a href="/_pages/Day1/3-8.html">Next: 3-7</a></h3>
+  <h3><a href="{{ site.baseurl }}workshop">Back to Main</a></h3>
+</body>
+</html>

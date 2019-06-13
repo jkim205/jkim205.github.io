@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title> Exercise 6-3 | Creating a list  </title>
+  <link rel='shortcut icon' type='image/x-icon' href='{{ site.baseurl }}public/favicon.ico'/>
+  <style>
+    .exercise {
+      margin: 50px;
+    }
+  </style>
+
+  <script async src="https://cdn.datacamp.com/dcl-react.js.gz"></script>
+</head>
+<body>
+  <div class="exercise">
+    <div class="title">
+      <h2> Creating a list</h2>
+    </div>
+
+    <div class="description">
+
+<p>Let us create our first list! To construct a list you use the function <a href="http://www.rdocumentation.org/packages/base/functions/list"><code>list()</code></a>: </p>
+
+<pre><code>my_list &lt;- list(comp1, comp2 ...)
+</code></pre>
+
+<p>The arguments to the list function are the list components. Remember, these components can be matrices, vectors, other lists, ...</p>
+
+    <div class="Instruction">
+
+<h2>Instruction</h2>
+
+<p>Construct a list, named <code>my_list</code>, that contains the variables <code>my_vector</code>, <code>my_matrix</code> and <code>my_df</code> as list components.</p>
+    </div>
+
+    <div data-datacamp-exercise data-lang="r" data-height="auto">
+      <code data-type="pre-exercise-code">
+
+      </code>
+      <code data-type="sample-code">
+# Vector with numerics from 1 up to 10
+my_vector <- 1:10 
+
+# Matrix with numerics from 1 up to 9
+my_matrix <- matrix(1:9, ncol = 3)
+
+# First 10 elements of the built-in data frame mtcars
+my_df <- mtcars[1:10,]
+
+# Construct list with these different elements:
+my_list <-
+
+      </code>
+      <code data-type="solution">
+# Vector with numerics from 1 up to 10
+my_vector <- 1:10 
+
+# Matrix with numerics from 1 up to 9
+my_matrix <- matrix(1:9, ncol = 3)
+
+# First 10 elements of the built-in data frame mtcars
+my_df <- mtcars[1:10,]
+
+# Construct list with these different elements:
+my_list <- list(my_vector, my_matrix, my_df)
+
+      </code>
+      <code data-type="sct">
+msg = "Do not remove or change the definition of the variables `my_vector`, `my_matrix` or `my_df`!"
+test_object("my_vector", undefined_msg = msg, incorrect_msg = msg)
+test_object("my_matrix", undefined_msg = msg, incorrect_msg = msg)
+test_object("my_df", undefined_msg = msg, incorrect_msg = msg)
+test_object("my_list",
+            incorrect_msg = "It looks like `my_list` does not contain the correct elements. Make sure to pass the variables `my_vector`, `my_matrix` and `my_df` to the `list()` function, separated by commas, in this order.")
+success_msg("Wonderful! Head over to the next exercise.")
+
+</code>
+ <div data-type="hint">
+
+<p>Use the <a href="http://www.rdocumentation.org/packages/base/functions/list"><code>list()</code></a> function with <code>my_vector</code>, <code>my_matrix</code> and <code>my_df</code> as arguments separated by a comma.</p>
+
+      </div>
+    </div>
+  </div>
+
+  <h3><a href="/_pages/Day1/3-6.html">Previous: 3-5 Analyze matrices, you shall</a></h3>
+  <h3><a href="/_pages/Day1/3-8.html">Next: 3-7</a></h3>
+  <h3><a href="{{ site.baseurl }}workshop">Back to Main</a></h3>
+</body>
+</html>

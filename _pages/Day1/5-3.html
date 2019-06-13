@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title> Exercise 5-3 | Have a look at the structure </title>
+  <link rel='shortcut icon' type='image/x-icon' href='{{ site.baseurl }}public/favicon.ico'/>
+  <style>
+    .exercise {
+      margin: 50px;
+    }
+  </style>
+
+  <script async src="https://cdn.datacamp.com/dcl-react.js.gz"></script>
+</head>
+<body>
+  <div class="exercise">
+    <div class="title">
+      <h2> Have a look at the structure  </h2>
+    </div>
+
+    <div class="description">
+
+<p>Another method that is often used to get a rapid overview of your data is the function <a href="http://www.rdocumentation.org/packages/utils/functions/str"><code>str()</code></a>. The function <a href="http://www.rdocumentation.org/packages/utils/functions/str"><code>str()</code></a> shows you the structure of your data set. For a data frame it tells you:</p>
+
+<ul>
+<li>The total number of observations (e.g. 32 car types)</li>
+
+<li>The total number of variables (e.g. 11 car features)</li>
+
+<li>A full list of the variables names (e.g. <code>mpg</code>, <code>cyl</code> ... )</li>
+
+<li>The data type of each variable (e.g. <code>num</code>)</li>
+
+<li>The first observations</li>
+</ul>
+
+<p>Applying the <a href="http://www.rdocumentation.org/packages/utils/functions/str"><code>str()</code></a> function will often be the first thing that you do when receiving a new data set or data frame. It is a great way to get more insight in your data set before diving into the real analysis.</p>
+
+</div>
+
+    <div class="Instruction">
+
+<h2>Instruction</h2>
+
+<p>Investigate the structure of <a href="http://www.rdocumentation.org/packages/datasets/functions/mtcars"><code>mtcars</code></a>. Make sure that you see the same numbers, variables and data types as mentioned above.</p>
+
+    </div>
+
+    <div data-datacamp-exercise data-lang="r" data-height="auto">
+      <code data-type="pre-exercise-code">
+      </code>
+      <code data-type="sample-code">
+# Investigate the structure of mtcars
+
+      </code>
+      <code data-type="solution">
+# Investigate the structure of mtcars
+str(mtcars)
+
+      </code>
+      <code data-type="sct">
+test_output_contains("str(mtcars)", incorrect_msg = "Have you correctly called `str()` on `mtcars`?")
+success_msg("Nice work! Can you find all the information that is listed in the exercise's assignment? Continue to the next exercise.")
+
+</code>
+ <div data-type="hint">
+
+<p>Use the <a href="http://www.rdocumentation.org/packages/utils/functions/str"><code>str()</code></a> function on <a href="http://www.rdocumentation.org/packages/datasets/functions/mtcars"><code>mtcars</code></a>.</p>
+      </div>
+    </div>
+  </div>
+
+  <h3><a href="/_pages/Day1/3-6.html">Previous: 3-5 Analyze matrices, you shall</a></h3>
+  <h3><a href="/_pages/Day1/3-8.html">Next: 3-7</a></h3>
+  <h3><a href="{{ site.baseurl }}workshop">Back to Main</a></h3>
+</body>
+</html>

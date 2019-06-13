@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title> Exercise 5-4 | Creating a data frame  </title>
+  <link rel='shortcut icon' type='image/x-icon' href='{{ site.baseurl }}public/favicon.ico'/>
+  <style>
+    .exercise {
+      margin: 50px;
+    }
+  </style>
+
+  <script async src="https://cdn.datacamp.com/dcl-react.js.gz"></script>
+</head>
+<body>
+  <div class="exercise">
+    <div class="title">
+      <h2> Creating a data frame </h2>
+    </div>
+
+    <div class="description">
+
+<p>Since using built-in data sets is not even half the fun of creating your own data sets, the rest of this chapter is based on your personally developed data set. Put your jet pack on because it is time for some space exploration! </p>
+
+<p>As a first goal, you want to construct a data frame that describes the main characteristics of eight planets in our solar system. According to your good friend Buzz, the main features of a planet are:</p>
+
+<ul>
+<li>The type of planet (Terrestrial or Gas Giant).</li>
+
+<li>The planet's diameter relative to the diameter of the Earth.</li>
+
+<li>The planet's rotation across the sun relative to that of the Earth.</li>
+
+<li>If the planet has rings or not (TRUE or FALSE).</li>
+</ul>
+
+<p>After doing some high-quality research on <a href="http://en.wikipedia.org/wiki/Planet">Wikipedia</a>, you feel confident enough to create the necessary vectors: <code>name</code>, <code>type</code>, <code>diameter</code>, <code>rotation</code> and <code>rings</code>; these vectors have already been coded up on the right. The first element in each of these vectors correspond to the first observation.</p>
+
+<p>You construct a data frame with the <a href="http://www.rdocumentation.org/packages/base/functions/data.frame"><code>data.frame()</code></a> function. As arguments, you pass the vectors from before: they will become the different columns of your data frame. Because every column has the same length, the vectors you pass should also have the same length. But don't forget that it is possible (and likely) that they contain different types of data.</p>
+
+</div>
+
+    <div class="Instruction">
+
+<h2>Instruction</h2>
+
+<p>Use the function <a href="http://www.rdocumentation.org/packages/base/functions/data.frame"><code>data.frame()</code></a> to construct a data frame. Pass the vectors <code>name</code>, <code>type</code>, <code>diameter</code>, <code>rotation</code> and <code>rings</code> as arguments to <code>data.frame()</code>, in this order. Call the resulting data frame <code>planets_df</code>.</p>
+
+    </div>
+
+    <div data-datacamp-exercise data-lang="r" data-height="auto">
+      <code data-type="pre-exercise-code">
+      </code>
+      <code data-type="sample-code">
+# Definition of vectors
+name <- c("Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune")
+type <- c("Terrestrial planet", "Terrestrial planet", "Terrestrial planet", 
+          "Terrestrial planet", "Gas giant", "Gas giant", "Gas giant", "Gas giant")
+diameter <- c(0.382, 0.949, 1, 0.532, 11.209, 9.449, 4.007, 3.883)
+rotation <- c(58.64, -243.02, 1, 1.03, 0.41, 0.43, -0.72, 0.67)
+rings <- c(FALSE, FALSE, FALSE, FALSE, TRUE, TRUE, TRUE, TRUE)
+
+# Create a data frame from the vectors
+planets_df <-
+
+      </code>
+      <code data-type="solution">
+# Definition of vectors
+name <- c("Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune")
+type <- c("Terrestrial planet", "Terrestrial planet", "Terrestrial planet", 
+          "Terrestrial planet", "Gas giant", "Gas giant", "Gas giant", "Gas giant")
+diameter <- c(0.382, 0.949, 1, 0.532, 11.209, 9.449, 4.007, 3.883)
+rotation <- c(58.64, -243.02, 1, 1.03, 0.41, 0.43, -0.72, 0.67)
+rings <- c(FALSE, FALSE, FALSE, FALSE, TRUE, TRUE, TRUE, TRUE)
+
+# Create a data frame from the vectors
+planets_df <- data.frame(name, type, diameter, rotation, rings)
+      </code>
+      <code data-type="sct">
+msg = "Do not change anything about the definition of the vectors. Only add a `data.frame()` call to create `planets_df`."
+test_object("name", undefined_msg = msg, incorrect_msg = msg)
+test_object("type", undefined_msg = msg, incorrect_msg = msg)
+test_object("diameter", undefined_msg = msg, incorrect_msg = msg)
+test_object("rotation", undefined_msg = msg, incorrect_msg = msg)
+test_object("rings", undefined_msg = msg, incorrect_msg = msg)
+
+test_object("planets_df",
+            incorrect_msg = "Have you correctly called `data.frame()` to create `planets_df`. Inside `data.frame()`, make sure to pass all vectors in the correct order: `name`, `type`, `diameter`, `rotation` and finally `rings`.")
+
+success_msg("Great job! Continue to the next exercise. The logical next step, as you know by now, is inspecting the data frame you just created. Head over to the next exercise.");
+
+</code>
+ <div data-type="hint">
+
+<p>Your <code>data.frame()</code> call starts as follows:</p>
+
+<pre><code>data.frame(planets, type, diameter)
+</code></pre>
+
+<p>Can you finish it?</p>
+
+      </div>
+    </div>
+  </div>
+
+  <h3><a href="/_pages/Day1/3-6.html">Previous: 3-5 Analyze matrices, you shall</a></h3>
+  <h3><a href="/_pages/Day1/3-8.html">Next: 3-7</a></h3>
+  <h3><a href="{{ site.baseurl }}workshop">Back to Main</a></h3>
+</body>
+</html>

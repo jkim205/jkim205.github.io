@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <title> Exercise 4-9 | Comparing ordered factors </title>
+  <title> Exercise 5-1 | What's a data frame? </title>
   <link rel='shortcut icon' type='image/x-icon' href='{{ site.baseurl }}public/favicon.ico'/>
   <style>
     .exercise {
@@ -15,80 +15,60 @@
 <body>
   <div class="exercise">
     <div class="title">
-      <h2> Comparing ordered factors </h2>
+      <h2> What's a data frame?  </h2>
     </div>
 
     <div class="description">
 
-<p>Having a bad day at work, 'data analyst number two' enters your office and starts complaining that 'data analyst number five' is slowing down the entire project. Since you know that 'data analyst number two' has the reputation of being a smarty-pants, you first decide to check if his statement is true.</p>
+<p>You may remember from the chapter about matrices that all the elements that you put in a matrix should be of the same type. Back then, your data set on Star Wars only contained numeric elements. </p>
 
-<p>The fact that <code>factor_speed_vector</code> is now ordered enables us to compare different elements (the data analysts in this case). You can simply do this by using the well-known operators.</p>
+<p>When doing a market research survey, however, you often have questions such as:</p>
+
+<ul>
+<li>'Are you married?' or 'yes/no' questions (<code>logical</code>)</li>
+
+<li>'How old are you?' (<code>numeric</code>)</li>
+
+<li>'What is your opinion on this product?' or other 'open-ended' questions (<code>character</code>)</li>
+
+<li>...</li>
+</ul>
+
+<p>The output, namely the respondents' answers to the questions formulated above, is a data set of different data types. You will often find yourself working with data sets that contain different data types instead of only one. </p>
+
+<p>A data frame has the variables of a data set as columns and the observations as rows. This will be a familiar concept for those coming from different statistical software packages such as SAS or SPSS.</p>
 
 </div>
 
     <div class="Instruction">
 
-<ul>
-<li>Use <code>[2]</code> to select from <code>factor_speed_vector</code> the factor value for the second data analyst. Store it as <code>da2</code>.</li>
+<h2>Instruction</h2>
 
-<li>Use <code>[5]</code> to select the <code>factor_speed_vector</code> factor value for the fifth data analyst. Store it as <code>da5</code>.</li>
-
-<li>Check if <code>da2</code> is greater than <code>da5</code>; simply print out the result. Remember that you can use the <code>&gt;</code> operator to check whether one element is larger than the other.</li>
-</ul>
-
+<p>Click 'Submit Answer'. The data from the built-in example data frame <a href="http://www.rdocumentation.org/packages/datasets/functions/mtcars"><code>mtcars</code></a> will be printed to the console.</p>
     </div>
 
     <div data-datacamp-exercise data-lang="r" data-height="auto">
       <code data-type="pre-exercise-code">
       </code>
       <code data-type="sample-code">
-# Create factor_speed_vector
-speed_vector <- c("medium", "slow", "slow", "medium", "fast")
-factor_speed_vector <- factor(speed_vector, ordered = TRUE, levels = c("slow", "medium", "fast"))
-
-# Factor value for second data analyst
-da2 <-
-
-# Factor value for fifth data analyst
-da5 <-
-
-# Is data analyst 2 faster than data analyst 5?
-
+# Print out built-in R data frame
+mtcars 
 
       </code>
       <code data-type="solution">
-# Create factor_speed_vector
-speed_vector <- c("medium", "slow", "slow", "medium", "fast")
-factor_speed_vector <- factor(speed_vector, ordered = TRUE, levels = c("slow", "medium", "fast"))
+# Print out built-in R data frame
+mtcars 
 
-# Factor value for second data analyst
-da2 <- factor_speed_vector[2]
-
-# Factor value for fifth data analyst
-da5 <- factor_speed_vector[5]
-
-# Is data analyst 2 faster data analyst 5?
-da2 > da5
       </code>
       <code data-type="sct">
-msg = "Do not change anything about the commands that define `speed_vector` and `factor_speed_vector`!"
-test_object("speed_vector", undefined_msg = msg, incorrect_msg = msg)
-test_object("factor_speed_vector", eq_condition = "equal", undefined_msg = msg, incorrect_msg = msg)
+test_output_contains("mtcars", incorrect_msg = "Do not change anything about the code, Make sure that you output `mtcars`.")
+success_msg("Great! Continue to the next exercise.")
 
-msg <- "Have you correctly selected the factor value for the %s data analyst? You can use `factor_speed_vector[%s]`."
-test_object("da2", eq_condition = "equal", incorrect_msg = sprintf(msg, "second", "2"))
-test_object("da5", eq_condition = "equal", incorrect_msg = sprintf(msg, "fifth", "5"))
-test_output_contains("da2 > da5", incorrect_msg = "Have you correctly compared `da2` and `da5`? You can use the `>`. Simply print out the result.")
-
-success_msg("Bellissimo! What do the result tell you? Data analyst two is complaining about the data analyst five while in fact they are the one slowing everything down! This concludes the chapter on factors. With a solid basis in vectors, matrices and factors, you're ready to dive into the wonderful world of data frames, a very important data structure in R!")
 </code>
  <div data-type="hint">
 
-<ul>
-<li>To select the factor value for the third data analyst, you'd need <code>factor_speed_vector[3]</code>.</li>
+<p>Just click 'Submit Answer' and witness the magic!</p>
 
-<li>To compare two values, you can use <code>&gt;</code>. For example: <code>da3 &gt; da4</code>.</li>
-</ul>
       </div>
     </div>
   </div>

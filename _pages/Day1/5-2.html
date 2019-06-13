@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title> Exercise 5-2 | Quick, have a look at your data set </title>
+  <link rel='shortcut icon' type='image/x-icon' href='{{ site.baseurl }}public/favicon.ico'/>
+  <style>
+    .exercise {
+      margin: 50px;
+    }
+  </style>
+
+  <script async src="https://cdn.datacamp.com/dcl-react.js.gz"></script>
+</head>
+<body>
+  <div class="exercise">
+    <div class="title">
+      <h2> Quick, have a look at your data set  </h2>
+    </div>
+
+    <div class="description">
+
+<p>Wow, that is a lot of cars! </p>
+
+<p>Working with large data sets is not uncommon in data analysis. When you work with (extremely) large data sets and data frames, your first task as a data analyst is to develop a clear understanding of its structure and main elements. Therefore, it is often useful to show only a small part of the entire data set. </p>
+
+<p>So how to do this in R? Well, the function <a href="http://www.rdocumentation.org/packages/utils/functions/head"><code>head()</code></a> enables you to show the first observations of a data frame. Similarly, the function <a href="http://www.rdocumentation.org/packages/utils/functions/head"><code>tail()</code></a> prints out the last observations in your data set.</p>
+
+<p>Both <a href="http://www.rdocumentation.org/packages/utils/functions/head"><code>head()</code></a> and <a href="http://www.rdocumentation.org/packages/utils/functions/head"><code>tail()</code></a> print a top line called the 'header', which contains the names of the different variables in your data set.</p>
+
+</div>
+
+    <div class="Instruction">
+
+<h2>Instruction</h2>
+
+<p>Call <a href="http://www.rdocumentation.org/packages/utils/functions/head"><code>head()</code></a> on the <a href="http://www.rdocumentation.org/packages/datasets/functions/mtcars"><code>mtcars</code></a> data set to have a look at the header and the first observations.</p>
+
+    </div>
+
+    <div data-datacamp-exercise data-lang="r" data-height="auto">
+      <code data-type="pre-exercise-code">
+      </code>
+      <code data-type="sample-code">
+# Call head() on mtcars
+
+      </code>
+      <code data-type="solution">
+# Call head() on mtcars
+head(mtcars)
+
+      </code>
+      <code data-type="sct">
+test_function("head", "x", incorrect_msg = "Have you correctly passed `mtcars` to the `head()` function?")
+test_output_contains("head(mtcars)", incorrect_msg = "Simply print out the result of the `head()` call, no need to assign it to a new variable.")
+success_msg("Wonderful! So, what do we have in this data set? For example, `hp` represents the car's horsepower; the Datsun has the lowest horse power of the 6 cars that are displayed. For a full overview of the variables' meaning, type `?mtcars` in the console and read the help page. Continue to the next exercise!");
+
+</code>
+ <div data-type="hint">
+
+<p><code>head(mtcars)</code> will show the first observations of the <code>mtcars</code> data frame.</p>
+
+      </div>
+    </div>
+  </div>
+
+  <h3><a href="/_pages/Day1/3-6.html">Previous: 3-5 Analyze matrices, you shall</a></h3>
+  <h3><a href="/_pages/Day1/3-8.html">Next: 3-7</a></h3>
+  <h3><a href="{{ site.baseurl }}workshop">Back to Main</a></h3>
+</body>
+</html>

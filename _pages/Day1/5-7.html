@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title> Exercise 5-7 | Selection of data frame elements (2)  </title>
+  <link rel='shortcut icon' type='image/x-icon' href='{{ site.baseurl }}public/favicon.ico'/>
+  <style>
+    .exercise {
+      margin: 50px;
+    }
+  </style>
+
+  <script async src="https://cdn.datacamp.com/dcl-react.js.gz"></script>
+</head>
+<body>
+  <div class="exercise">
+    <div class="title">
+      <h2> Selection of data frame elements (2) </h2>
+    </div>
+
+    <div class="description">
+
+<p>Instead of using numerics to select elements of a data frame, you can also use the variable names to select columns of a data frame. </p>
+
+<p>Suppose you want to select the first three elements of the <code>type</code> column. One way to do this is</p>
+
+<pre><code>planets_df[1:3,2]
+</code></pre>
+
+<p>A possible disadvantage of this approach is that you have to know (or look up) the column number of <code>type</code>, which gets hard if you have a lot of variables. It is often easier to just make use of the variable name:</p>
+
+<pre><code>planets_df[1:3,"type"]
+</code></pre>
+
+</div>
+
+    <div class="Instruction">
+
+<h2>Instruction</h2>
+
+<p>Select and print out the first 5 values in the <code>"diameter"</code> column of <code>planets_df</code>.</p>
+
+    </div>
+
+    <div data-datacamp-exercise data-lang="r" data-height="auto">
+      <code data-type="pre-exercise-code">
+        load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/planets.RData"))
+      </code>
+      <code data-type="sample-code">
+# The planets_df data frame from the previous exercise is pre-loaded
+
+# Select first 5 values of diameter column
+
+
+      </code>
+      <code data-type="solution">
+# The planets_df data frame from the previous exercise is pre-loaded
+
+# Select first 5 values of diameter column
+planets_df[1:5, "diameter"]
+
+
+      </code>
+      <code data-type="sct">
+msg = "Do not remove or overwrite the `planets_df` data frame!"
+test_object("planets_df", undefined_msg = msg, incorrect_msg = msg)
+test_output_contains("planets_df[1:5, \"diameter\"]", incorrect_msg = "Have you correctly selected the first five values from the diameter column and printed them out? You can use `[1:5, \"diameter\"]` here.")
+success_msg("Nice! Continue to the next exercise!")
+
+
+</code>
+ <div data-type="hint">
+
+<p>You can select the first five values with <code>planets_df[1:5, ...]</code>. Can you fill in the <code>...</code> bit to only select the <code>"diameter"</code> column?</p>
+
+      </div>
+    </div>
+  </div>
+
+  <h3><a href="/_pages/Day1/3-6.html">Previous: 3-5 Analyze matrices, you shall</a></h3>
+  <h3><a href="/_pages/Day1/3-8.html">Next: 3-7</a></h3>
+  <h3><a href="{{ site.baseurl }}workshop">Back to Main</a></h3>
+</body>
+</html>

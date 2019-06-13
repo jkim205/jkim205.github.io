@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title> Exercise 5-8 | Only planets with rings  </title>
+  <link rel='shortcut icon' type='image/x-icon' href='{{ site.baseurl }}public/favicon.ico'/>
+  <style>
+    .exercise {
+      margin: 50px;
+    }
+  </style>
+
+  <script async src="https://cdn.datacamp.com/dcl-react.js.gz"></script>
+</head>
+<body>
+  <div class="exercise">
+    <div class="title">
+      <h2> Only planets with rings </h2>
+    </div>
+
+    <div class="description">
+
+<p>You will often want to select an entire column, namely one specific variable from a data frame. If you want to select all elements of the variable <code>diameter</code>, for example, both of these will do the trick:</p>
+
+<pre><code>planets_df[,3]
+planets_df[,"diameter"]
+</code></pre>
+
+<p>However, there is a short-cut. If your columns have names, you can use the <code>$</code> sign:</p>
+
+<pre><code>planets_df$diameter
+</code></pre>
+
+</div>
+
+    <div class="Instruction">
+
+<h2>Instruction</h2>
+
+<ul>
+<li>Use the <code>$</code> sign to select the <code>rings</code> variable from <code>planets_df</code>. Store the vector that results as <code>rings_vector</code>.</li>
+
+<li>Print out <code>rings_vector</code> to see if you got it right.</li>
+</ul>
+
+    </div>
+
+    <div data-datacamp-exercise data-lang="r" data-height="auto">
+      <code data-type="pre-exercise-code">
+        load(url("http://s3.amazonaws.com/assets.datacamp.com/course/intro_to_r/planets.RData"))
+      </code>
+      <code data-type="sample-code">
+# planets_df is pre-loaded in your workspace
+
+# Select the rings variable from planets_df
+rings_vector <- 
+  
+# Print out rings_vector
+
+      </code>
+      <code data-type="solution">
+# planets_df is pre-loaded in your workspace
+
+# Select the rings variable from planets_df
+rings_vector <- planets_df$rings
+
+# Print out rings_vector
+rings_vector
+
+      </code>
+      <code data-type="sct">
+msg = "Do not remove or overwrite the `planets_df` data frame!"
+test_object("planets_df", undefined_msg = msg, incorrect_msg = msg)
+test_object("rings_vector",
+            incorrect_msg = "Have you correctly selected the `rings` variable from `planets_df`? Use `$rings`. Store the result as `rings_vector`.")
+test_output_contains("rings_vector", incorrect_msg = "Don't forget to print out `rings_vector` after you've created it!")
+success_msg("Great! Continue to the next exercise and discover yet another way of subsetting!")
+
+
+</code>
+ <div data-type="hint">
+
+<p><code>planets_df$diameter</code> selects the <code>diameter</code> column from <code>planets_df</code>; what do you need to select the <code>rings</code> column then?</p>
+
+      </div>
+    </div>
+  </div>
+
+  <h3><a href="/_pages/Day1/3-6.html">Previous: 3-5 Analyze matrices, you shall</a></h3>
+  <h3><a href="/_pages/Day1/3-8.html">Next: 3-7</a></h3>
+  <h3><a href="{{ site.baseurl }}workshop">Back to Main</a></h3>
+</body>
+</html>
