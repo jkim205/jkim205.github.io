@@ -34,7 +34,7 @@ permalink: d1
 
 [4-1](Day1/4-1.html) | [4-2](Day1/4-2.html) | [4-3](Day1/4-3.html) | [4-4](Day1/4-4.html) 
 [4-5](Day1/4-5.html) | [4-6](Day1/4-6.html) | [4-7](Day1/4-7.html) | [4-8](Day1/4-8.html) 
-[4-9](Day1/4-9.html) 
+[4-9](Day1/4-9.html) | | | 
 
 ## [Data frames](Day1/5-1.html)
 
