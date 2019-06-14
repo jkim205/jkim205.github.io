@@ -15,23 +15,28 @@
 <body>
   <div class="exercise">
     <div class="title">
-      <h2>Variable assignment (2)</h2>
+      <h2>Variable assignment (3)</h2>
     </div>
 
     <div class="description">
-      <p>Every tasty fruit basket needs oranges, so you decide to add six oranges. As a data analyst, your reflex is to immediately create the variable `my_oranges` and assign the value 6 to it. Next, you want to calculate how many pieces of fruit you have in total. Since you have given meaningful names to these values, you can now code this in a clear way:   </p><p>
-        ```
+      <p>Every tasty fruit basket needs oranges, so you decide to add six oranges. As a data analyst, your reflex is to immediately create the variable <code>my_oranges</code> and assign the value 6 to it. Next, you want to calculate how many pieces of fruit you have in total. Since you have given meaningful names to these values, you can now code this in a clear way: <br/>
+        <code>
 my_apples + my_oranges
-```
-      </p>
+</code></p>
+      
+      </div>
 
     <div class="Instruction">
       <h3>Instruction</h3>
 
-<p>- Assign to `my_oranges` the value 6.</p><p>
-- Add the variables `my_apples` and `my_oranges` and have R simply print the result.</p><p>
-- Assign the result of adding `my_apples` and `my_oranges` to a new variable `my_fruit`.
-</p>
+<ul>
+<li>Assign to <code>my_oranges</code> the value 6.</li>
+
+<li>Add the variables <code>my_apples</code> and <code>my_oranges</code> and have R simply print the result.</li>
+
+<li>Assign the result of adding <code>my_apples</code> and <code>my_oranges</code> to a new variable <code>my_fruit</code>.</li>
+</ul>
+
 </div>
 
     <div data-datacamp-exercise data-lang="r" data-height="auto">
@@ -68,15 +73,14 @@ test_object("my_fruit", undefined_msg = msg, incorrect_msg = msg)
 success_msg("Nice one! The great advantage of doing calculations with variables is reusability. If you just change `my_apples` to equal 12 instead of 5 and rerun the script, `my_fruit` will automatically update as well. Continue to the next exercise.")
       </code>
       <div data-type="hint">
-`my_fruit` is just the sum of `my_apples` and `my_oranges`. You can use the `+` operator to sum the two and `<-` to assign that value to the variable `my_fruit`.
-
+<p><code>my_fruit</code> is just the sum of <code>my_apples</code> and <code>my_oranges</code>. You can use the <code>+</code> operator to sum the two and <code>&lt;-</code> to assign that value to the variable <code>my_fruit</code>.</p>
 
       </div>
     </div>
   </div>
 
-  <h3><a href="/_pages/Day1/1-4.html">Previous</a></h3>
-  <h3><a href="/_pages/Day1/1-6.html">Next</a></h3>
-  <h3><a href="{{ site.baseurl }}workshop">Back to Main</a></h3>
+  <h3><a href="/_pages/Day1/1-4.html">Previous: 1-4 | Variable assignment (2)</a></h3>
+  <h3><a href="/_pages/Day1/1-6.html">Next: 1-6 | Apples and oranges</a></h3>
+  <h3><a href="{{ site.baseurl }}d1">Back to Main</a></h3>
 </body>
 </html>

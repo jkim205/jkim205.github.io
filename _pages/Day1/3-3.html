@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <title> Exercise 3-2 | Naming a matrix </title>
+  <title> Exercise 3-3 | Naming a matrix </title>
   <link rel='shortcut icon' type='image/x-icon' href='{{ site.baseurl }}public/favicon.ico'/>
   <style>
     .exercise {
@@ -29,6 +29,8 @@ colnames(my_matrix) &lt;- col_names_vector
 </code></pre>
 
 <p>We went ahead and prepared two vectors for you: <code>region</code>, and <code>titles</code>. You will need these vectors to name the columns and rows of <code>star_wars_matrix</code>, respectively.</p>
+
+</div>
 
     <div class="Instruction">
       <h3>Instruction</h3>
@@ -92,14 +94,16 @@ test_object("star_wars_matrix", eq_condition = "equal",
             incorrect_msg = "Did you set the row and column names of `star_wars_matrix` correctly? Use `colnames(star_wars_matrix) <- region` for the column names; do a similar thing to name the rows.")
 test_output_contains("star_wars_matrix", incorrect_msg = "Don't forget to print out `star_wars_matrix` after you've named the rows and columns.")
 success_msg("Great! You're on the way of becoming an R jedi! Continue to the next exercise.")
+</code>
  <div data-type="hint">
 <p>You can use <code>colnames(star_wars_matrix) &lt;- region</code> to name the columns of <code>star_wars_matrix</code>. Do a similar thing to name the rows.</p>
       </div>
     </div>
   </div>
 
-  <h3><a href="/_pages/Day1/3-2.html">Previous: 3-2 Analyze matrices, you shall</a></h3>
-  <h3><a href="/_pages/Day1/3-4.html">Next: 3-4</a></h3>
-  <h3><a href="{{ site.baseurl }}workshop">Back to Main</a></h3>
+  <h3><a href="/_pages/Day1/3-2.html">Previous: 3-2 | Analyze matrices, you shall</a></h3>
+  <h3><a href="/_pages/Day1/3-4.html">Next: 3-4 | Calculating the worldwide box office
+</a></h3>
+  <h3><a href="{{ site.baseurl }}d1">Back to Main</a></h3>
 </body>
 </html>
