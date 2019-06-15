@@ -66,12 +66,11 @@ visitors
       <code data-type="sct">
 msg = "Do not change the contents of `all_wars_matrix`; this matrix has already been created for you in the workspace."
 test_object("all_wars_matrix", undefined_msg = msg, incorrect_msg = msg)
-
 test_object("visitors",
             incorrect_msg = "It looks like `visitors` is not correct. Simply divide `all_wars_matrix` by 5 and store the resulting matrix as `visitors`.")
 test_output_contains("visitors", incorrect_msg = "Don't forget to also print out `visitors` so you can have a look.")
-success_msg("Great! What do these results tell you? A staggering 92 million people went to see A New Hope in US theaters! Continue to the next exercise."
-</code>
+success_msg("Great! What do these results tell you? A staggering 92 million people went to see A New Hope in US theaters! Continue to the next exercise.")
+
  <div data-type="hint">
 <p>The number of visitors is equal to <code>all_wars_matrix</code> divided by 5.</p>
       </div>
