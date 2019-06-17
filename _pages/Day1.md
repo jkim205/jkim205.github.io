@@ -50,3 +50,5 @@ permalink: d1
 
 [6-1](Day1/6-1.html) | [6-2](Day1/6-2.html) | [6-3](Day1/6-3.html) | [6-4](Day1/6-4.html) 
 [6-5](Day1/6-5.html) | [6-6](Day1/6-6.html) | [6-7](Day1/6-7.html) 
+
+### Source : [Datacamp GitHub](https://github.com/jkim205/courses-intro-to-r)

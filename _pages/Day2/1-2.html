@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title> Exercise 1-2 | Assign a value into object </title>
+  <link rel='shortcut icon' type='image/x-icon' href='/public/favicon.ico'/>
+  <style>
+    .exercise {
+      margin: 50px;
+    }
+  </style>
+
+  <script async src="https://cdn.datacamp.com/dcl-react.js.gz"></script>
+</head>
+<body>
+  <div class="exercise">
+    <div class="title">
+      <h2>Assign a value into object</h2>
+    </div>
+
+    <div class = "Description">
+
+<p>We use <code>&lt;-</code> to assign values to the variables.</p>
+<p>We can also assign values using <code>=</code> instead of <code>&lt;-</code>, but we recommend against using <code>=</code> to avoid confusion.</p>
+
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">a &lt;-<span class="st"> </span><span class="dv">1</span>
+b &lt;-<span class="st"> </span><span class="dv">3</span>
+c &lt;-<span class="st"> </span><span class="op">-</span><span class="dv">1</span></code></pre></div>
+
+<p>To see the value stored in a variable, we simply ask R to evaluate a and it shows the stored value:
+</p>
+
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">a
+<span class="co">#&gt; [1] 1</span></code></pre></div>
+<p>A more explicit way to ask R to show us the value stored in <code>a</code> is using <code>print</code> like this:</p>
+
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">print</span>(a)
+<span class="co">#&gt; [1] 1</span></code></pre></div>
+
+</div>
+
+    <div class = "Instruction">
+      <h3>Instruction</h3>
+
+<ul>
+<li>Copy and paste the code above into your console to define the three variables.</li>
+<li>Print three variables in the console.</li>
+</ul>
+
+</div>
+
+    <div data-datacamp-exercise data-lang="r" data-height="auto">
+      <code data-type="pre-exercise-code"></code>
+      <code data-type="sample-code">
+# Assign three variables
+
+# print variable a without print function
+
+# display variable c by using print function
+
+      </code>
+      <code data-type="solution">
+# Assign three variables
+a <- 1
+b <- 3
+c <- -1
+
+# print variable a without print function
+a
+
+# display variable c by using print function
+print(c)
+
+      </code>
+      <code data-type="sct">
+msg = "Do not remove the other arithmetic examples!"
+
+test_object("a", undefined_msg = "Make sure to define a variable `a`.",
+            incorrect_msg = "Make sure that you assign the correct value to `a`.") 
+test_object("b", undefined_msg = "Make sure to define a variable `b`.",
+            incorrect_msg = "Make sure that you assign the correct value to `b`.")
+test_object("c", undefined_msg = "Make sure to define a variable `c`.",
+            incorrect_msg = "Make sure that you assign the correct value to `c`.") 
+
+test_output_contains("a", incorrect_msg = "Make sure that you type just a.")
+test_output_contains("print(c)", incorrect_msg = "Make sure that you should use print function.")
+
+success_msg("Great! Head over to the next exercise.")
+
+      </code>
+      <div data-type="hint">
+      </div>
+    </div>
+  </div>
+
+  <h3><a href="/_pages/Day2/1-1.html">Previous: 1-1 | How it works</a></h3>
+  <h3><a href="/_pages/Day2/1-3.html">Next: 1-3 | Variable assignment</a></h3>    
+  <h3><a href="/d1">Back to Main</a></h3>
+  
+</body>
+</html>
