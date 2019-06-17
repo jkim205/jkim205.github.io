@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title> Exercise 1-7 | sum(): Sum up the values in a vector</title>
+  <link rel='shortcut icon' type='image/x-icon' href='/public/favicon.ico'/>
+  <style>
+    .exercise {
+      margin: 50px;
+    }
+  </style>
+
+  <script async src="https://cdn.datacamp.com/dcl-react.js.gz"></script>
+</head>
+<body>
+  <div class="exercise">
+    <div class="title">
+      <h2>sum(): Sum up the values in a vector</h2>
+    </div>
+
+    <div class = "Description">
+
+<p>The function <a href="https://www.rdocumentation.org/packages/base/versions/3.6.0/topics/sum">sum</a> is a widely used function to sum up the values in a vector, data.frame. An argument <code>na.rm</code> is used to ignore NA values when the vector has NA values.
+
+<p>The basic usage of seq function is written in the exercise </p>
+
+    <div class = "Instruction">
+      <h3>Instruction</h3>
+
+<ul>
+<li> Click the Submit button. </li>
+<li> See what happens in the console to generate even numbers within 1 to 100</li>
+</ul>
+
+</div>
+
+    <div data-datacamp-exercise data-lang="r" data-height="auto">
+      <code data-type="pre-exercise-code"></code>
+
+      <code data-type="sample-code">
+# Generate a vector from 1 to 10
+x <- seq(1, 10)
+
+# Sum up the values in variable x
+sum(x)
+
+# Generate a vector that includes NA value
+y <- c(seq(1,5), NA, seq(6,10))
+
+# print y
+y
+
+# Sum up the values in variable y
+sum(y)
+sum(y, na.rm = TRUE)
+
+      </code>
+      <code data-type="solution">
+# Generate a vector from 1 to 10
+x <- seq(1, 10)
+
+# Sum up the values in variable x
+sum(x)
+
+# Generate a vector that includes NA value
+y <- c(seq(1,5), NA, seq(6,10))
+
+# print y
+y
+
+# Sum up the values in variable y
+sum(y)
+sum(y, na.rm = TRUE)
+
+      </code>
+      <code data-type="sct">
+
+success_msg("Great! Head over to the next exercise.")
+
+      </code>
+      <div data-type="hint">
+      </div>
+    </div>
+  </div>
+
+  <h3><a href="/_pages/Day2/1-5.html">Previous: 1-3 | ls(): Lists of variables saved in the workspace </a></h3>
+  <h3><a href="/_pages/Day2/1-7.html">Next: 1-3 | Variable assignment</a></h3>    
+  <h3><a href="/d2">Back to Main</a></h3>
+  
+</body>
+</html>

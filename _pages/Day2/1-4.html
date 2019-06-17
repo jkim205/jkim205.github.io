@@ -53,7 +53,7 @@ If you type <code>ls()</code> the function is evaluated and, as seen before, we 
 
 <ul>
 <li> Click the Submit button </li>
-<li> * Help documents will not pop up in the datacamp light version. But, it will work in your workspace in R studio. </li>
+<li> * Help documents will not pop up in this datacamp light version environment. But, it will work in your workspace in R studio. </li>
 </ul>
 
 </div>
@@ -62,36 +62,38 @@ If you type <code>ls()</code> the function is evaluated and, as seen before, we 
       <code data-type="pre-exercise-code"></code>
 
       <code data-type="sample-code">
-# Pop up the help document of log function.
-help("log")
+# Pop up the help document of seq function.
+help("seq")
 
-# Another method to pop up the help document of log.
-?log
+# Another method to pop up the help document of seq.
+?seq
 
-# See the .
-x <-
+# Find arguments of seq function.
+args(seq)
 
-# Look up the variables in the workspace after assigning x.
-ls()
+# An example of using seq function
+seq(1, 10)
 
       </code>
       <code data-type="solution">
-# Look up the variables in the workspace.
-ls()
+# Pop up the help document of seq function.
+help("seq")
 
-# Create new variable called x and assign any value.
-x <- 1
+# Another method to pop up the help document of seq.
+?seq
 
-# Look up the variables in the workspace after assigning x.
-ls()
+# Find arguments of seq function.
+args(seq)
+
+# An example of using seq function
+seq(1, 10)
 
       </code>
       <code data-type="sct">
 
-test_object("x", undefined_msg = "Make sure to define a variable `b`.",
-            incorrect_msg = "Make sure that you assign the correct value to `b`.")
-
-test_output_contains("ls()", incorrect_msg = "Make sure that you type the commamnd ls()")
+test_function("help")
+test_function("args")
+test_function("seq")
 
 success_msg("Great! Head over to the next exercise.")
 
@@ -101,10 +103,9 @@ success_msg("Great! Head over to the next exercise.")
     </div>
   </div>
 
-  <h3><a href="/_pages/Day2/1-2.html">Previous: 1-2 | print(): Print a value of object to the console. 
-</a></h3>
-  <h3><a href="/_pages/Day2/1-4.html">Next: 1-3 | Variable assignment</a></h3>    
-  <h3><a href="/d1">Back to Main</a></h3>
+  <h3><a href="/_pages/Day2/1-3.html">Previous: 1-3 | ls(): Lists of variables saved in the workspace </a></h3>
+  <h3><a href="/_pages/Day2/1-5.html">Next: 1-5 | data(): Prebuilt datasets</a></h3>    
+  <h3><a href="/d2">Back to Main</a></h3>
   
 </body>
 </html>
