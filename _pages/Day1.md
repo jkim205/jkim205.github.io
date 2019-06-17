@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Day 1 - Intro to R data types
+title: Day 1 - Intro to R and data types
 permalink: d1
 ---
 
