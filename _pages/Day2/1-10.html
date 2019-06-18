@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title> Exercise 1-10 | Subsetting with logical operations </title>
+  <link rel='shortcut icon' type='image/x-icon' href='/public/favicon.ico'/>
+  <style>
+    .exercise {
+      margin: 50px;
+    }
+  </style>
+
+  <script async src="https://cdn.datacamp.com/dcl-react.js.gz"></script>
+</head>
+<body>
+  <div class="exercise">
+    <div class="title">
+      <h2>Subsetting</h2>
+    </div>
+
+    <div class = "Description">
+
+<p>The function <a href="https://www.rdocumentation.org/packages/base/versions/3.6.0/topics/sum">sum</a> is a widely used function to sum up the values in a vector, data.frame. An argument <code>na.rm</code> is used to ignore NA values when the vector has NA values.
+
+<p>The basic usage of seq function is written in the exercise </p>
+
+    <div class = "Instruction">
+      <h3>Instruction</h3>
+
+<ul>
+<li> Click the Submit button. </li>
+<li> See what happens in the console to generate even numbers within 1 to 100</li>
+</ul>
+
+</div>
+
+    <div data-datacamp-exercise data-lang="r" data-height="auto">
+      <code data-type="pre-exercise-code"></code>
+
+      <code data-type="sample-code">
+# Country codes
+codes <- c(380, 124, 818)
+country <- c("italy","canada","egypt")
+names(codes) <- country
+
+# Subsetting by using indices
+codes[3]
+codes[c(1,3)]
+codes[1:2]
+
+# Subsetting by using names
+codes["italy"]
+codes[c("canada","egypt")]
+
+      </code>
+      <code data-type="solution">
+
+# Country codes
+codes <- c(380, 124, 818)
+country <- c("italy","canada","egypt")
+names(codes) <- country
+
+# Subsetting by using indices
+codes[3]
+codes[c(1,3)]
+codes[1:2]
+
+# Subsetting by using names
+codes["italy"]
+codes[c("canada","egypt")]
+
+      </code>
+      <code data-type="sct">
+
+success_msg("Great! Head over to the next exercise.")
+
+      </code>
+      <div data-type="hint">
+      </div>
+    </div>
+  </div>
+
+  <h3><a href="/_pages/Day2/1-5.html">Previous: 1-3 | ls(): Lists of variables saved in the workspace </a></h3>
+  <h3><a href="/_pages/Day2/1-7.html">Next: 1-3 | Variable assignment</a></h3>    
+  <h3><a href="/d2">Back to Main</a></h3>
+  
+</body>
+</html>
