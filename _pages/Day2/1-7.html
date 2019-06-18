@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <title> Exercise 1-7 | sum(): Sum up the values in a vector</title>
+  <title> Exercise 1-7 | head(): Show first few data stored in data list</title>
   <link rel='shortcut icon' type='image/x-icon' href='/public/favicon.ico'/>
   <style>
     .exercise {
@@ -15,19 +15,29 @@
 <body>
   <div class="exercise">
     <div class="title">
-      <h2>sum(): Sum up the values in a vector</h2>
+      <h2>head(): Show first few data stored in data list<</h2>
     </div>
 
     <div class = "Description">
 
-<p>The function <a href="https://www.rdocumentation.org/packages/base/versions/3.6.0/topics/sum">sum</a> is a widely used function to sum up the values in a vector, data.frame. An argument <code>na.rm</code> is used to ignore NA values when the vector has NA values.
 
-<p>The basic usage of seq function is written in the exercise </p>
+
+R provides us with open datasets for the purpose of developing statistical methods. 
+`data()` will show the possible datasets we can freely use.
+`iris` is one of the most popular dataset for R users.
+
+For the further information of iris data, help(iris) will help you to understand the dataset.
+
+Since a dataset often has a huge volume of its size 
+
+[head()](https://www.rdocumentation.org/packages/utils/versions/3.6.0/topics/head)
+tail()
+
 
     <div class = "Instruction">
       <h3>Instruction</h3>
 
-<ul>
+<ul> 
 <li> Click the Submit button. </li>
 <li> See what happens in the console to generate even numbers within 1 to 100</li>
 </ul>
@@ -38,48 +48,25 @@
       <code data-type="pre-exercise-code"></code>
 
       <code data-type="sample-code">
-# Generate a vector from 1 to 10
-x <- seq(1, 10)
+# NOT RUN {
+head(letters)
+head(letters, n = -6L)
 
-# Sum up the values in variable x
-sum(x)
+head(freeny.x, n = 10L)
+head(freeny.y)
 
-# Generate a vector that includes NA value
-y <- c(seq(1,5), NA, seq(6,10))
+tail(letters)
+tail(letters, n = -6L)
 
-# print y
-y
+tail(freeny.x)
+tail(freeny.y)
 
-# Sum up the values in variable y
-sum(y)
-sum(y, na.rm = TRUE)
+tail(library)
 
-      </code>
-      <code data-type="solution">
-# Generate a vector from 1 to 10
-x <- seq(1, 10)
-
-# Sum up the values in variable x
-sum(x)
-
-# Generate a vector that includes NA value
-y <- c(seq(1,5), NA, seq(6,10))
-
-# print y
-y
-
-# Sum up the values in variable y
-sum(y)
-sum(y, na.rm = TRUE)
+head(stats::ftable(Titanic))
+# }
 
       </code>
-      <code data-type="sct">
-
-success_msg("Great! Head over to the next exercise.")
-
-      </code>
-      <div data-type="hint">
-      </div>
     </div>
   </div>
 

@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <title> Exercise 1-5 | data(): Prebuilt datasets</title>
+  <title> Exercise 1-5 | seq(): Sequence function</title>
   <link rel='shortcut icon' type='image/x-icon' href='/public/favicon.ico'/>
   <style>
     .exercise {
@@ -15,26 +15,77 @@
 <body>
   <div class="exercise">
     <div class="title">
-      <h2>data(): Prebuilt datasets</h2>
+      <h2>seq(): Sequence function</h2>
     </div>
 
     <div class = "Description">
 
-<p>There are several datasets that are included for users to practice and test out functions. You can see all the available datasets by typing:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>()</code></pre></div>
-<p>This shows you the object name for these datasets. These datasets are objects that can be used by simply typing the name. For example, if you type:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">co2</code></pre></div>
-<p>R will show you Mauna Loa atmospheric CO2 concentration data.</p>
+<p>The function <a href="https://www.rdocumentation.org/packages/base/versions/3.6.0/topics/seq">seq</a> is a widely used function to generate a sequence. <code>from</code>, <code>to</code>, <code>by</code>, and <code>length.out</code> are widely used arguments in seq function.</p>
 
-<p>Other prebuilt objects are mathematical quantities, such as the constant <span class="math inline">\(\pi\)</span> and <span class="math inline">\(\infty\)</span>:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">pi
-<span class="co">#&gt; [1] 3.14</span>
-<span class="ot">Inf</span><span class="op">+</span><span class="dv">1</span>
-<span class="co">#&gt; [1] Inf</span></code></pre></div>
+<p>The basic usage of seq function is written in the exercise. </p>
+
+    <div class = "Instruction">
+      <h3>Instruction</h3>
+
+<ul>
+<li> Click the Submit button. </li>
+<li> See what happens in the console to generate even numbers within 1 to 100</li>
+</ul>
+
 </div>
 
-  <h3><a href="/_pages/Day2/1-4.html">Previous: 1-4 | help(): Help document for pre-built functions </a></h3>
-  <h3><a href="/_pages/Day2/1-6.html">Next: 1-3 | Variable assignment</a></h3>    
+    <div data-datacamp-exercise data-lang="r" data-height="auto">
+      <code data-type="pre-exercise-code"></code>
+
+      <code data-type="sample-code">
+# Generate a sequence from 1 to 10 by using seq function
+seq(from = 1, to = 10)
+seq(1, 10)
+
+# Alternative way to make 1 to 10 sequence
+1:10
+
+# Generate a sequence of odd numbers from 1 to 100 by using seq function
+seq(from = 1, to = 100, by = 2)
+seq(1, 100, 2)
+
+# Generate a sequence of even numbers within 1 to 100 by using seq function
+seq(1, 100, 2) + 1
+seq(2, 100, 2)
+2 * seq(1, 50)
+
+      </code>
+      <code data-type="solution">
+# Generate a sequence from 1 to 10 by using seq function
+seq(from = 1, to = 10)
+seq(1, 10)
+
+# Alternative way to make 1 to 10 sequence
+1:10
+
+# Generate a sequence of odd numbers from 1 to 100 by using seq function
+seq(from = 1, to = 100, by = 2)
+seq(1, 100, 2)
+
+# Generate a sequence of even numbers within 1 to 100 by using seq function
+seq(1, 100, 2) + 1
+seq(2, 100, 2)
+2 * seq(1, 50)
+
+
+      </code>
+      <code data-type="sct">
+
+success_msg("Great! Head over to the next exercise.")
+
+      </code>
+      <div data-type="hint">
+      </div>
+    </div>
+  </div>
+
+  <h3><a href="/_pages/Day2/1-5.html">Previous: 1-3 | ls(): Lists of variables saved in the workspace </a></h3>
+  <h3><a href="/_pages/Day2/1-7.html">Next: 1-3 | Variable assignment</a></h3>    
   <h3><a href="/d2">Back to Main</a></h3>
   
 </body>

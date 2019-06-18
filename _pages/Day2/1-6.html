@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <title> Exercise 1-6 | seq(): Sequence function</title>
+  <title> Exercise 1-6 | sum(): Sum up values in a vector</title>
   <link rel='shortcut icon' type='image/x-icon' href='/public/favicon.ico'/>
   <style>
     .exercise {
@@ -15,14 +15,14 @@
 <body>
   <div class="exercise">
     <div class="title">
-      <h2>seq(): Sequence function</h2>
+      <h2>sum(): Sum up values in a vector</h2>
     </div>
 
     <div class = "Description">
 
-<p>The function <a href="https://www.rdocumentation.org/packages/base/versions/3.6.0/topics/seq">seq</a> is a widely used function to generate a sequence. <code>from</code>, <code>to</code>, <code>by</code>, and <code>length.out</code> are widely used arguments in seq function.</p>
+<p>The function <a href="https://www.rdocumentation.org/packages/base/versions/3.6.0/topics/sum">sum</a> is a widely used function to sum up the values in a vector, data.frame. An argument <code>na.rm</code> is used to ignore NA values when the vector has NA values.
 
-<p>The basic usage of seq function is written in the exercise. </p>
+<p>The basic usage of seq function is written in the exercise </p>
 
     <div class = "Instruction">
       <h3>Instruction</h3>
@@ -38,40 +38,39 @@
       <code data-type="pre-exercise-code"></code>
 
       <code data-type="sample-code">
-# Generate a sequence from 1 to 10 by using seq function
-seq(from = 1, to = 10)
-seq(1, 10)
+# Generate a vector from 1 to 10
+x <- seq(1, 10)
 
-# Alternative way to make 1 to 10 sequence
-1:10
+# Sum up the values in variable x
+sum(x)
 
-# Generate a sequence of odd numbers from 1 to 100 by using seq function
-seq(from = 1, to = 100, by = 2)
-seq(1, 100, 2)
+# Generate a vector that includes NA value
+y <- c(seq(1,5), NA, seq(6,10))
 
-# Generate a sequence of even numbers within 1 to 100 by using seq function
-seq(1, 100, 2) + 1
-seq(2, 100, 2)
-2 * seq(1, 50)
+# print y
+y
+
+# Sum up the values in variable y
+sum(y)
+sum(y, na.rm = TRUE)
 
       </code>
       <code data-type="solution">
-# Generate a sequence from 1 to 10 by using seq function
-seq(from = 1, to = 10)
-seq(1, 10)
+# Generate a vector from 1 to 10
+x <- seq(1, 10)
 
-# Alternative way to make 1 to 10 sequence
-1:10
+# Sum up the values in variable x
+sum(x)
 
-# Generate a sequence of odd numbers from 1 to 100 by using seq function
-seq(from = 1, to = 100, by = 2)
-seq(1, 100, 2)
+# Generate a vector that includes NA value
+y <- c(seq(1,5), NA, seq(6,10))
 
-# Generate a sequence of even numbers within 1 to 100 by using seq function
-seq(1, 100, 2) + 1
-seq(2, 100, 2)
-2 * seq(1, 50)
+# print y
+y
 
+# Sum up the values in variable y
+sum(y)
+sum(y, na.rm = TRUE)
 
       </code>
       <code data-type="sct">
