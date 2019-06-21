@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <title> Exercise 3-2 | install.packages(): install packages easily </title>
+  <title> Exercise 3-1 | data(): Prebuilt datasets </title>
   <link rel='shortcut icon' type='image/x-icon' href='/public/favicon.ico'/>
   <style>
     .exercise {
@@ -16,7 +16,7 @@
 
 <div> 
 
-<h2> install.packages(): install packages easily </h2>
+<h2> data(): Prebuilt datasets </h2>
 
 <p>In this page, we will learn prebuilt datasets in R. <code>data()</code> function will show the list of all datasets in your workspace. data() is a function within a "utils" package in "base" version of R installation so that you do not need to install any package to run this. </p>
 
@@ -26,12 +26,11 @@
 
 <p> You can see the document of <code> data() </code> function at the following link: </p>
 
-<ui><li><a href="https://www.rdocumentation.org/packages/utils/versions/3.6.0/topics/install.packages">install.packages()</a> : install pacakges</li>
+<ui><li><a href="https://www.rdocumentation.org/packages/utils/versions/3.6.0/topics/data">data()</a> : Show all public datasets in your workspace</li>
 
 <h3> Instruction </h3>
 
-<p> Copy and Run the sample code in your Rstudio to see how install.packages() function works. </p>  
-<p> DO NOT CLICK RUN </p>
+<p> Copy and Run the sample code in your Rstudio to see how data() function works. </p>  
 
 </div>
 
@@ -39,12 +38,11 @@
       <code data-type="pre-exercise-code"></code>
 
       <code data-type="sample-code">
-      # install packages "dplyr"
-      install.packages("dplyr")
+      # list all available data sets
+      data()                         
 
-      # install packages only when it is not installed
-      if(!require("ggplot2")) install.packages("ggplot2")
-      
+      # give information on data set 'USArrests'
+      help(USArrests)
       </code>
     </div>
 

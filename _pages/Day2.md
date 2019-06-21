@@ -4,13 +4,11 @@ title: Day 2 - Basic Usages of R
 permalink: d2
 ---
 
-# Under Construction 
+## 0. [R and RStudio Install](https://rafalab.github.io/dsbook/installing-r-rstudio.html)
 
-## 0. [R and RStudio Installation](https://rafalab.github.io/dsbook/installing-r-rstudio.html)
+> If you want to install R and RStudio in your computer, click the title above to the link that illustrated how to install R and RStudio.
 
-> If you want to install R and RStudio in your computer, click the above link that illustrated how to install R and RStudio.
-
-The following contents are extracted from the website [RafaLAB](https://rafalab.github.io/dsbook/) and modified to fit in the [datacamp light](https://github.com/datacamp/datacamp-light) environment. 
+The following contents are extracted from the website [RafaLAB](https://rafalab.github.io/dsbook/) and [official R documentation sites](https://www.rdocumentation.org/), and the contents are modified to fit in the [datacamp light](https://github.com/datacamp/datacamp-light) environment. 
 
 ## 1. [Basic R Functions](Day2/1-1.html)
 

@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <title> Exercise 1-3 | ls(): Lists of variables saved in the workspace </title>
+  <title> Exercise 1-3 | data(): Prebuilt datasets </title>
   <link rel='shortcut icon' type='image/x-icon' href='/public/favicon.ico'/>
   <style>
     .exercise {
@@ -13,79 +13,40 @@
   <script async src="https://cdn.datacamp.com/dcl-react.js.gz"></script>
 </head>
 <body>
-  <div class="exercise">
-    <div class="title">
-      <h2>ls(): Lists of variables saved in the workspace</h2>
-    </div>
 
-    <div class = "Description">
+<div> 
 
-<p>As we define objects in the console, we are actually changing the <em>workspace</em>. You can see all the variables saved in your workspace by typing:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ls</span>()
-<span class="co">#&gt; [1] &quot;a&quot;        &quot;b&quot;        &quot;c&quot;        &quot;img_path&quot; &quot;murders&quot;</span></code></pre></div>
-<p>In RStudio, the <em>Environment</em> tab shows the values:</p>
-<p><img src="R/img/rstudio-environment.png" width="70%" style="display: block; margin: auto;" /></p>
-<p>We should see <code>a</code>, <code>b</code> and <code>c</code>.
-  If you try to recover the value of a variable that is not in your workspace, you receive an error. For example, if you type <code>x</code> you will receive the following message: <code>Error: object 'x' not found</code>.</p>
+<h2> data(): Prebuilt datasets </h2>
 
-</div>
+<p>In this page, we will learn <code> data() </code> function that shows prebuilt datasets in R. <code>data()</code> function will show the list of all datasets in your workspace. <code> data() </code> is a function within a "utils" package in "base" version of R installation so that you do not need to install any package to run this. </p>
 
-    <div class = "Instruction">
-      <h3>Instruction</h3>
+<p>When you install R in your computer, the package "datasets" is included in the base installation of R. Datasets in the package "datasets" are provided openly and free. These datasets can be used when you want to verify your statistical methods. When you install some packages that include datasets, <code> data() </code> function will show the datasets in the packages. </p>
 
-<ul>
-<li></li>
-</ul>
+<img src="/d2/img/1-3_List_Of_Datasets.png">
+
+<p> You can see the document of <code> data() </code> function at the following link: </p>
+
+<ui><li><a href="https://www.rdocumentation.org/packages/utils/versions/3.6.0/topics/data">data()</a> : Show all datasets in your workspace</li>
+
+<h3> Instruction </h3>
+
+<p> Copy and Run the sample code in your Rstudio to see how data() function works. </p>  
 
 </div>
 
     <div data-datacamp-exercise data-lang="r" data-height="auto">
       <code data-type="pre-exercise-code"></code>
-      a <- "Happy R Coding"
-      b <- 3.141592
-      jj <- c("Jongjin", "Kim")
 
       <code data-type="sample-code">
-# Look up the variables in the workspace.
-ls()
-
-# Create new variable called x and assign 1.
-x <-
-
-# Look up the variables in the workspace after assigning x.
-ls()
+      # list all available data sets
+      data()                         
 
       </code>
-      <code data-type="solution">
-# Look up the variables in the workspace.
-ls()
-
-# Create new variable called x and assign any value.
-x <- 1
-
-# Look up the variables in the workspace after assigning x.
-ls()
-
-      </code>
-      <code data-type="sct">
-
-test_object("x", undefined_msg = "Make sure to define a variable `b`.",
-            incorrect_msg = "Make sure that you assign the correct value to `b`.")
-
-test_output_contains("ls()", incorrect_msg = "Make sure that you type the commamnd ls()")
-
-success_msg("Great! Head over to the next exercise.")
-
-      </code>
-      <div data-type="hint">
-      </div>
     </div>
-  </div>
 
-  <h3><a href="/_pages/Day2/1-2.html">Previous: 1-2 | print(): Print a value of object to the console. 
-</a></h3>
-  <h3><a href="/_pages/Day2/1-4.html">Next: 1-4 | help(): Help document for pre-built functions</a></h3>    
+  <h3><a href="/_pages/Day2/1-5.html">Previous: 1-3 | ls(): Lists of variables saved in the workspace </a></h3>
+  <h3><a href="/_pages/Day2/1-7.html">Next: 1-3 | Variable assignment</a></h3>    
   <h3><a href="/d2">Back to Main</a></h3>
-  
+
 </body>
 </html>

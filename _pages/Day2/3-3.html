@@ -22,9 +22,9 @@
 
 <p>When you install R in your computer, the package "datasets" is installed. Datasets in the package "datasets" are provided openly and free. These datasets can be used when you want to verify your statistical methods. When you install some packages that include datasets, data() function will show the datasets in the packages. </p>
 
-<p> help() function can be used to find out how the dataset is such as <code>help(iris)</code>.  </p>
+<p> <code> require() </code> function returns <code> FALSE </code> when the package is not installed.  </p>
 
-<p> You can see the document of <code> data() </code> function at the following link: </p>
+<p> You can see the document of <code> install.packages() </code> function at the following link: </p>
 
 <ui><li><a href="https://www.rdocumentation.org/packages/utils/versions/3.6.0/topics/install.packages">install.packages()</a> : install pacakges</li>
 
@@ -39,12 +39,15 @@
       <code data-type="pre-exercise-code"></code>
 
       <code data-type="sample-code">
+              # Please do not run this code in the environment.
+      # Instead, copy and run in your RStudio.
+
       # install packages "dplyr"
       install.packages("dplyr")
 
       # install packages only when it is not installed
       if(!require("ggplot2")) install.packages("ggplot2")
-      
+
       </code>
     </div>
 
