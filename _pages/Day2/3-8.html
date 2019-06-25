@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title> Exercise 3-8 | pull(): Accessing a data object in a piped data </title>
+  <link rel='shortcut icon' type='image/x-icon' href='/public/favicon.ico'/>
+  <style>
+    .exercise {
+      margin: 50px;
+    }
+  </style>
+
+  <script async src="https://cdn.datacamp.com/dcl-react.js.gz"></script>
+</head>
+<body>
+
+<div> 
+
+<h2> pull(): Accessing a data object in a piped data </h2>
+
+<p>The <code>us_murder_rate</code> object defined above represents just one number. Yet we are storing it in a data frame:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(us_murder_rate)
+<span class="co">#&gt; [1] &quot;data.frame&quot;</span></code></pre></div>
+<p>since, as most <strong>dplyr</strong> functions, <code>summarize</code> always returns a data frame.</p>
+<p>This might be problematic if we want to use this result with functions that require a numeric value. Here we show a useful trick for accessing values stored in data when using pipes: when a data object is piped that object and its columns can be accessed using the <code>pull</code> function. To understand what we mean take a look at this line of code:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">us_murder_rate <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">pull</span>(rate)
+<span class="co">#&gt; [1] 3.03</span></code></pre></div>
+<p>This returns the value in the <code>rate</code> column of <code>us_murder_rate</code> making it equivalent to <code>us_murder_rate$rate</code>.</p>
+<p>To get a number from the original data table with one line of code we can type:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">us_murder_rate &lt;-<span class="st"> </span>murders <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">summarize</span>(<span class="dt">rate =</span> <span class="kw">sum</span>(total) <span class="op">/</span><span class="st"> </span><span class="kw">sum</span>(population) <span class="op">*</span><span class="st"> </span><span class="dv">100000</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">pull</span>(rate)
+
+us_murder_rate
+<span class="co">#&gt; [1] 3.03</span></code></pre></div>
+<p>which is now a numeric:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(us_murder_rate)
+<span class="co">#&gt; [1] &quot;numeric&quot;</span></code></pre></div>
+</div>
+
+<h3> Instruction </h3>
+
+<p> Copy and Run the sample code in your Rstudio to see how install.packages() function works. </p>  
+<p> DO NOT CLICK RUN </p>
+
+</div>
+
+    <div data-datacamp-exercise data-lang="r" data-height="auto">
+      <code data-type="pre-exercise-code"></code>
+
+library(dplyr)
+library(dslabs)
+data(heights)
+
+data(murders)
+murders <- murders %>% mutate(rate = total/population*100000)
+us_murder_rate <- murders %>%
+  summarize(rate = sum(total) / sum(population) * 100000)
+
+      <code data-type="sample-code">
+      # Add the rate column
+us_murder_rate %>% pull(rate)
+
+      </code>
+    </div>
+
+  <h3><a href="/_pages/Day2/3-7.html">Previous: 3-7 | summarize(): Compute summary statistics </a></h3>
+  <h3><a href="/_pages/Day2/3-9.html">Next: 3-9 | group_by():  Group then summarize with group_by
+</a></h3>    
+  <h3><a href="/d2">Back to Main</a></h3>
+
+</body>
+</html>

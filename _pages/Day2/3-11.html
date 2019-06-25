@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title> Exercise 3-11 | top_n(): see the top n rows </title>
+  <link rel='shortcut icon' type='image/x-icon' href='/public/favicon.ico'/>
+  <style>
+    .exercise {
+      margin: 50px;
+    }
+  </style>
+
+  <script async src="https://cdn.datacamp.com/dcl-react.js.gz"></script>
+</head>
+<body>
+
+<div> 
+
+<h2> top_n(): see the top n rows </h2>
+
+<p>In the code above, we have used the function <code>head</code> to avoid having the page fill up with the entire dataset. If we want to see a larger proportion, we can use the <code>top_n</code> function. This function takes a data frame as it’s first argument, the number of rows to show in the second, and the variable to filter by in the third. Here is an example of how to see the top 10 rows:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">murders <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">top_n</span>(<span class="dv">10</span>, rate)
+<span class="co">#&gt;                   state abb        region population total  rate</span>
+<span class="co">#&gt; 1               Arizona  AZ          West    6392017   232  3.63</span>
+<span class="co">#&gt; 2              Delaware  DE         South     897934    38  4.23</span>
+<span class="co">#&gt; 3  District of Columbia  DC         South     601723    99 16.45</span>
+<span class="co">#&gt; 4               Georgia  GA         South    9920000   376  3.79</span>
+<span class="co">#&gt; 5             Louisiana  LA         South    4533372   351  7.74</span>
+<span class="co">#&gt; 6              Maryland  MD         South    5773552   293  5.07</span>
+<span class="co">#&gt; 7              Michigan  MI North Central    9883640   413  4.18</span>
+<span class="co">#&gt; 8           Mississippi  MS         South    2967297   120  4.04</span>
+<span class="co">#&gt; 9              Missouri  MO North Central    5988927   321  5.36</span>
+<span class="co">#&gt; 10       South Carolina  SC         South    4625364   207  4.48</span></code></pre></div>
+<p>Note that rows are not sorted by <code>rate</code>, only filtered. If want to sort, we need to use <code>arrange</code>. Note that if the third argument is left blank, <code>top_n</code>, filters by the last column.</p>
+
+</div>
+
+</div>
+
+<h3> Instruction </h3>
+
+<p> Copy and Run the sample code in your Rstudio to see how install.packages() function works. </p>  
+<p> DO NOT CLICK RUN </p>
+
+</div>
+
+    <div data-datacamp-exercise data-lang="r" data-height="auto">
+      <code data-type="pre-exercise-code"></code>
+
+library(dplyr)
+library(dslabs)
+data(heights)
+
+data(murders)
+murders <- murders %>% mutate(rate = total/population*100000)
+us_murder_rate <- murders %>%
+  summarize(rate = sum(total) / sum(population) * 100000)
+
+      <code data-type="sample-code">
+      # Add the rate column
+us_murder_rate %>% pull(rate)
+
+      </code>
+    </div>
+
+  <h3><a href="/_pages/Day2/3-10.html">Previous: 3-10 | arrange(): Sorting data frames </a></h3>
+  <h3><a href="/_pages/Day2/3-12.html">Next: 3-12 | case_when(): define categorical variables based on existing variables</a></h3>    
+  <h3><a href="/d2">Back to Main</a></h3>
+
+</body>
+</html>

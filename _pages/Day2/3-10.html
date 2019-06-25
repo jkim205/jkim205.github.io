@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title> Exercise 3-10 | arrange(): Sorting data frames </title>
+  <link rel='shortcut icon' type='image/x-icon' href='/public/favicon.ico'/>
+  <style>
+    .exercise {
+      margin: 50px;
+    }
+  </style>
+
+  <script async src="https://cdn.datacamp.com/dcl-react.js.gz"></script>
+</head>
+<body>
+
+<div> 
+
+<h2> arrange(): Sorting data frames </h2>
+
+<p>When examining a dataset, it is often convenient to sort the table by the different columns. We know about the <code>order</code> and <code>sort</code> function, but for ordering entire tables, the <strong>dplyr</strong> function <code>arrange</code> is useful. For example, here we order the states by population size:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">murders <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">arrange</span>(population) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">head</span>()
+<span class="co">#&gt;                  state abb        region population total   rate</span>
+<span class="co">#&gt; 1              Wyoming  WY          West     563626     5  0.887</span>
+<span class="co">#&gt; 2 District of Columbia  DC         South     601723    99 16.453</span>
+<span class="co">#&gt; 3              Vermont  VT     Northeast     625741     2  0.320</span>
+<span class="co">#&gt; 4         North Dakota  ND North Central     672591     4  0.595</span>
+<span class="co">#&gt; 5               Alaska  AK          West     710231    19  2.675</span>
+<span class="co">#&gt; 6         South Dakota  SD North Central     814180     8  0.983</span></code></pre></div>
+<p>With <code>arrange</code> we get to decide which column to sort by. To see the states by population, from smallest to largest, we arrange by <code>rate</code> instead:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">murders <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">arrange</span>(rate) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">head</span>()
+<span class="co">#&gt;           state abb        region population total  rate</span>
+<span class="co">#&gt; 1       Vermont  VT     Northeast     625741     2 0.320</span>
+<span class="co">#&gt; 2 New Hampshire  NH     Northeast    1316470     5 0.380</span>
+<span class="co">#&gt; 3        Hawaii  HI          West    1360301     7 0.515</span>
+<span class="co">#&gt; 4  North Dakota  ND North Central     672591     4 0.595</span>
+<span class="co">#&gt; 5          Iowa  IA North Central    3046355    21 0.689</span>
+<span class="co">#&gt; 6         Idaho  ID          West    1567582    12 0.766</span></code></pre></div>
+<p>Note that the default behavior is to order in ascending order. In <strong>dplyr</strong>, the function <code>desc</code> transforms a vector so that it is in descending order. To sort the table in descending order, we can type:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">murders <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">arrange</span>(<span class="kw">desc</span>(rate)) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">head</span>()
+<span class="co">#&gt;                  state abb        region population total  rate</span>
+<span class="co">#&gt; 1 District of Columbia  DC         South     601723    99 16.45</span>
+<span class="co">#&gt; 2            Louisiana  LA         South    4533372   351  7.74</span>
+<span class="co">#&gt; 3             Missouri  MO North Central    5988927   321  5.36</span>
+<span class="co">#&gt; 4             Maryland  MD         South    5773552   293  5.07</span>
+<span class="co">#&gt; 5       South Carolina  SC         South    4625364   207  4.48</span>
+<span class="co">#&gt; 6             Delaware  DE         South     897934    38  4.23</span></code></pre></div>
+<div id="nested-sorting" class="section level3">
+<h3><span class="header-section-number">5.8.1</span> Nested sorting</h3>
+<p>If we are ordering by a column with ties, we can use a second column to break the tie. Similarly, a third column can be used to break ties between first and second and so on. Here we order by <code>region</code>, then within region we order by murder rate:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">murders <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">arrange</span>(region, rate) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">head</span>()
+<span class="co">#&gt;           state abb    region population total  rate</span>
+<span class="co">#&gt; 1       Vermont  VT Northeast     625741     2 0.320</span>
+<span class="co">#&gt; 2 New Hampshire  NH Northeast    1316470     5 0.380</span>
+<span class="co">#&gt; 3         Maine  ME Northeast    1328361    11 0.828</span>
+<span class="co">#&gt; 4  Rhode Island  RI Northeast    1052567    16 1.520</span>
+<span class="co">#&gt; 5 Massachusetts  MA Northeast    6547629   118 1.802</span>
+<span class="co">#&gt; 6      New York  NY Northeast   19378102   517 2.668</span></code></pre></div>
+</div>
+<div id="the-top-n" class="section level3">
+<h3><span class="header-section-number">5.8.2</span> The top <span class="math inline">\(n\)</span></h3>
+
+</div>
+
+</div>
+
+<h3> Instruction </h3>
+
+<p> Copy and Run the sample code in your Rstudio to see how install.packages() function works. </p>  
+<p> DO NOT CLICK RUN </p>
+
+</div>
+
+    <div data-datacamp-exercise data-lang="r" data-height="auto">
+      <code data-type="pre-exercise-code"></code>
+
+library(dplyr)
+library(dslabs)
+data(heights)
+
+data(murders)
+murders <- murders %>% mutate(rate = total/population*100000)
+us_murder_rate <- murders %>%
+  summarize(rate = sum(total) / sum(population) * 100000)
+
+      <code data-type="sample-code">
+      # Add the rate column
+us_murder_rate %>% pull(rate)
+
+      </code>
+    </div>
+
+  <h3><a href="/_pages/Day2/3-9.html">Previous: 3-9 | group_by():  Group then summarize with group_by </a></h3>
+  <h3><a href="/_pages/Day2/3-11.html">Next: 3-11 | top_n(): see the top n rows </a></h3>    
+  <h3><a href="/d2">Back to Main</a></h3>
+
+</body>
+</html>

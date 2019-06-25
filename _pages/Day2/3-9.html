@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title> Exercise 3-9 | group_by():  Group then summarize with group_by </title>
+  <link rel='shortcut icon' type='image/x-icon' href='/public/favicon.ico'/>
+  <style>
+    .exercise {
+      margin: 50px;
+    }
+  </style>
+
+  <script async src="https://cdn.datacamp.com/dcl-react.js.gz"></script>
+</head>
+<body>
+
+<div> 
+
+<h2> <code> group_by() </code>: Group then summarize with <code>group_by</code> </h2>
+
+<p>A common operation in data exploration is to first split data into groups and then compute summaries for each group. For example, we may want to compute the average and standard deviation for men’s and women’s heights separately. The <code>group_by</code> function helps us do this.</p>
+<p>If we type this:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">heights <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(sex)
+<span class="co">#&gt; # A tibble: 1,050 x 2</span>
+<span class="co">#&gt; # Groups:   sex [2]</span>
+<span class="co">#&gt;   sex    height</span>
+<span class="co">#&gt;   &lt;fct&gt;   &lt;dbl&gt;</span>
+<span class="co">#&gt; 1 Male       75</span>
+<span class="co">#&gt; 2 Male       70</span>
+<span class="co">#&gt; 3 Male       68</span>
+<span class="co">#&gt; 4 Male       74</span>
+<span class="co">#&gt; 5 Male       61</span>
+<span class="co">#&gt; 6 Female     65</span>
+<span class="co">#&gt; # ... with 1,044 more rows</span></code></pre></div>
+<p>The result does not look very different from <code>heights</code>, except we see <code>Groups: sex [2]</code> when we print the object. Although not immediately obvious from its appearance, this is now a special data frame called a <em>grouped data frame</em> and <strong>dplyr</strong> functions, in particular <code>summarize</code>, will behave differently when acting on this object. Conceptually, you can think of this table as many tables, with the same columns but not necessarily the same number of rows, stacked together in one object. When we summarize the data after grouping, this is what happens:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">heights <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">group_by</span>(sex) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">summarize</span>(<span class="dt">average =</span> <span class="kw">mean</span>(height), <span class="dt">standard_deviation =</span> <span class="kw">sd</span>(height))
+<span class="co">#&gt; # A tibble: 2 x 3</span>
+<span class="co">#&gt;   sex    average standard_deviation</span>
+<span class="co">#&gt;   &lt;fct&gt;    &lt;dbl&gt;              &lt;dbl&gt;</span>
+<span class="co">#&gt; 1 Female    64.9               3.76</span>
+<span class="co">#&gt; 2 Male      69.3               3.61</span></code></pre></div>
+<p>The <code>summarize</code> function applies the summarization to each group separately.</p>
+<p>For another example, let’s compute the median murder rate in the four regions of the country:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">murders <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">group_by</span>(region) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">summarize</span>(<span class="dt">median_rate =</span> <span class="kw">median</span>(rate))
+<span class="co">#&gt; # A tibble: 4 x 2</span>
+<span class="co">#&gt;   region        median_rate</span>
+<span class="co">#&gt;   &lt;fct&gt;               &lt;dbl&gt;</span>
+<span class="co">#&gt; 1 Northeast            1.80</span>
+<span class="co">#&gt; 2 South                3.40</span>
+<span class="co">#&gt; 3 North Central        1.97</span>
+<span class="co">#&gt; 4 West                 1.29</span></code></pre></div>
+</div>
+
+</div>
+
+<h3> Instruction </h3>
+
+<p> Copy and Run the sample code in your Rstudio to see how install.packages() function works. </p>  
+<p> DO NOT CLICK RUN </p>
+
+</div>
+
+    <div data-datacamp-exercise data-lang="r" data-height="auto">
+      <code data-type="pre-exercise-code"></code>
+
+library(dplyr)
+library(dslabs)
+data(heights)
+
+data(murders)
+murders <- murders %>% mutate(rate = total/population*100000)
+us_murder_rate <- murders %>%
+  summarize(rate = sum(total) / sum(population) * 100000)
+
+      <code data-type="sample-code">
+      # Add the rate column
+us_murder_rate %>% pull(rate)
+
+      </code>
+    </div>
+
+  <h3><a href="/_pages/Day2/3-8.html">Previous: 3-8 | pull(): Accessing a data object in a piped data </a></h3>
+  <h3><a href="/_pages/Day2/3-10.html">Next: 3-10 | arrange(): Sorting data frames</a></h3>    
+  <h3><a href="/d2">Back to Main</a></h3>
+
+</body>
+</html>
