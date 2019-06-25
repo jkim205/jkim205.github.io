@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Day 5 - SEM in R
+title: Day 5 - Advanced Statistics in R
 permalink: d5
 ---
 
