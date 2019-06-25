@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title> Exercise 1-16 | Indexing Basics</title>
+  <link rel='shortcut icon' type='image/x-icon' href='/public/favicon.ico'/>
+  <style>
+    .exercise {
+      margin: 50px;
+    }
+  </style>
+
+  <script async src="https://cdn.datacamp.com/dcl-react.js.gz"></script>
+</head>
+<body>
+  <div class="exercise">
+    <div class="title">
+      <h2>Indexing Basics</h2>
+    </div>
+
+    <div class = "Description">
+
+<p>We use square brackets to access specific elements of a vector. For the vector <code>codes</code> we defined above, we can access the second element using:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">codes[<span class="dv">2</span>]
+<span class="co">#&gt; canada </span>
+<span class="co">#&gt;    124</span></code></pre></div>
+<p>You can get more than one entry by using a multi-entry vector as an index:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">codes[<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>)]
+<span class="co">#&gt; italy egypt </span>
+<span class="co">#&gt;   380   818</span></code></pre></div>
+<p>The sequences defined above are particularly useful if we want to access, say, the first two elements:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">codes[<span class="dv">1</span><span class="op">:</span><span class="dv">2</span>]
+<span class="co">#&gt;  italy canada </span>
+<span class="co">#&gt;    380    124</span></code></pre></div>
+<p>If the elements have names, we can also access the entries using these names. Below are two examples.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">codes[<span class="st">&quot;canada&quot;</span>]
+<span class="co">#&gt; canada </span>
+<span class="co">#&gt;    124</span>
+codes[<span class="kw">c</span>(<span class="st">&quot;egypt&quot;</span>,<span class="st">&quot;italy&quot;</span>)]
+<span class="co">#&gt; egypt italy </span>
+<span class="co">#&gt;   818   380</span></code></pre></div>
+
+
+    <div class = "Instruction">
+      <h3>Instruction</h3>
+
+<ul>
+<li> Click Run button to see the usage of indexing. </li>
+</ul>
+
+</div>
+
+    <div data-datacamp-exercise data-lang="r" data-height="auto">
+      <code data-type="pre-exercise-code"></code>
+
+      <code data-type="sample-code">
+
+# Make codes vector with names of country.
+codes <- c(380, 124, 818)
+country <- c("italy","canada","egypt")
+names(codes) <- country
+
+# You can access the second value in codes vector
+codes[2]
+
+# When you use two or more indexes, please use c function.
+codes[c(1,3)]
+
+# You can use : symbol for multiple indexing.
+codes[1:2]
+
+# You can use the assgined name to access the value.
+codes["canada"]
+
+# You can use the two or more assgined name to access the value.
+codes[c("egypt","italy")]
+
+
+      </code>
+    </div>
+  </div>
+
+  <h3><a href="/_pages/Day2/1-5.html">Previous: 1-3 | ls(): Lists of variables saved in the workspace </a></h3>
+  <h3><a href="/_pages/Day2/1-7.html">Next: 1-3 | Variable assignment</a></h3>    
+  <h3><a href="/d2">Back to Main</a></h3>
+  
+</body>
+</html>

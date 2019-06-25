@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <title> Exercise 1-6 | sum(): Sum up values in a vector</title>
+  <title> Exercise 1-13 | sum(): Sum up values in a vector</title>
   <link rel='shortcut icon' type='image/x-icon' href='/public/favicon.ico'/>
   <style>
     .exercise {
@@ -22,14 +22,14 @@
 
 <p>The function <a href="https://www.rdocumentation.org/packages/base/versions/3.6.0/topics/sum">sum</a> is a widely used function to sum up the values in a vector, data.frame. An argument <code>na.rm</code> is used to ignore NA values when the vector has NA values.
 
-<p>The basic usage of seq function is written in the exercise </p>
+<p>The basic usage of <code> sum() </code> function is written in the exercise. </p>
 
     <div class = "Instruction">
       <h3>Instruction</h3>
 
 <ul>
 <li> Click the Submit button. </li>
-<li> See what happens in the console to generate even numbers within 1 to 100</li>
+<li> See what happens in the console and Fix the sum(y) </li>
 </ul>
 
 </div>
@@ -50,9 +50,9 @@ y <- c(seq(1,5), NA, seq(6,10))
 # print y
 y
 
-# Sum up the values in variable y
-sum(y)
-sum(y, na.rm = TRUE)
+# Fix the following code by using na.rm argument to remove NA when calculating sum.
+z <- sum(y)
+z
 
       </code>
       <code data-type="solution">
@@ -68,12 +68,17 @@ y <- c(seq(1,5), NA, seq(6,10))
 # print y
 y
 
-# Sum up the values in variable y
-sum(y)
-sum(y, na.rm = TRUE)
+# Fix the following code by using na.rm argument to remove NA when calculating sum.
+z <- sum(y, na.rm=TRUE)
+z
 
       </code>
       <code data-type="sct">
+
+msg <- "Please see that objects are well-defined and correct."
+test_object("x", undefined_msg = msg, incorrect_msg = msg)
+test_object("y", undefined_msg = msg, incorrect_msg = msg)
+test_object("z", undefined_msg = msg, incorrect_msg = msg)
 
 success_msg("Great! Head over to the next exercise.")
 

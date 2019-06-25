@@ -19,6 +19,7 @@ Source: [R basics @ RafaLab/dsbook](https://rafalab.github.io/dsbook/r-basics.ht
 [1-1](Day2/1-1.html) | [1-2](Day2/1-2.html) | [1-3](Day2/1-3.html) | [1-4](Day2/1-4.html) 
 [1-5](Day2/1-5.html) | [1-6](Day2/1-6.html) | [1-7](Day2/1-7.html) | [1-8](Day2/1-8.html) 
 [1-9](Day2/1-9.html) | [1-10](Day2/1-10.html) | [1-11](Day2/1-11.html) | [1-12](Day2/1-12.html) 
+[1-13](Day2/1-13.html) | [1-14](Day2/1-14.html) | [1-15](Day2/1-15.html) | [1-16](Day2/1-16.html) 
 
 ## 2. [Basic Programming in R](Day2/2-1.html)
 
@@ -27,7 +28,7 @@ Source: [R basics @ RafaLab/dsbook](https://rafalab.github.io/dsbook/r-basics.ht
 Source: [Programming basics @ RafaLab/dsbook](https://rafalab.github.io/dsbook/programming-basics.html)
 
 [2-1](Day2/2-1.html) | [2-2](Day2/2-2.html) | [2-3](Day2/2-3.html) | [2-4](Day2/2-4.html) 
-[2-5](Day2/2-5.html) | [2-6](Day2/2-6.html) | [2-7](Day2/2-7.html) | [2-8](Day2/2-8.html) 
+[2-5](Day2/2-5.html) | [2-6](Day2/2-6.html)
 
 ## 3. [Dplyr: Data Processing package](Day2/3-1.html)
 
@@ -44,4 +45,5 @@ Source : [Tidyverse](https://rafalab.github.io/dsbook/tidyverse.html)
 > In this R course, you will learn the basic usage of importing data in R.
 
 [4-1](Day2/4-1.html) | [4-2](Day2/4-2.html) | [4-3](Day2/4-3.html) | [4-4](Day2/4-4.html) 
-[4-5](Day2/4-5.html) | [4-6](Day2/4-6.html) | [4-7](Day2/4-7.html) | [4-8](Day2/4-8.html) 
+[4-5](Day2/4-5.html) | [4-6](Day2/4-6.html)
+

@@ -16,25 +16,27 @@ Section | Title
 1-13 | sum(): 
 1-14 | min(), max():
 1-15 | which.min(), which.max():
+1-16 | Indexing:
 
 2-1 | Programming basics
 2-2 | if-else syntax: Conditional Expression
 2-3 | ifelse(): conditional
 2-4 | any(), all(): 
-2-5 | Exercise 3:
+2-5 | Defining a function:
 2-6 | For-loops syntax: Iteration process
-2-7 | apply(), sapply(), lapply(): apply function 
-2-8 | Exercise 4:
 
-3-5 | dplyr:: dplyr package
-3-1 | Case study: US Gun Murders 
-3-6 | mutate():
-3-11 | select():
-3-7 | filter():
-3-8 | summarize():
+3-1 | dplyr:: dplyr package
+3-2 | Case study: US Gun Murders 
+3-3 | mutate():
+3-4 | filter():
+3-5 | select():
+3-6 | %>%:
+3-7 | summarize():
+3-8 | pull():
 3-9 | group_by():
 3-10 | arrange():
-3-7 | %>%:
+3-11 | top_n():
+3-12 | case_when():
 
 4-1 | Import files
 4-2 | list.files():

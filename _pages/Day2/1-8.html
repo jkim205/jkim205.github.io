@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <title> Exercise 3-2 | library(): load installed packages </title>
+  <title> Exercise 1-8 | library(): load installed packages </title>
   <link rel='shortcut icon' type='image/x-icon' href='/public/favicon.ico'/>
   <style>
     .exercise {
@@ -18,22 +18,27 @@
 
 <h2> library(): load installed packages </h2>
 
-<p> After you are successful in installing useful packages, you should load the installed packages to use them. <code>libarary()</code> function is helpful to load the installed packages. You should declare library(PACKAGE_NAME) function once before using the functions in the package of PACKAGE_NAME. </p>
+<p> After you are successful in installing useful packages, you should load the installed packages to use them. <code>library()</code> function is helpful to load the installed packages. You should declare <code> library(PACKAGE_NAME) </code> function once before using the functions in the package. </p>
 
-<p> If you want to know the functions in the packages after installing the packages, pleases use library(help=PACKAGE_NAME). This will show the functions in the package. </p>
+<p> If you want to know the functions in the packages after installing the packages, pleases use <code> library(help=PACKAGE_NAME)</code>. This will show the functions in the package. </p>
 
-<p>require() function is similar to library() except for that require() returns FALSE when the package is not installed. </p>
+<p> <code> require()</code> function is similar to <code> library() </code> except for that <code> require() </code> returns <code> FALSE </code> when the package is not installed. </p>
 
 <p> You can see the document of <code> library() </code> function at the following link: </p>
 
 <ui><li><a href="https://www.rdocumentation.org/packages/base/versions/3.6.0/topics/library">library()</a> : load installed pacakges</li>
 
-Also, this document is popped up when you type help(library) in the console.
+Also, this document is popped up when you type <code> help(library) </code> in the console.
+
+If you want to unload the packages, you can click out the checkbox in the packages in RStudio, or you can use <code> detach() </code> function. The way to use <code> detach() </code> can be found when typing <code> help(detach) </code> in your R workspace.
 
 <h3> Instruction </h3>
 
-<p> Copy and Run the sample code in your Rstudio to see how install.packages() function works. </p>  
-<p> DO NOT CLICK RUN </p>
+<ul> 
+  <li> Copy and Run the sample code in your Rstudio to see how <code>library()</code> function works. </li> 
+  <li> See that the first <code> %>% </code> shows error before loading dplyr package. </li> 
+</ul>  
+
 
 </div>
 

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title> Exercise 1-15 | which(): Find an index under condition. </title>
+  <link rel='shortcut icon' type='image/x-icon' href='/public/favicon.ico'/>
+  <style>
+    .exercise {
+      margin: 50px;
+    }
+  </style>
+
+  <script async src="https://cdn.datacamp.com/dcl-react.js.gz"></script>
+</head>
+<body>
+  <div class="exercise">
+    <div class="title">
+      <h2>which(): Find an index under condition.</h2>
+    </div>
+
+    <div class = "Description">
+
+<p> The function <a href="https://www.rdocumentation.org/packages/base/versions/3.6.0/topics/which">which()</a> is widely used to check which indices in a vector satisfy certain condition.
+</p>
+
+<p>The function <a href="https://www.rdocumentation.org/packages/base/versions/3.6.0/topics/which.min">which.min</a> is a widely used function to find the index where maximum and minimum value exists in a vector, data.frame. 
+
+<p>The basic usage of <code> which() </code> and <code> which.min() </code> function is written in the exercise. </p>
+
+    <div class = "Instruction">
+      <h3>Instruction</h3>
+
+<ul>
+<li> Revise </li>
+</ul>
+
+</div>
+
+    <div data-datacamp-exercise data-lang="r" data-height="auto">
+      <code data-type="pre-exercise-code"></code>
+
+      <code data-type="sample-code">
+
+# Create a variable x
+x <- c(1:4, 0:5, 11)
+
+# Logical vector
+x>4
+
+# Fix the following code to save indices where the value is larger than 4 into variable a.
+a <- which()
+
+# Access the values where x > 4.
+x[a]
+
+# Find an index where a minimum value exists.
+which.min(x)
+
+# Find an index where a maximum value exists.
+
+
+      </code>
+      <code data-type="solution">
+# Create a variable x
+x <- c(1:4, 0:5, 11)
+
+# Logical vector
+x>4
+
+# Fix the following code to save indices where the value is larger than 4 into variable a.
+a <- which(x>4)
+
+# Access the values where x > 4.
+x[a]
+
+# Find an index where a minimum value exists.
+which.min(x)
+
+# Find an index where a maximum value exists.
+which.max(x)
+
+      </code>
+      <code data-type="sct">
+
+msg <- "Please see that objects are well-defined and correct."
+test_object(a, incorrect_msg = msg, undefined_msg = msg)
+test_function(which)
+test_function(which.min)
+test_function(which.max)
+success_msg("Great! Head over to the next exercise.")
+
+      </code>
+      <div data-type="hint">
+      </div>
+    </div>
+  </div>
+
+  <h3><a href="/_pages/Day2/1-5.html">Previous: 1-3 | ls(): Lists of variables saved in the workspace </a></h3>
+  <h3><a href="/_pages/Day2/1-7.html">Next: 1-3 | Variable assignment</a></h3>    
+  <h3><a href="/d2">Back to Main</a></h3>
+  
+</body>
+</html>

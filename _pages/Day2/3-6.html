@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <title> Exercise 3-5 | dplyr:: package for data manipulation </title>
+  <title> Exercise 3-5 | %>% : Pipe </title>
   <link rel='shortcut icon' type='image/x-icon' href='/public/favicon.ico'/>
   <style>
     .exercise {
@@ -16,49 +16,54 @@
 
 <div> 
 
-<h2> dplyr:: package for data manipulation</h2>
+<h2> %>%: Pipe </h2>
 
+<p>With <strong>dplyr</strong> we can perform a series of operations, for example <code>select</code> and then <code>filter</code>, by sending the results of one function to another using what is called the <em>pipe operator</em>: <code>%&gt;%</code>. Some details are included below.</p>
+<p>We wrote code above to show three variables (state, region, rate) for states that have murder rates below 0.71. To do this, we defined the intermediate object <code>new_table</code>. In <strong>dplyr</strong> we can write code that looks more like a description of what we want to do without intermediate objects:</p>
+<p><span class="math display">\[ \mbox{original data }
+\rightarrow \mbox{ select }
+\rightarrow \mbox{ filter } \]</span></p>
+<p>For such an operation, we can use the pipe <code>%&gt;%</code>. The code looks like this:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">murders <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(state, region, rate) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(rate <span class="op">&lt;=</span><span class="st"> </span><span class="fl">0.71</span>)
+<span class="co">#&gt;           state        region  rate</span>
+<span class="co">#&gt; 1        Hawaii          West 0.515</span>
+<span class="co">#&gt; 2          Iowa North Central 0.689</span>
+<span class="co">#&gt; 3 New Hampshire     Northeast 0.380</span>
+<span class="co">#&gt; 4  North Dakota North Central 0.595</span>
+<span class="co">#&gt; 5       Vermont     Northeast 0.320</span></code></pre></div>
+<p>This line of code is equivalent to the two lines of code above. What is going on here?</p>
+<p>In general, the pipe <em>sends</em> the result of the left side of the pipe to be the first argument of the function on the right side of the pipe. </p>
 
-<p>dplyr is a grammar of data manipulation, providing a consistent set of
-verbs that help you solve the most common data manipulation challenges:</p>
-<ul>
-<li><code>mutate()</code> adds new variables that are functions of existing
-variables</li>
-<li><code>select()</code> picks variables based on their names.</li>
-<li><code>filter()</code> picks cases based on their values.</li>
-<li><code>summarise()</code> reduces multiple values down to a single summary.</li>
-<li><code>arrange()</code> changes the ordering of the rows.</li>
-<li><code>%>%</code> improves readability when using multiple functions</li>
-</ul>
-<p>These all combine naturally with <code>group_by()</code> which allows you to
-perform any operation &#x201C;by group&#x201D;. You can learn more about them in
-<code>vignette(&quot;dplyr&quot;)</code>. As well as these single-table verbs, dplyr also
-provides a variety of two-table verbs, which you can learn about in
-<code>vignette(&quot;two-table&quot;)</code>.</p>
-<p>dplyr is designed to abstract over how the data is stored. That means as
-well as working with local data frames, you can also work with remote
-database tables, using exactly the same R code. Install the dbplyr
-package then read <code>vignette(&quot;databases&quot;, package = &quot;dbplyr&quot;)</code>.</p>
-<p>If you are new to dplyr, the best place to start is the <a href="http://r4ds.had.co.nz/transform.html">data import
-chapter</a> in R for data science.</p>
+<p>Remember that the pipe sends values to the first argument, so we can define other arguments as if the first argument is already defined:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">16</span> <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">sqrt</span>() <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">log</span>(<span class="dt">base =</span> <span class="dv">2</span>)
+<span class="co">#&gt; [1] 2</span></code></pre></div>
+<p>Therefore, when using the pipe with data frames and <strong>dplyr</strong>, we no longer need to specify the required first argument since the <strong>dplyr</strong> functions we have described all take the data as the first argument. In the code we wrote:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">murders <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(state, region, rate) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(rate <span class="op">&lt;=</span><span class="st"> </span><span class="fl">0.71</span>)</code></pre></div>
+<p><code>murders</code> is the first argument of the <code>select</code> function, and the new data frame (formerly <code>new_table</code>) is the first argument of the <code>filter</code> function.</p>
+
+</div>
 
 <h3> Instruction </h3>
 
-<p> Read carefully and Click the Next Page. </p>  
+<p> Copy and Run the sample code in your Rstudio to see how install.packages() function works. </p>  
+<p> DO NOT CLICK RUN </p>
 
 </div>
 
     <div data-datacamp-exercise data-lang="r" data-height="auto">
       <code data-type="pre-exercise-code"></code>
 
-      
-      <code data-type="sample-code">
-      # Please do not run this code in the environment.
-      # Instead, copy and run in your RStudio.
+library(dslabs)
+data("murders")
 
-      # The following will show the basic usages of dplyr package
-      vignette("dplyr")
-      
+
+      <code data-type="sample-code">
+      # Add the rate column
+      murders <- mutate(murders, rate = total / population * 100000)
+
+      # Check murders to find that the new column is added.
+      head(murders)
+
       </code>
     </div>
 

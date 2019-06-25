@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <title> Exercise 3-2 | install.packages(): install packages easily </title>
+  <title> Exercise 3-3 | mutate(): Adding a column</title>
   <link rel='shortcut icon' type='image/x-icon' href='/public/favicon.ico'/>
   <style>
     .exercise {
@@ -16,17 +16,22 @@
 
 <div> 
 
-<h2> install.packages(): install packages easily </h2>
+<h2> mutate(): Adding a column </h2>
 
-<p>In this page, we will learn prebuilt datasets in R. <code>data()</code> function will show the list of all datasets in your workspace. data() is a function within a "utils" package in "base" version of R installation so that you do not need to install any package to run this. </p>
+<p>We want all the necessary information for our analysis to be included in the data table. So the first task is to add the murder rates to our murders data frame. The function <code>mutate</code> takes the data frame as a first argument and the name and values of the variable as a second argument using the convention <code>name = values</code>. So, to add murder rates, we use:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(dslabs)
+<span class="kw">data</span>(<span class="st">&quot;murders&quot;</span>)
+murders &lt;-<span class="st"> </span><span class="kw">mutate</span>(murders, <span class="dt">rate =</span> total <span class="op">/</span><span class="st"> </span>population <span class="op">*</span><span class="st"> </span><span class="dv">100000</span>)</code></pre></div>
 
-<p>When you install R in your computer, the package "datasets" is installed. Datasets in the package "datasets" are provided openly and free. These datasets can be used when you want to verify your statistical methods. When you install some packages that include datasets, data() function will show the datasets in the packages. </p>
-
-<p> <code> require() </code> function returns <code> FALSE </code> when the package is not installed.  </p>
-
-<p> You can see the document of <code> install.packages() </code> function at the following link: </p>
-
-<ui><li><a href="https://www.rdocumentation.org/packages/utils/versions/3.6.0/topics/install.packages">install.packages()</a> : install pacakges</li>
+<p>We can see that the new column is added:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(murders)
+<span class="co">#&gt;        state abb region population total rate</span>
+<span class="co">#&gt; 1    Alabama  AL  South    4779736   135 2.82</span>
+<span class="co">#&gt; 2     Alaska  AK   West     710231    19 2.68</span>
+<span class="co">#&gt; 3    Arizona  AZ   West    6392017   232 3.63</span>
+<span class="co">#&gt; 4   Arkansas  AR  South    2915918    93 3.19</span>
+<span class="co">#&gt; 5 California  CA   West   37253956  1257 3.37</span>
+<span class="co">#&gt; 6   Colorado  CO   West    5029196    65 1.29</span></code></pre></div>
 
 <h3> Instruction </h3>
 
@@ -38,15 +43,16 @@
     <div data-datacamp-exercise data-lang="r" data-height="auto">
       <code data-type="pre-exercise-code"></code>
 
+library(dslabs)
+data("murders")
+
+
       <code data-type="sample-code">
-              # Please do not run this code in the environment.
-      # Instead, copy and run in your RStudio.
+      # Add the rate column
+      murders <- mutate(murders, rate = total / population * 100000)
 
-      # install packages "dplyr"
-      install.packages("dplyr")
-
-      # install packages only when it is not installed
-      if(!require("ggplot2")) install.packages("ggplot2")
+      # Check murders to find that the new column is added.
+      head(murders)
 
       </code>
     </div>

@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <title> Exercise 3-2 | library(): load installed packages </title>
+  <title> Exercise 3-4 | filter(): Subsetting with filter</title>
   <link rel='shortcut icon' type='image/x-icon' href='/public/favicon.ico'/>
   <style>
     .exercise {
@@ -16,19 +16,17 @@
 
 <div> 
 
-<h2> library(): load installed packages </h2>
+<h2> filter(): Subsetting with filter </h2>
 
-<p> After you are successful in installing useful packages, you should load the installed packages to use them. <code>libarary()</code> function is helpful to load the installed packages. You should declare library(PACKAGE_NAME) function once before using the functions in the package of PACKAGE_NAME. </p>
-
-<p> If you want to know the functions in the packages after installing the packages, pleases use library(help=PACKAGE_NAME). This will show the functions in the package. </p>
-
-<p>require() function is similar to library() except for that require() returns FALSE when the package is not installed. </p>
-
-<p> You can see the document of <code> library() </code> function at the following link: </p>
-
-<ui><li><a href="https://www.rdocumentation.org/packages/base/versions/3.6.0/topics/library">library()</a> : load installed pacakges</li>
-
-Also, this document is popped up when you type help(library) in the console.
+<p>Now suppose that we want to filter the data table to only show the entries for which the murder rate is lower than 0.71. To do this we use the <code>filter</code> function, which takes the data table as the first argument and then the conditional statement as the second. Like <code>mutate</code>, we can use the unquoted variable names from <code>murders</code> inside the function and it will know we mean the columns and not objects in the workspace.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">filter</span>(murders, rate <span class="op">&lt;=</span><span class="st"> </span><span class="fl">0.71</span>)
+<span class="co">#&gt;           state abb        region population total  rate</span>
+<span class="co">#&gt; 1        Hawaii  HI          West    1360301     7 0.515</span>
+<span class="co">#&gt; 2          Iowa  IA North Central    3046355    21 0.689</span>
+<span class="co">#&gt; 3 New Hampshire  NH     Northeast    1316470     5 0.380</span>
+<span class="co">#&gt; 4  North Dakota  ND North Central     672591     4 0.595</span>
+<span class="co">#&gt; 5       Vermont  VT     Northeast     625741     2 0.320</span></code></pre></div>
+</div>
 
 <h3> Instruction </h3>
 
@@ -40,21 +38,17 @@ Also, this document is popped up when you type help(library) in the console.
     <div data-datacamp-exercise data-lang="r" data-height="auto">
       <code data-type="pre-exercise-code"></code>
 
-      Length <- iris$Sepal.Length
+library(dslabs)
+data("murders")
+
 
       <code data-type="sample-code">
-      # Length is a pre loaded vector in the environment.
-      Length
+      # Add the rate column
+      murders <- mutate(murders, rate = total / population * 100000)
 
-      # Use %>% before loading dplyr
-      Length %>% mean()
+      # Check murders to find that the new column is added.
+      head(murders)
 
-      # load package dplyr
-      library(dplyr)
-
-      # Use %>% after loading dplyr package
-      Length %>% mean()
-      
       </code>
     </div>
 

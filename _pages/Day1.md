@@ -3,6 +3,12 @@ layout: page
 title: Day 1 - Intro to R and data types
 permalink: d1
 ---
+## Why should we learn R?
+
+The following two videos are helpful to understand why we should learn R.
+
+[Why Data Scientists Use R?](https://youtu.be/u94oFWZCTCU)
+[Reasons to learn the R Programming Language](https://youtu.be/W2GZFeYGU3s)
 
 ## [Intro to basics](Day1/1-1.html)
 

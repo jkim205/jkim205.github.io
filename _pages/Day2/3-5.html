@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <title> Exercise 3-5 | dplyr:: package for data manipulation </title>
+  <title> Exercise 3-5 | select(): Selecting columns with select</title>
   <link rel='shortcut icon' type='image/x-icon' href='/public/favicon.ico'/>
   <style>
     .exercise {
@@ -16,54 +16,40 @@
 
 <div> 
 
-<h2> dplyr:: dplyr package </h2>
+<h2> select(): Selecting columns with select </h2>
 
-
-<p>dplyr is a grammar of data manipulation, providing a consistent set of
-verbs that help you solve the most common data manipulation challenges:</p>
-<ul>
-<li><code>mutate()</code> adds new variables that are functions of existing
-variables</li>
-<li><code>select()</code> picks variables based on their names.</li>
-<li><code>filter()</code> picks cases based on their values.</li>
-<li><code>summarise()</code> reduces multiple values down to a single summary.</li>
-<li><code>arrange()</code> changes the ordering of the rows.</li>
-</ul>
-<p>These all combine naturally with <code>group_by()</code> which allows you to
-perform any operation &#x201C;by group&#x201D;. You can learn more about them in
-<code>vignette(&quot;dplyr&quot;)</code>. As well as these single-table verbs, dplyr also
-provides a variety of two-table verbs, which you can learn about in
-<code>vignette(&quot;two-table&quot;)</code>.</p>
-<p>dplyr is designed to abstract over how the data is stored. That means as
-well as working with local data frames, you can also work with remote
-database tables, using exactly the same R code. Install the dbplyr
-package then read <code>vignette(&quot;databases&quot;, package = &quot;dbplyr&quot;)</code>.</p>
-<p>If you are new to dplyr, the best place to start is the <a href="http://r4ds.had.co.nz/transform.html">data import
-chapter</a> in R for data science.</p>
+<p>Although our data table only has six columns, some data tables include hundreds. If we want to view just a few, we can use the <strong>dplyr</strong> <code>select</code> function. In the code below we select three columns, assign this to a new object and then filter the new object:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">new_table &lt;-<span class="st"> </span><span class="kw">select</span>(murders, state, region, rate)
+<span class="kw">filter</span>(new_table, rate <span class="op">&lt;=</span><span class="st"> </span><span class="fl">0.71</span>)
+<span class="co">#&gt;           state        region  rate</span>
+<span class="co">#&gt; 1        Hawaii          West 0.515</span>
+<span class="co">#&gt; 2          Iowa North Central 0.689</span>
+<span class="co">#&gt; 3 New Hampshire     Northeast 0.380</span>
+<span class="co">#&gt; 4  North Dakota North Central 0.595</span>
+<span class="co">#&gt; 5       Vermont     Northeast 0.320</span></code></pre></div>
+<p>In the call to <code>select</code>, the first argument <code>murders</code> is an object, but <code>state</code>, <code>region</code>, and <code>rate</code> are variable names.</p>
+</div>
 
 <h3> Instruction </h3>
 
-<p> Click the Next Page. </p>  
+<p> Copy and Run the sample code in your Rstudio to see how install.packages() function works. </p>  
+<p> DO NOT CLICK RUN </p>
 
 </div>
 
     <div data-datacamp-exercise data-lang="r" data-height="auto">
       <code data-type="pre-exercise-code"></code>
 
-      Length <- iris$Sepal.Length
+library(dslabs)
+data("murders")
+
 
       <code data-type="sample-code">
-      # Length is a pre loaded vector in the environment.
-      Length
+      # Add the rate column
+      murders <- mutate(murders, rate = total / population * 100000)
 
-      # Use %>% before loading dplyr
-      Length %>% mean()
-
-      # load package dplyr
-      library(dplyr)
-
-      # Use %>% after loading dplyr package
-      Length %>% mean()
+      # Check murders to find that the new column is added.
+      head(murders)
 
       </code>
     </div>

@@ -28,6 +28,8 @@
 <p>We should see <code>a</code>, <code>b</code> and <code>c</code>.
   If you try to recover the value of a variable that is not in your workspace, you receive an error. For example, if you type <code>x</code> you will receive the following message: <code>Error: object 'x' not found</code>.</p>
 
+<p> If you want to save memory spaces in workspace, you can use <code> rm() </code> function to remove variable in your workspace. </p> 
+
 </div>
 
     <div class = "Instruction">
@@ -49,8 +51,11 @@
 # Look up the variables in the workspace.
 ls()
 
-# Create new variable called x and assign 1.
-x <-
+# Create new variable called x and assign log(8, base=2).
+x <- 
+
+# Remove variable jj in a workspace
+
 
 # Look up the variables in the workspace after assigning x.
 ls()
@@ -61,7 +66,10 @@ ls()
 ls()
 
 # Create new variable called x and assign any value.
-x <- 1
+x <- log(8, base=2)
+
+# Remove variable jj in a workspace
+rm(jj)
 
 # Look up the variables in the workspace after assigning x.
 ls()
@@ -69,10 +77,12 @@ ls()
       </code>
       <code data-type="sct">
 
-test_object("x", undefined_msg = "Make sure to define a variable `b`.",
-            incorrect_msg = "Make sure that you assign the correct value to `b`.")
+test_object("x", undefined_msg = "Make sure to define a variable `x`.",
+            incorrect_msg = "Make sure that you assign the correct value to `x`.")
 
 test_output_contains("ls()", incorrect_msg = "Make sure that you type the commamnd ls()")
+test_output_contains("rm(jj)", incorrect_msg = "Make sure that you remove jj from your workspace.")
+
 
 success_msg("Great! Head over to the next exercise.")
 

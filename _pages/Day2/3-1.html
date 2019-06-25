@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <title> Exercise 3-1 | data(): Prebuilt datasets </title>
+  <title> Exercise 3-1 | dplyr:: dplyr package </title>
   <link rel='shortcut icon' type='image/x-icon' href='/public/favicon.ico'/>
   <style>
     .exercise {
@@ -14,23 +14,40 @@
 </head>
 <body>
 
-<div> 
+<div class = "Description"> 
 
-<h2> data(): Prebuilt datasets </h2>
+<h2> dplyr:: dplyr package </h2>
 
-<p>In this page, we will learn prebuilt datasets in R. <code>data()</code> function will show the list of all datasets in your workspace. data() is a function within a "utils" package in "base" version of R installation so that you do not need to install any package to run this. </p>
+<p>The <strong>dplyr</strong> package from the <strong>tidyverse</strong> introduces functions that perform some of the most common operations when working with data frames and uses names for these functions that are relatively easy to remember. For instance, to change the data table by adding a new column, we use <code>mutate</code>. To filter the data table to a subset of rows, we use <code>filter</code>. Finally, to subset the data by selecting specific columns, we use <code>select</code>.</p>
 
-<p>When you install R in your computer, the package "datasets" is installed. Datasets in the package "datasets" are provided openly and free. These datasets can be used when you want to verify your statistical methods. When you install some packages that include datasets, data() function will show the datasets in the packages. </p>
+<p>dplyr is a grammar of data manipulation, providing a consistent set of
+verbs that help you solve the most common data manipulation challenges:</p>
+<ul>
+<li><code>mutate()</code> adds new variables that are functions of existing
+variables</li>
+<li><code>select()</code> picks variables based on their names.</li>
+<li><code>filter()</code> picks cases based on their values.</li>
+<li><code>summarise()</code> reduces multiple values down to a single summary.</li>
+<li><code>arrange()</code> changes the ordering of the rows.</li>
+</ul>
+<p>These all combine naturally with <code>group_by()</code> which allows you to
+perform any operation &#x201C;by group&#x201D;. You can learn more about them in
+<code>vignette(&quot;dplyr&quot;)</code>. As well as these single-table verbs, dplyr also
+provides a variety of two-table verbs, which you can learn about in
+<code>vignette(&quot;two-table&quot;)</code>.</p>
+<p>dplyr is designed to abstract over how the data is stored. That means as
+well as working with local data frames, you can also work with remote
+database tables, using exactly the same R code. Install the dbplyr
+package then read <code>vignette(&quot;databases&quot;, package = &quot;dbplyr&quot;)</code>.</p>
+<p>If you are new to dplyr, the best place to start is the <a href="http://r4ds.had.co.nz/transform.html">data import
+chapter</a> in R for data science.</p>
 
-<p> help() function can be used to find out how the dataset is such as <code>help(iris)</code>.  </p>
-
-<p> You can see the document of <code> data() </code> function at the following link: </p>
-
-<ui><li><a href="https://www.rdocumentation.org/packages/utils/versions/3.6.0/topics/data">data()</a> : Show all public datasets in your workspace</li>
+</div>
+<div class = "Instruction">
 
 <h3> Instruction </h3>
 
-<p> Copy and Run the sample code in your Rstudio to see how data() function works. </p>  
+<p> Copy and Run the sample code in your Rstudio to install dplyr package. </p>  
 
 </div>
 
@@ -38,11 +55,16 @@
       <code data-type="pre-exercise-code"></code>
 
       <code data-type="sample-code">
-      # list all available data sets
-      data()                         
+      # NOT RUN
+      # PLEASE COPY THE CODE IN YOUR RSTUDIO.
 
-      # give information on data set 'USArrests'
-      help(USArrests)
+      # Install a dplyr package
+        install.packages("dplyr") 
+
+      # Look up the functions in the 'dplyr' package.
+      library(help=dplyr)
+
+
       </code>
     </div>
 

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title> Exercise 3-7 | summarize(): Compute summary statistics </title>
+  <link rel='shortcut icon' type='image/x-icon' href='/public/favicon.ico'/>
+  <style>
+    .exercise {
+      margin: 50px;
+    }
+  </style>
+
+  <script async src="https://cdn.datacamp.com/dcl-react.js.gz"></script>
+</head>
+<body>
+
+<div> 
+
+<h2> Summarize(): Compute summary statistics </h2>
+
+<p>An important part of exploratory data analysis is summarizing data. The average and standard deviation are two examples of widely used summary statistics. More informative summaries can often be achieved by first splitting data into groups. In this section, we cover two new <strong>dplyr</strong> verbs that make these computations easier: <code>summarize</code> and <code>group_by</code>. We learn to access resulting values using the <code>pull</code> function.</p>
+<div id="summarize" class="section level3">
+<h3><span class="header-section-number">5.7.1</span> <code>summarize</code></h3>
+<p>The <code>summarize</code> function in <strong>dplyr</strong> provides a way to compute summary statistics with intuitive and readable code. We start with a simple example based on heights. The <code>heights</code> dataset includes heights and sex reported by students in an in-class survey.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(dplyr)
+<span class="kw">library</span>(dslabs)
+<span class="kw">data</span>(heights)</code></pre></div>
+<p>The following code computes the average and standard deviation for females:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">s &lt;-<span class="st"> </span>heights <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">filter</span>(sex <span class="op">==</span><span class="st"> &quot;Female&quot;</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">summarize</span>(<span class="dt">average =</span> <span class="kw">mean</span>(height), <span class="dt">standard_deviation =</span> <span class="kw">sd</span>(height))
+s
+<span class="co">#&gt;   average standard_deviation</span>
+<span class="co">#&gt; 1    64.9               3.76</span></code></pre></div>
+<p>This takes our original data table as input, filters it to keep only females, and then produces a new summarized table with just the average and the standard deviation of heights. We get to choose the names of the columns of the resulting table. For example, above we decided to use <code>average</code> and <code>standard_deviation</code>, but we could have used other names just the same.</p>
+</div>
+
+<h3> Instruction </h3>
+
+<p> Copy and Run the sample code in your Rstudio to see how install.packages() function works. </p>  
+<p> DO NOT CLICK RUN </p>
+
+</div>
+
+    <div data-datacamp-exercise data-lang="r" data-height="auto">
+      <code data-type="pre-exercise-code"></code>
+
+library(dslabs)
+data("murders")
+
+
+      <code data-type="sample-code">
+      # Add the rate column
+      murders <- mutate(murders, rate = total / population * 100000)
+
+      # Check murders to find that the new column is added.
+      head(murders)
+
+      </code>
+    </div>
+
+  <h3><a href="/_pages/Day2/1-5.html">Previous: 1-3 | ls(): Lists of variables saved in the workspace </a></h3>
+  <h3><a href="/_pages/Day2/1-7.html">Next: 1-3 | Variable assignment</a></h3>    
+  <h3><a href="/d2">Back to Main</a></h3>
+
+</body>
+</html>

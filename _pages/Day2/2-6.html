@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title> Exercise 2-6 | For-Loop </title>
+  <link rel='shortcut icon' type='image/x-icon' href='/public/favicon.ico'/>
+  <style>
+    .exercise {
+      margin: 50px;
+    }
+  </style>
+
+  <script async src="https://cdn.datacamp.com/dcl-react.js.gz"></script>
+</head>
+<body>
+  <div class="exercise">
+    <div class="title">
+      <h2> For-Loop </h2>
+    </div>
+
+    <div class = "Description">
+
+<p>The formula for the sum of the series <span class="math inline">\(1+2+\dots+n\)</span> is <span class="math inline">\(n(n+1)/2\)</span>. What if we weren’t sure that was the right function? How could we check? Using what we learned about functions we can create one that computes the <span class="math inline">\(S_n\)</span>:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">compute_s_n &lt;-<span class="st"> </span><span class="cf">function</span>(n){
+  x &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span>n
+  <span class="kw">sum</span>(x)
+}</code></pre></div>
+<p>How can we compute <span class="math inline">\(S_n\)</span> for various values of <span class="math inline">\(n\)</span>, say <span class="math inline">\(n=1,\dots,25\)</span>? Do we write 25 lines of code calling <code>compute_s_n</code>? No, that is what for-loops are for in programming. In this case, we are performing exactly the same task over and over, and the only thing that is changing is the value of <span class="math inline">\(n\)</span>. For-loops let us define the range that our variable takes (in our example <span class="math inline">\(n=1,\dots,10\)</span>), then change the value and evaluate expression as you <em>loop</em>.</p>
+<p>Perhaps the simplest example of a for-loop is this useless piece of code:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">5</span>){
+  <span class="kw">print</span>(i)
+}
+<span class="co">#&gt; [1] 1</span>
+<span class="co">#&gt; [1] 2</span>
+<span class="co">#&gt; [1] 3</span>
+<span class="co">#&gt; [1] 4</span>
+<span class="co">#&gt; [1] 5</span></code></pre></div>
+<p>Here is the for-loop we would write for our <span class="math inline">\(S_n\)</span> example:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">m &lt;-<span class="st"> </span><span class="dv">25</span>
+s_n &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="dt">length =</span> m) <span class="co"># create an empty vector</span>
+<span class="cf">for</span>(n <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>m){
+  s_n[n] &lt;-<span class="st"> </span><span class="kw">compute_s_n</span>(n)
+}</code></pre></div>
+<p>In each iteration <span class="math inline">\(n=1\)</span>, <span class="math inline">\(n=2\)</span>, etc…, we compute <span class="math inline">\(S_n\)</span> and store it in the <span class="math inline">\(n\)</span>th entry of <code>s_n</code>.</p>
+
+</div>
+
+    <div class = "Instruction">
+      <h3>Instruction</h3>
+
+<ul>
+<li> Fix the code to calculate the squares of vector . </li>
+</ul>
+
+</div>
+
+    <div data-datacamp-exercise data-lang="r" data-height="auto">
+      <code data-type="pre-exercise-code"></code>
+      <code data-type="sample-code">
+# The simplest example of for-loop.
+for(i in 1:5){
+  print(i)
+}
+
+# Create a compute_s_n function to sum up 1^2 + 2^2 + ... + n^2. 
+compute_s_n <- function(n){
+  x <- 1:n
+  sum(x)
+}
+
+# S_n example.
+m <- 25
+s_n <- vector(length = m) # create an empty vector
+for(n in 1:m){
+  s_n[n] <- compute_s_n(n)
+}
+z <- s_n[25]
+
+      </code>
+      <code data-type="solution">
+# The simplest example of for-loop.
+for(i in 1:5){
+  print(i)
+}
+
+# Create a compute_s_n function to sum up 1^2 + 2^2 + ... + n^2. 
+compute_s_n <- function(n){
+  x <- 1:n
+  sum(x^2)
+}
+
+# S_n example.
+m <- 25
+s_n <- vector(length = m) # create an empty vector
+for(n in 1:m){
+  s_n[n] <- compute_s_n(n)
+}     
+z <- s_n[25]
+
+      </code>
+      <code data-type="sct">
+        msg = "Please check the function to get the correct value in z."
+      test_function("compute_s_n")
+      test_object("z", undefined_msg = msg, incorrect_msg = msg)
+
+success_msg("Great! Head over to the next exercise.")
+
+      </code>
+    </div>
+  </div>
+
+  <h3><a href="/_pages/Day2/1-5.html">Previous: 1-3 | ls(): Lists of variables saved in the workspace </a></h3>
+  <h3><a href="/_pages/Day2/1-7.html">Next: 1-3 | Variable assignment</a></h3>    
+  <h3><a href="/d2">Back to Main</a></h3>
+  
+</body>
+</html>
