@@ -20,12 +20,12 @@
 
     <div class = "Description">
 
-<p>The formula for the sum of the series <span class="math inline">\(1+2+\dots+n\)</span> is <span class="math inline">\(n(n+1)/2\)</span>. What if we weren’t sure that was the right function? How could we check? Using what we learned about functions we can create one that computes the <span class="math inline">\(S_n\)</span>:</p>
+<p>The formula for the sum of the series 1 + 2 + ... + n is (n(n+1)/2. What if we weren’t sure that was the right function? How could we check? Using what we learned about functions we can create one that computes the S_n:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">compute_s_n &lt;-<span class="st"> </span><span class="cf">function</span>(n){
   x &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span>n
   <span class="kw">sum</span>(x)
 }</code></pre></div>
-<p>How can we compute <span class="math inline">\(S_n\)</span> for various values of <span class="math inline">\(n\)</span>, say <span class="math inline">\(n=1,\dots,25\)</span>? Do we write 25 lines of code calling <code>compute_s_n</code>? No, that is what for-loops are for in programming. In this case, we are performing exactly the same task over and over, and the only thing that is changing is the value of <span class="math inline">\(n\)</span>. For-loops let us define the range that our variable takes (in our example <span class="math inline">\(n=1,\dots,10\)</span>), then change the value and evaluate expression as you <em>loop</em>.</p>
+<p>How can we compute S_n for various values of n, say n=1,...,25 ? Do we write 25 lines of code calling <code>compute_s_n</code>? No, that is what for-loops are for in programming. In this case, we are performing exactly the same task over and over, and the only thing that is changing is the value of n. For-loops let us define the range that our variable takes (in our example n=1,...,10, then change the value and evaluate expression as you <em>loop</em>.</p>
 <p>Perhaps the simplest example of a for-loop is this useless piece of code:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">5</span>){
   <span class="kw">print</span>(i)
@@ -41,7 +41,7 @@ s_n &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="dt
 <span class="cf">for</span>(n <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>m){
   s_n[n] &lt;-<span class="st"> </span><span class="kw">compute_s_n</span>(n)
 }</code></pre></div>
-<p>In each iteration <span class="math inline">\(n=1\)</span>, <span class="math inline">\(n=2\)</span>, etc…, we compute <span class="math inline">\(S_n\)</span> and store it in the <span class="math inline">\(n\)</span>th entry of <code>s_n</code>.</p>
+<p>In each iteration n=1, n=2, etc…, we compute S_n and store it in the nth entry of <code>s_n</code>.</p>
 
 </div>
 
@@ -49,7 +49,7 @@ s_n &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="dt
       <h3>Instruction</h3>
 
 <ul>
-<li> Fix the code to calculate the squares of vector . </li>
+<li> Fix the code to calculate the sum of squares of vector, instead of the sum of vectors. </li>
 </ul>
 
 </div>
@@ -57,10 +57,6 @@ s_n &lt;-<span class="st"> </span><span class="kw">vector</span>(<span class="dt
     <div data-datacamp-exercise data-lang="r" data-height="auto">
       <code data-type="pre-exercise-code"></code>
       <code data-type="sample-code">
-# The simplest example of for-loop.
-for(i in 1:5){
-  print(i)
-}
 
 # Create a compute_s_n function to sum up 1^2 + 2^2 + ... + n^2. 
 compute_s_n <- function(n){
@@ -76,12 +72,11 @@ for(n in 1:m){
 }
 z <- s_n[25]
 
+# print the sum of squres.
+z
+
       </code>
       <code data-type="solution">
-# The simplest example of for-loop.
-for(i in 1:5){
-  print(i)
-}
 
 # Create a compute_s_n function to sum up 1^2 + 2^2 + ... + n^2. 
 compute_s_n <- function(n){
@@ -96,6 +91,9 @@ for(n in 1:m){
   s_n[n] <- compute_s_n(n)
 }     
 z <- s_n[25]
+
+# print the sum of squres.
+z
 
       </code>
       <code data-type="sct">
