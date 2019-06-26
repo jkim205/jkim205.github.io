@@ -32,17 +32,17 @@
 
 <h3> Instruction </h3>
 
-<p> Copy and Run the sample code in your Rstudio to see how install.packages() function works. </p>  
-<p> DO NOT CLICK RUN </p>
+<p> Run the sample code to see how select() function works. </p>  
+
 
 </div>
 
     <div data-datacamp-exercise data-lang="r" data-height="auto">
-      <code data-type="pre-exercise-code"></code>
-
+      <code data-type="pre-exercise-code">
+library(dplyr)
 library(dslabs)
 data("murders")
-
+</code>
 
       <code data-type="sample-code">
       # Add the rate column
@@ -50,6 +50,12 @@ data("murders")
 
       # Check murders to find that the new column is added.
       head(murders)
+
+      # select new table with 4 columns
+      new_table <- select(murders, state, region, rate)
+
+      # filter new_table
+      filter(new_table, rate <= 0.71)
 
       </code>
     </div>

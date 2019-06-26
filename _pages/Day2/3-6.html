@@ -20,9 +20,9 @@
 
 <p>With <strong>dplyr</strong> we can perform a series of operations, for example <code>select</code> and then <code>filter</code>, by sending the results of one function to another using what is called the <em>pipe operator</em>: <code>%&gt;%</code>. Some details are included below.</p>
 <p>We wrote code above to show three variables (state, region, rate) for states that have murder rates below 0.71. To do this, we defined the intermediate object <code>new_table</code>. In <strong>dplyr</strong> we can write code that looks more like a description of what we want to do without intermediate objects:</p>
-<p><span class="math display">\[ \mbox{original data }
-\rightarrow \mbox{ select }
-\rightarrow \mbox{ filter } \]</span></p>
+<p>
+  [original data] -> [select] -> [filter]
+</p>
 <p>For such an operation, we can use the pipe <code>%&gt;%</code>. The code looks like this:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">murders <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(state, region, rate) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(rate <span class="op">&lt;=</span><span class="st"> </span><span class="fl">0.71</span>)
 <span class="co">#&gt;           state        region  rate</span>
@@ -45,24 +45,26 @@
 
 <h3> Instruction </h3>
 
-<p> Copy and Run the sample code in your Rstudio to see how install.packages() function works. </p>  
-<p> DO NOT CLICK RUN </p>
+<p> Run the sample code to see how %>% structure works. </p>  
+
 
 </div>
 
     <div data-datacamp-exercise data-lang="r" data-height="auto">
-      <code data-type="pre-exercise-code"></code>
+      <code data-type="pre-exercise-code">
 
+library(dplyr)
 library(dslabs)
 data("murders")
-
-
-      <code data-type="sample-code">
       # Add the rate column
       murders <- mutate(murders, rate = total / population * 100000)
+</code>
+      <code data-type="sample-code">
+      # Without Pipe
+      filter(select(murders, state, region, rate), rate <= 0.71)
 
-      # Check murders to find that the new column is added.
-      head(murders)
+      # Using pipe(%>%) to fix the code .
+murders %>% select(state, region, rate) %>% filter(rate <= 0.71)
 
       </code>
     </div>

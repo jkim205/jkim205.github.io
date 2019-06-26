@@ -30,18 +30,18 @@
 
 <h3> Instruction </h3>
 
-<p> Copy and Run the sample code in your Rstudio to see how install.packages() function works. </p>  
-<p> DO NOT CLICK RUN </p>
+<p> Run the sample code to see how filter() function works. </p>  
 
 </div>
 
     <div data-datacamp-exercise data-lang="r" data-height="auto">
-      <code data-type="pre-exercise-code"></code>
+      <code data-type="pre-exercise-code">
 
+library(dplyr)
 library(dslabs)
 data("murders")
 
-
+</code>
       <code data-type="sample-code">
       # Add the rate column
       murders <- mutate(murders, rate = total / population * 100000)
@@ -49,11 +49,14 @@ data("murders")
       # Check murders to find that the new column is added.
       head(murders)
 
+      # select the data under condition rate <= 0.71
+      filter(murders, rate <= 0.71)
+
       </code>
     </div>
 
   <h3><a href="/_pages/Day2/3-3.html">Previous: 3-3 | mutate(): Adding a column </a></h3>
-  <h3><a href="/_pages/Day2/3-5.html">Next: 1-3 | Variable assignment</a></h3>    
+  <h3><a href="/_pages/Day2/3-5.html">Next: 3-5 | select(): Selecting columns with select</a></h3>    
   <h3><a href="/d2">Back to Main</a></h3>
 
 </body>

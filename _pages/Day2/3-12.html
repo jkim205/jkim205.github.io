@@ -46,13 +46,13 @@ murders <span class="op">%&gt;%</span><span class="st"> </span>
 
 <h3> Instruction </h3>
 
-<p> Copy and Run the sample code in your Rstudio to see how install.packages() function works. </p>  
-<p> DO NOT CLICK RUN </p>
+<p> Copy and Run the sample code in your Rstudio to see how case_when() function works. </p>  
+
 
 </div>
 
     <div data-datacamp-exercise data-lang="r" data-height="auto">
-      <code data-type="pre-exercise-code"></code>
+      <code data-type="pre-exercise-code">
 
 library(dplyr)
 library(dslabs)
@@ -63,10 +63,20 @@ murders <- murders %>% mutate(rate = total/population*100000)
 us_murder_rate <- murders %>%
   summarize(rate = sum(total) / sum(population) * 100000)
 
-      <code data-type="sample-code">
-      # Add the rate column
-us_murder_rate %>% pull(rate)
 
+</code>
+      <code data-type="sample-code">
+# Adding categorical column called group based on the region        
+data(murders)
+murders %>% 
+  mutate(group = case_when(
+    abb %in% c("ME", "NH", "VT", "MA", "RI", "CT") ~ "New England",
+    abb %in% c("WA", "OR", "CA") ~ "West Coast",
+    region == "South" ~ "South",
+    TRUE ~ "other")) %>%
+  group_by(group) %>%
+  summarize(rate = sum(total) / sum(population) * 10^5) %>%
+  arrange(rate)
       </code>
     </div>
 

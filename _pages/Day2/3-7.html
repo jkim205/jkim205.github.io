@@ -37,13 +37,12 @@ s
 
 <h3> Instruction </h3>
 
-<p> Copy and Run the sample code in your Rstudio to see how install.packages() function works. </p>  
-<p> DO NOT CLICK RUN </p>
+<p> Run the sample code to see how summarize() function works. </p>  
 
 </div>
 
     <div data-datacamp-exercise data-lang="r" data-height="auto">
-      <code data-type="pre-exercise-code"></code>
+      <code data-type="pre-exercise-code">
 
 library(dplyr)
 library(dslabs)
@@ -51,6 +50,7 @@ data(heights)
 
 data(murders)
 murders <- murders %>% mutate(rate = total/population*100000)
+</code>
 
       <code data-type="sample-code">
       # Add the rate column
