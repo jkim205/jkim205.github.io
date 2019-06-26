@@ -44,6 +44,5 @@ Source : [Tidyverse](https://rafalab.github.io/dsbook/tidyverse.html)
 
 > In this R course, you will learn the basic usage of importing data in R.
 
-[4-1](Day2/4-1.html) | [4-2](Day2/4-2.html) | [4-3](Day2/4-3.html) | [4-4](Day2/4-4.html) 
-[4-5](Day2/4-5.html) | [4-6](Day2/4-6.html)
+[4-1](Day2/4-1.html) | [4-2](Day2/4-2.html) | [4-3](Day2/4-3.html) | [4-4](Day2/4-4.html) | [4-5](Day2/4-5.html) 
 

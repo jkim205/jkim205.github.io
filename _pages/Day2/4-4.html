@@ -18,49 +18,89 @@
 
 <h2> read.csv() </h2>
 
-<section>
-      <h5>Data Input</h5>
-      <p><p>Reads a file in table format and creates a data frame from it, with
-  cases corresponding to lines and variables to fields in the file.</p></p>
-    </section>
+<p>In this section we introduce the main tidyverse data importing functions. We will use the <code>murders.csv</code> file provided by the <strong>dslabs</strong> package as an example. To simplify the illustration we will copy the file to our working directory using the following code:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">filename &lt;-<span class="st"> &quot;murders.csv&quot;</span>
+dir &lt;-<span class="st"> </span><span class="kw">system.file</span>(<span class="st">&quot;extdata&quot;</span>, <span class="dt">package =</span> <span class="st">&quot;dslabs&quot;</span>) 
+fullpath &lt;-<span class="st"> </span><span class="kw">file.path</span>(dir, filename)
+<span class="kw">file.copy</span>(fullpath, <span class="st">&quot;murders.csv&quot;</span>)</code></pre></div>
+<div id="readr" class="section level3">
+<h3><span class="header-section-number">6.2.1</span> readr</h3>
+<p>The <strong>readr</strong> library includes functions for reading data stored in text file spreadsheets into R. <strong>readr</strong> is part of the <strong>tidyverse</strong> package, or you can load it directly:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(readr)</code></pre></div>
+<p>The following functions are available to read-in spreadsheets:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Function</th>
+<th>Format</th>
+<th>Typical suffix</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>read_table</td>
+<td>white space separated values</td>
+<td>txt</td>
+</tr>
+<tr class="even">
+<td>read_csv</td>
+<td>comma separated values</td>
+<td>csv</td>
+</tr>
+<tr class="odd">
+<td>read_csv2</td>
+<td>semicolon separated values</td>
+<td>csv</td>
+</tr>
+<tr class="even">
+<td>read_tsv</td>
+<td>tab delimited separated values</td>
+<td>tsv</td>
+</tr>
+<tr class="odd">
+<td>read_delim</td>
+<td>general text file format, must define delimiter</td>
+<td>txt</td>
+</tr>
+</tbody>
+</table>
+<p>Although the suffix usually tells us what type of file it is, there is no guarantee that these always match. We can open the file to take a look or use the function <code>read_lines</code> to look at a few lines:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">read_lines</span>(<span class="st">&quot;murders.csv&quot;</span>, <span class="dt">n_max =</span> <span class="dv">3</span>)
+<span class="co">#&gt; [1] &quot;state,abb,region,population,total&quot; &quot;Alabama,AL,South,4779736,135&quot;     </span>
+<span class="co">#&gt; [3] &quot;Alaska,AK,West,710231,19&quot;</span></code></pre></div>
+<p>This also shows that there is a header. Now we are ready to read-in the data into R. From the .csv suffix and the peek at the file, we know to use <code>read_csv</code>:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dat &lt;-<span class="st"> </span><span class="kw">read_csv</span>(filename)
+<span class="co">#&gt; Parsed with column specification:</span>
+<span class="co">#&gt; cols(</span>
+<span class="co">#&gt;   state = col_character(),</span>
+<span class="co">#&gt;   abb = col_character(),</span>
+<span class="co">#&gt;   region = col_character(),</span>
+<span class="co">#&gt;   population = col_integer(),</span>
+<span class="co">#&gt;   total = col_integer()</span>
+<span class="co">#&gt; )</span></code></pre></div>
+<p>Note that we receive a message letting us know what data types were used for each column. Also note that <code>dat</code> is a <code>tibble</code>, not just a data frame. This is because <code>read_csv</code> is a <strong>tidyverse</strong> parser. We can see that the data has in fact been read-in with the content in the file:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(dat)
+<span class="co">#&gt; # A tibble: 6 x 5</span>
+<span class="co">#&gt;   state      abb   region population total</span>
+<span class="co">#&gt;   &lt;chr&gt;      &lt;chr&gt; &lt;chr&gt;       &lt;int&gt; &lt;int&gt;</span>
+<span class="co">#&gt; 1 Alabama    AL    South     4779736   135</span>
+<span class="co">#&gt; 2 Alaska     AK    West       710231    19</span>
+<span class="co">#&gt; 3 Arizona    AZ    West      6392017   232</span>
+<span class="co">#&gt; 4 Arkansas   AR    South     2915918    93</span>
+<span class="co">#&gt; 5 California CA    West     37253956  1257</span>
+<span class="co">#&gt; 6 Colorado   CO    West      5029196    65</span></code></pre></div>
+<p>Finally, note that we can also use the full path for the file:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dat &lt;-<span class="st"> </span><span class="kw">read_csv</span>(fullpath)</code></pre></div>
+</div>
 
-    
-      <section class="topic--keywords">
-        <div class="anchor" id="l_keywords"></div>
-        <dl>
-          <dt>Keywords</dt>
-                    <dd><a href="/search/keywords/file">file</a>, <a href="/search/keywords/connection">connection</a></dd>
-        </dl>
-      </section>
-    
+<p> Please download this file to run </p>
+<a href= "Day2/img/murders.csv"> murders.csv</a>
 
-    
-      <section id="usage">
-        <div class="anchor" id="l_usage"></div>
-        <h5 class="topic--title">Usage</h5>
-        <pre><code class="R">read.table(file, header = FALSE, sep = "", quote = "\"'",
-           dec = ".", numerals = c("allow.loss", "warn.loss", "no.loss"),
-           row.names, col.names, as.is = !stringsAsFactors,
-           na.strings = "NA", colClasses = NA, nrows = -1,
-           skip = 0, check.names = TRUE, fill = !blank.lines.skip,
-           strip.white = FALSE, blank.lines.skip = TRUE,
-           comment.char = "#",
-           allowEscapes = FALSE, flush = FALSE,
-           stringsAsFactors = default.stringsAsFactors(),
-           fileEncoding = "", encoding = "unknown", text, skipNul = FALSE)<p></p><p>read.csv(file, header = TRUE, sep = ",", quote = "\"",
-         dec = ".", fill = TRUE, comment.char = "", &#8230;)</p><p>read.csv2(file, header = TRUE, sep = ";", quote = "\"",
-          dec = ",", fill = TRUE, comment.char = "", &#8230;)</p><p>read.delim(file, header = TRUE, sep = "\t", quote = "\"",
-           dec = ".", fill = TRUE, comment.char = "", &#8230;)</p><p>read.delim2(file, header = TRUE, sep = "\t", quote = "\"",
-            dec = ",", fill = TRUE, comment.char = "", &#8230;)</p></code></pre>
-      </section>
-    
-
-
-<p> You can see further readings in the following <a href="https://www.rdocumentation.org/packages/utils/versions/3.6.0/topics/read.table"> link </a>.</p>
+<p> You can see further readings in the following <a href="https://www.rdocumentation.org/packages/readr/versions/1.3.1/topics/read_delim"> link </a>.</p>
 
 <h3> Instruction </h3>
 
-<p> Copy and Run the sample code in your Rstudio to see how install.packages() function works. </p>  
+<p> Copy and Run the sample code in your Rstudio to see how readr() function works. </p>  
 <p> DO NOT CLICK RUN </p>
 
 </div>
@@ -69,10 +109,16 @@
       <code data-type="pre-exercise-code"></code>
 
       <code data-type="sample-code">
-      # Add the rate column
-print(getwd())
 
-setwd('Data')
+# load readr package
+library(readr)
+
+# read three lines
+read_lines("murders.csv", n_max = 3)
+
+# read data file
+dat <- read_csv(filename)
+
       </code>
     </div>
 
