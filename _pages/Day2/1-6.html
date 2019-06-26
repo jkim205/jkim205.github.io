@@ -20,7 +20,7 @@
 
     <div class = "Description">
 
-If you type <code>ls()</code> the function is evaluated and, as seen before, we see objects in the workspace.</p>
+<p> If you type <code>ls()</code> the function is evaluated and, as seen before, we see objects in the workspace.</p>
 <p>Unlike <code>ls</code>, most functions require one or more <em>arguments</em>. Below is an example of how we assign an object to the argument of the function <code>log</code>. Remember that we earlier defined <code>a</code> to be 1:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">log</span>(<span class="dv">8</span>)
 <span class="co">#&gt; [1] 2.08</span>
@@ -45,6 +45,9 @@ If you type <code>ls()</code> the function is evaluated and, as seen before, we 
 
 </p>
 
+<p> In addition, there is a help tab in the right bottom pannel in RStudio. When we use help function, the help document pops up in the help tab like the image below: </p>
+
+<img src = "Dat2/img/1-6_help.png" width=70%>
 
 </div>
 
@@ -52,7 +55,7 @@ If you type <code>ls()</code> the function is evaluated and, as seen before, we 
       <h3>Instruction</h3>
 
 <ul>
-<li> Click the Submit button </li>
+<li> COPY AND PASTE THE CODE in RSTUDIO. </li>
 <li> * Help documents will not pop up in this datacamp light version environment. But, it will work in your workspace in R studio. </li>
 </ul>
 
@@ -62,6 +65,10 @@ If you type <code>ls()</code> the function is evaluated and, as seen before, we 
       <code data-type="pre-exercise-code"></code>
 
       <code data-type="sample-code">
+
+# DO NOT RUN this code in the environment
+# COPY AND PASTE THIS CODE AND RUN IN RSTUDIO.
+
 # Pop up the help document of seq function.
 help("seq")
 
@@ -75,31 +82,6 @@ args(seq)
 seq(1, 10)
 
       </code>
-      <code data-type="solution">
-# Pop up the help document of seq function.
-help("seq")
-
-# Another method to pop up the help document of seq.
-?seq
-
-# Find arguments of seq function.
-args(seq)
-
-# An example of using seq function
-seq(1, 10)
-
-      </code>
-      <code data-type="sct">
-
-test_function("help")
-test_function("args")
-test_function("seq")
-
-success_msg("Great! Head over to the next exercise.")
-
-      </code>
-      <div data-type="hint">
-      </div>
     </div>
   </div>
 

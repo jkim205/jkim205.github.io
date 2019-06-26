@@ -24,7 +24,7 @@
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ls</span>()
 <span class="co">#&gt; [1] &quot;a&quot;        &quot;b&quot;        &quot;c&quot;        &quot;img_path&quot; &quot;murders&quot;</span></code></pre></div>
 <p>In RStudio, the <em>Environment</em> tab shows the values:</p>
-<p><img src="R/img/rstudio-environment.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="Day2/img/1-5_ls.png" width="70%" style="display: block; margin: auto;" /></p>
 <p>We should see <code>a</code>, <code>b</code> and <code>c</code>.
   If you try to recover the value of a variable that is not in your workspace, you receive an error. For example, if you type <code>x</code> you will receive the following message: <code>Error: object 'x' not found</code>.</p>
 
@@ -43,37 +43,54 @@
 
     <div data-datacamp-exercise data-lang="r" data-height="auto">
       <code data-type="pre-exercise-code"></code>
-      a <- "Happy R Coding"
-      b <- 3.141592
-      jj <- c("Jongjin", "Kim")
 
       <code data-type="sample-code">
+# Assign sample variables
+a <- "Happy R Coding"
+b <- iris$Sepal.Length
+name <- c("Jongjin", "Kim")
+
 # Look up the variables in the workspace.
 ls()
 
 # Create new variable called x and assign log(8, base=2).
 x <- 
 
-# Remove variable jj in a workspace
+# Look up the variables in the workspace after assigning x.
+print("workspace after creating x")
+ls()
 
+# Remove variable name in a workspace
+rm(_____)
 
 # Look up the variables in the workspace after assigning x.
+print("workspace after removing name")
 ls()
+
 
       </code>
       <code data-type="solution">
+# Assign sample variables
+a <- "Happy R Coding"
+b <- iris$Sepal.Length
+name <- c("Jongjin", "Kim")
+
 # Look up the variables in the workspace.
 ls()
 
-# Create new variable called x and assign any value.
+# Create new variable called x and assign log(8, base=2).
 x <- log(8, base=2)
 
-# Remove variable jj in a workspace
-rm(jj)
-
 # Look up the variables in the workspace after assigning x.
+print("workspace after creating x")
 ls()
 
+# Remove variable name in a workspace
+rm(name)
+
+# Look up the variables in the workspace after assigning x.
+print("workspace after removing name")
+ls()
       </code>
       <code data-type="sct">
 
