@@ -23,7 +23,7 @@
 <p> The function <a href="https://www.rdocumentation.org/packages/base/versions/3.6.0/topics/which">which()</a> is widely used to check which indices in a vector satisfy certain condition.
 </p>
 
-<p>The function <a href="https://www.rdocumentation.org/packages/base/versions/3.6.0/topics/which.min">which.min()</a> is a widely used function to find the index where maximum and minimum value exists in a vector, data.frame. 
+<p>The function <a href="https://www.rdocumentation.org/packages/base/versions/3.6.0/topics/which.min">which.min()</a> is a widely used function to find the index where maximum and minimum value exists in a vector, data.frame. </p>
 
 <p>The basic usage of <code> which() </code> and <code> which.min() </code> function is written in the exercise. </p>
 
@@ -49,26 +49,6 @@ x <- c(1:4, 0:5, 11)
 x>4
 
 # Fix the following code to save indices where the value is larger than 4 into variable a.
-a <- which(______)
-
-# Access the values where x > 4.
-x[a]
-
-# Find an index where a minimum value exists.
-which.min(x)
-
-# Find an index where a maximum value exists.
-
-
-      </code>
-      <code data-type="solution">
-# Create a variable x
-x <- c(1:4, 0:5, 11)
-
-# Logical vector
-x>4
-
-# Fix the following code to save indices where the value is larger than 4 into variable a.
 a <- which(x>4)
 
 # Access the values where x > 4.
@@ -81,18 +61,6 @@ which.min(x)
 which.max(x)
 
       </code>
-      <code data-type="sct">
-
-msg <- "Please see that objects are well defined and correct."
-test_object(a, incorrect_msg = msg, undefined_msg = msg)
-test_function(which)
-test_function(which.min)
-test_function(which.max)
-success_msg("Great! Head over to the next exercise.")
-
-      </code>
-      <div data-type="hint">
-      </div>
     </div>
   </div>
 
