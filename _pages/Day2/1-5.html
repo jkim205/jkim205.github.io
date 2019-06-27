@@ -61,7 +61,7 @@ x <-
 print("workspace after creating x")
 ls()
 
-# Remove variable name in a workspace
+# Remove a variable called 'name' in a workspace
 rm(_____)
 
 # Look up the variables in the workspace after assigning x.
@@ -99,7 +99,7 @@ test_object("x", undefined_msg = "Make sure to define a variable `x`.",
             incorrect_msg = "Make sure that you assign the correct value to `x`.")
 
 test_output_contains("ls()", incorrect_msg = "Make sure that you type the commamnd ls()")
-test_output_contains("rm(jj)", incorrect_msg = "Make sure that you remove jj from your workspace.")
+test_output_contains("rm(name)", incorrect_msg = "Make sure that you remove name from your workspace.")
 
 
 success_msg("Great! Head over to the next exercise.")
