@@ -13,11 +13,20 @@ permalink: d3
 
 ### Graphics package
 
-> Graphics package is installed when you install the base program of R. The useful functions 
+> Graphics package is installed when you install the base program of R. The useful functions are listed as follows:
 
-'''{r include = FALSE}
+[plot(x, y)](https://www.rdocumentation.org/packages/graphics/versions/3.6.0/topics/plot) : Create a scatter plot with x and y
+[lines(), abline()](https://www.rdocumentation.org/packages/graphics/versions/3.6.0/topics/lines) : Add line to the existing plot
+[curve()](https://www.rdocumentation.org/packages/graphics/versions/3.6.0/topics/curve) : Add curve for a function
+[par(mfrow = c(N,M))](https://www.rdocumentation.org/packages/graphics/versions/3.6.0/topics/par): Setting parameters for the plot, especially mfrow is for the frame numbers
+[hist()](https://www.rdocumentation.org/packages/graphics/versions/3.6.0/topics/hist): Add histogram
+[]
+
+'''r
 plot(iris$Sepal.Length, iris$Sepal.Width)
 '''
+
+please download the [r script](https://raw.githubusercontent.com/jkim205/jkim205.github.io/master/_pages/Day3/examples_plot.r)
 
 Here are links of references:
 [R Graphics CookBook](http://www.cookbook-r.com/Graphs/)
@@ -25,8 +34,9 @@ Here are links of references:
 
 ### ggplot2 package
 
-Please download the [data csv file]() and [R script]()
+Please download the [data csv file](https://raw.githubusercontent.com/jkim205/jkim205.github.io/master/_pages/Day3/sample_data_ggplot.csv?raw=true) and [R script](https://raw.githubusercontent.com/jkim205/jkim205.github.io/master/_pages/Day3/exercise_ggplot.r?raw=true)
 
+<img src="" alt="1-6_help.png" width="70%">
 Here are links of references:
 [R Graphics CookBook](http://www.cookbook-r.com/Graphs/)
 [ggplot2 tidyverse](https://ggplot2.tidyverse.org/)
