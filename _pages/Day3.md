@@ -17,22 +17,41 @@ permalink: d3
 
 [plot(x, y)](https://www.rdocumentation.org/packages/graphics/versions/3.6.0/topics/plot) : Create a scatter plot with x and y
 
-[lines(), abline()](https://www.rdocumentation.org/packages/graphics/versions/3.6.0/topics/lines) : Add line to the existing plot
+```r
+plot(iris$Sepal.Length, iris$Sepal.Width)
 
-[curve()](https://www.rdocumentation.org/packages/graphics/versions/3.6.0/topics/curve) : Add curve for a function
+plot(cars,
+     main = "CARS DATASET",
+     xlab = "SPEED OF CAR",
+     ylab = "STOPPING DISTANCE OF CAR")
 
-[par(mfrow = c(N,M))](https://www.rdocumentation.org/packages/graphics/versions/3.6.0/topics/par): Setting parameters for the plot, especially mfrow is for the frame numbers
+plot(iris$Sepal.Length, iris$Sepal.Width, pch = as.integer(iris$Species))
+
+plot(pressure, type = 'o')
+```
+
+
+
+[abline()](https://www.rdocumentation.org/packages/graphics/versions/3.6.0/topics/lines) : Add line to the existing plot
+
+```r
+m <- lm(Petal.Length ~ Petal.Width, data=iris)
+with(iris, plot(Petal.Width, Petal.Length))
+abline(m)
+```
 
 [hist()](https://www.rdocumentation.org/packages/graphics/versions/3.6.0/topics/hist): Add histogram
+```r
+hist(sunspots, prob = T)
+```
 
 [boxplot()](https://www.rdocumentation.org/packages/graphics/versions/3.6.0/topics/boxplot): Add boxplot
 
 ```r
-plot(iris$Sepal.Length, iris$Sepal.Width)
+boxplot(count ~ spray, data = InsectSprays, col = "lightgray")
 ```
 
-
-please download the [r script](https://raw.githubusercontent.com/jkim205/jkim205.github.io/master/_pages/Day3/examples_plot.R)
+please download the [r script](_pages/Day3/examples_plot.R)
 
 Here are links of references:
 
