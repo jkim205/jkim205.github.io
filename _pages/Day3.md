@@ -13,10 +13,22 @@ permalink: d3
 
 ### Graphics package
 
+> Graphics package is installed when you install the base program of R. The useful functions 
 
+'''{r include = FALSE}
+plot(iris$Sepal.Length, iris$Sepal.Width)
+'''
+
+Here are links of references:
+[R Graphics CookBook](http://www.cookbook-r.com/Graphs/)
+[R Documentation Graphics](https://www.rdocumentation.org/packages/graphics/versions/3.6.0)
 
 ### ggplot2 package
 
 Please download the [data csv file]() and [R script]()
 
+Here are links of references:
+[R Graphics CookBook](http://www.cookbook-r.com/Graphs/)
+[ggplot2 tidyverse](https://ggplot2.tidyverse.org/)
+[dsbooks ggplot2](https://rafalab.github.io/dsbook/ggplot2.html)
 
