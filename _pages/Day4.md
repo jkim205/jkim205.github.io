@@ -27,6 +27,14 @@ library(psych)
 describe(data)
 ```
 
+> Histogram is one of great plots to explore your dataset. In addition, if you need to check the normality of dataset, you can use the function qqnorm (constructing qq plot) or shapiro.test (Shapiro-Wilk test)
+
+```r
+hist(data, nclass = 15)
+qqnorm(data)
+shapiro.test(data)
+```
+
 ## Hypothesis testing - 1. t-test
 
 > If you want to do an one sample t-test with the null hypothesis H0: u = 0, you can use the following code in R.
@@ -71,8 +79,8 @@ TukeyHSD(res.aov)
 > If you want to compare the mean values among more than three groups, you would like to use ANOVA (Analysis of Variance).
 
 ```r
-cor.test(x, y)      # continuous x, continuous y
-cor.test(p, q, method = "spearman")      # order p, order q
+cor.test(x, y)                            # continuous x, continuous y
+cor.test(p, q, method = "spearman")       # order p, order q
 ```
 
 ## Hypothesis testing - 4. Linear Regression
