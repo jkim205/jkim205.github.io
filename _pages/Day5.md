@@ -108,7 +108,8 @@ M =~ a * X
 Y =~ b * M + c * X
 
 indirect := b*c
-direct := a
+direct := a'
+
 ```
 
 > Step 2. run the sem model to find the fit.
