@@ -25,7 +25,8 @@ anova(res.aov1, res.aov2)
 > Plot ANCOVA results
 
 ```r
-
+df <- mtcars %>% mutate(am = as.factor(am)) %>% select (mpg, hp, am)
+ggplot(df, aes(hp, mpg, col=am)) + geom_point() + geom_smooth(method = "lm")
 ```
 
 ## PCA (Principal Component Analysis)
